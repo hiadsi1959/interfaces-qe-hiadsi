@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accès protégé — HIADSI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body class="login-page">
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+  <div class="bg-lattice" aria-hidden="true"></div>
+
+  <main class="login-wrap">
+    <p class="login-brand">HIADSI</p>
+    <h1>Accès réservé</h1>
+    <p class="login-text">
+      Ces interfaces sont protégées. Un mot de passe est requis
+      pour consulter et télécharger — sans autorisation, aucune modification ni accès.
+    </p>
+
+    <form class="login-form" method="post" action="/login" autocomplete="current-password">
+      <label for="password">Mot de passe</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        required
+        autofocus
+        placeholder="Votre mot de passe"
+      />
+      <button class="btn btn-primary" type="submit">Entrer</button>
+    </form>
+
+    <p id="login-error" class="login-error" hidden>Mot de passe incorrect.</p>
+    <p class="login-note">Contactez S. Hiadsi (LMESM / USTO-MB) pour obtenir l’accès.</p>
+  </main>
+
+  <script>
+    if (new URLSearchParams(location.search).get("erreur") === "1") {
+      const el = document.getElementById("login-error");
+      el.hidden = false;
+    }
+  </script>
+</body>
+</html>

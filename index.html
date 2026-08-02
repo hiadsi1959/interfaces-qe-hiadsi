@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HIADSI — Interfaces Quantum ESPRESSO</title>
+  <meta name="description" content="Cinq interfaces de calcul Quantum ESPRESSO destinées aux chercheurs : inputs, pseudopotentiels, workflows, supra et thermo_pw." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+  <div class="bg-lattice" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="#top" class="nav-brand" aria-label="HIADSI — accueil">HIADSI</a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#interfaces">Interfaces</a>
+        <a href="#installer">Installer</a>
+        <a href="#suggestions">Suggestions</a>
+        <a href="#licence">Licence</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <h1 class="brand">HIADSI<span>.</span></h1>
+        <p class="hero-lead">Interfaces Quantum ESPRESSO pour la recherche.</p>
+        <p class="hero-sub">
+          Téléchargement et utilisation libres pour les chercheurs.
+          Le code source ne peut être modifié qu’en collaboration avec l’auteur.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#interfaces">Télécharger librement</a>
+          <a class="btn btn-ghost" href="#licence">Conditions d’usage</a>
+        </div>
+        <p class="hero-meta">LMESM · USTO-MB · S. Hiadsi</p>
+      </div>
+    </section>
+
+    <section id="interfaces">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">Dépôt public</p>
+          <h2>Les cinq interfaces</h2>
+          <p>
+            Téléchargez l’archive <code>.tar.gz</code>, extrayez-la, puis lancez
+            <code>./DEMARRER.sh</code>. Les interfaces fonctionnent normalement ;
+            le code source est protégé contre toute modification sans le mot de passe de l’auteur.
+          </p>
+        </div>
+
+        <div class="interface-list">
+          <article class="interface-item reveal">
+            <div class="iface-num">01</div>
+            <div class="iface-body">
+              <h3>Interface-QE v1</h3>
+              <p>Workflows électronique, phonons et optique, avec visualisation des résultats.</p>
+              <span class="tag">Port 5007</span>
+            </div>
+            <div class="iface-actions">
+              <a class="btn btn-sm btn-download" href="telechargements/Interface-QE_v1.tar.gz" download>Télécharger</a>
+            </div>
+          </article>
+
+          <article class="interface-item reveal">
+            <div class="iface-num">02</div>
+            <div class="iface-body">
+              <h3>Génération Inputs QE</h3>
+              <p>Création d’inputs QE et conversion CIF → input pour démarrer un calcul rapidement.</p>
+              <span class="tag">Port 5012</span>
+            </div>
+            <div class="iface-actions">
+              <a class="btn btn-sm btn-download" href="telechargements/generation_inputs-QE.tar.gz" download>Télécharger</a>
+            </div>
+          </article>
+
+          <article class="interface-item reveal">
+            <div class="iface-num">03</div>
+            <div class="iface-body">
+              <h3>Génération Pseudopotentiels</h3>
+              <p>Tableau périodique, ld1.x, APE, ATOMPAW, ONCVPSP et bibliothèques PSLibrary / PseudoDojo / SSSP.</p>
+              <span class="tag">Port 5008</span>
+            </div>
+            <div class="iface-actions">
+              <a class="btn btn-sm btn-download" href="telechargements/generation_pseudos.tar.gz" download>Télécharger</a>
+            </div>
+          </article>
+
+          <article class="interface-item reveal">
+            <div class="iface-num">04</div>
+            <div class="iface-body">
+              <h3>Supra-QE</h3>
+              <p>Propriétés supraconductrices : voie classique (λ, Tᶜ) et voie EPW / Éliashberg.</p>
+              <span class="tag">Port 8765</span>
+            </div>
+            <div class="iface-actions">
+              <a class="btn btn-sm btn-download" href="telechargements/supra-QE.tar.gz" download>Télécharger</a>
+            </div>
+          </article>
+
+          <article class="interface-item reveal">
+            <div class="iface-num">05</div>
+            <div class="iface-body">
+              <h3>THERMO_PW</h3>
+              <p>Orchestration thermo_pw : élasticité, QHA, phonons, constantes diélectriques — un clic.</p>
+              <span class="tag">Port 8000</span>
+            </div>
+            <div class="iface-actions">
+              <a class="btn btn-sm btn-download" href="telechargements/thermo_pw.tar.gz" download>Télécharger</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="installer">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">Mise en route</p>
+          <h2>Installer une interface</h2>
+          <p>Trois étapes sur Ubuntu. Chaque interface s’ouvre ensuite dans le navigateur.</p>
+        </div>
+
+        <div class="steps reveal">
+          <div class="step">
+            <h3>Télécharger</h3>
+            <p>Récupérez l’archive <code>.tar.gz</code> de l’interface souhaitée depuis ce site.</p>
+          </div>
+          <div class="step">
+            <h3>Extraire</h3>
+            <p>Décompressez le fichier dans votre dossier personnel, puis ouvrez le dossier obtenu.</p>
+          </div>
+          <div class="step">
+            <h3>Démarrer</h3>
+            <p>Lancez le script de configuration (une fois), puis <code>./DEMARRER.sh</code> à chaque session.</p>
+          </div>
+        </div>
+
+        <div class="note-panel reveal">
+          <p><strong>Exemple — Interface-QE v1</strong></p>
+          <pre>tar -xzf Interface-QE_v1.tar.gz
+cd Interface-QE_v1
+./CONFIGURER-PC.sh
+./DEMARRER.sh
+# → http://127.0.0.1:5007/interface/</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="suggestions">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">Après essai</p>
+          <h2>Donnez vos suggestions</h2>
+          <p>
+            Après avoir testé une interface, partagez vos idées d’amélioration.
+            Vos commentaires aident à faire évoluer les outils — en collaboration avec l’auteur.
+          </p>
+        </div>
+
+        <form id="form-suggestions" class="suggest-form reveal" novalidate>
+          <div class="suggest-row">
+            <label for="sug-nom">Nom <span>(optionnel)</span></label>
+            <input id="sug-nom" name="nom" type="text" maxlength="80" placeholder="Votre nom" />
+          </div>
+          <div class="suggest-row">
+            <label for="sug-email">E-mail <span>(optionnel)</span></label>
+            <input id="sug-email" name="email" type="email" maxlength="120" placeholder="pour une éventuelle collaboration" />
+          </div>
+          <div class="suggest-row">
+            <label for="sug-interface">Interface testée</label>
+            <select id="sug-interface" name="interface" required>
+              <option value="">— Choisir —</option>
+              <option value="Interface-QE_v1">Interface-QE v1</option>
+              <option value="generation_inputs-QE">Génération Inputs QE</option>
+              <option value="generation_pseudos">Génération Pseudopotentiels</option>
+              <option value="supra-QE">Supra-QE</option>
+              <option value="thermo_pw">THERMO_PW</option>
+              <option value="plusieurs">Plusieurs interfaces</option>
+              <option value="autre">Autre / site en général</option>
+            </select>
+          </div>
+          <div class="suggest-row">
+            <label for="sug-message">Vos suggestions d’amélioration</label>
+            <textarea
+              id="sug-message"
+              name="message"
+              required
+              minlength="10"
+              maxlength="4000"
+              rows="6"
+              placeholder="Après essai : ce qui marche bien, ce qui manque, bugs, idées de fonctions…"
+            ></textarea>
+          </div>
+          <div class="suggest-actions">
+            <button class="btn btn-primary" type="submit">Envoyer ma suggestion</button>
+            <p id="sug-status" class="suggest-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <div class="suggest-list-wrap reveal">
+          <h3 class="suggest-list-title">Suggestions reçues</h3>
+          <div id="liste-suggestions" class="suggest-list">
+            <p class="suggest-empty">Chargement…</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="licence">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">Droits d’auteur</p>
+          <h2>Libre d’usage, pas libre de modification</h2>
+          <p>
+            Vous pouvez télécharger et travailler avec ces interfaces.
+            Toute modification du contenu (code, interface, scripts) nécessite
+            une collaboration avec S. Hiadsi.
+          </p>
+        </div>
+
+        <div class="licence-grid reveal">
+          <div class="licence-col ok">
+            <h3>Autorisé</h3>
+            <ul>
+              <li>Télécharger les archives</li>
+              <li>Installer et utiliser pour la recherche</li>
+              <li>Enseigner avec ces outils</li>
+              <li>Citer l’auteur dans vos publications</li>
+            </ul>
+          </div>
+          <div class="licence-col no">
+            <h3>Interdit sans collaboration</h3>
+            <ul>
+              <li>Modifier le code source (verrouillé)</li>
+              <li>Contourner la protection d’intégrité</li>
+              <li>Redistribuer une version altérée</li>
+              <li>Retirer le nom de l’auteur</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="licence-note reveal">
+          Document complet :
+          <a href="CONDITIONS_UTILISATION.md">CONDITIONS_UTILISATION.md</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="a-propos">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">Contexte</p>
+          <h2>Pour les chercheurs</h2>
+          <p>
+            Ces interfaces tournent sur votre ordinateur avec Quantum ESPRESSO installé.
+            Ce site sert de vitrine et de dépôt de téléchargement — pas de calcul distant.
+            Prérequis typiques : Ubuntu 20.04+, Python 3.9+, QE 7.x.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div><strong>HIADSI</strong> — usage libre · modification sur collaboration</div>
+      <div>LMESM / USTO-MB · S. Hiadsi</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
