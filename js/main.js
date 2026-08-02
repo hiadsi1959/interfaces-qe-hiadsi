@@ -1,4 +1,16 @@
 (() => {
+  const cfg = window.HIADSI_CONFIG || {};
+  const COUNTER_NS = cfg.counterNamespace || "hiadsi1959-interfaces";
+  const NOTIFY_EMAIL = String(cfg.notificationEmail || "").trim();
+
+  const IFACES = [
+    { id: "Interface-QE_v1", label: "Interface-QE v1" },
+    { id: "generation_inputs-QE", label: "Génération Inputs QE" },
+    { id: "generation_pseudos", label: "Génération Pseudopotentiels" },
+    { id: "supra-QE", label: "Supra-QE" },
+    { id: "thermo_pw", label: "THERMO_PW" },
+  ];
+
   const nodes = document.querySelectorAll(".reveal");
   if (nodes.length) {
     if (!("IntersectionObserver" in window)) {
@@ -18,10 +30,6 @@
     }
   }
 
-  const form = document.getElementById("form-suggestions");
-  const status = document.getElementById("sug-status");
-  const list = document.getElementById("liste-suggestions");
-
   function escapeHtml(text) {
     return String(text)
       .replace(/&/g, "&amp;")
@@ -30,6 +38,74 @@
       .replace(/"/g, "&quot;");
   }
 
+  function formatCount(n) {
+    const v = Number(n) || 0;
+    return v <= 1 ? `${v} téléchargement` : `${v} téléchargements`;
+  }
+
+  async function fetchCounter(id) {
+    try {
+      const res = await fetch(
+        `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_NS)}/${encodeURIComponent(id)}/`,
+        { cache: "no-store" }
+      );
+      if (!res.ok) return 0;
+      const data = await res.json();
+      return Number(data.count) || 0;
+    } catch {
+      return 0;
+    }
+  }
+
+  async function bumpCounter(id) {
+    try {
+      const res = await fetch(
+        `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_NS)}/${encodeURIComponent(id)}/up`,
+        { cache: "no-store" }
+      );
+      if (!res.ok) return null;
+      const data = await res.json();
+      return Number(data.count) || null;
+    } catch {
+      return null;
+    }
+  }
+
+  function setCountDisplays(id, count) {
+    document.querySelectorAll(`[data-count-for="${id}"]`).forEach((el) => {
+      el.textContent = formatCount(count);
+    });
+  }
+
+  async function refreshCounts() {
+    const grid = document.getElementById("stats-grid");
+    const results = await Promise.all(
+      IFACES.map(async (iface) => {
+        const count = await fetchCounter(iface.id);
+        setCountDisplays(iface.id, count);
+        return { ...iface, count };
+      })
+    );
+
+    if (grid) {
+      grid.innerHTML = results
+        .map(
+          (r) => `
+        <article class="stat-card">
+          <h3>${escapeHtml(r.label)}</h3>
+          <p class="stat-num" data-count-for="${escapeHtml(r.id)}">${r.count}</p>
+          <p class="stat-label">téléchargement${r.count > 1 ? "s" : ""}</p>
+        </article>`
+        )
+        .join("");
+    }
+  }
+
+  /* ——— Suggestions ——— */
+  const form = document.getElementById("form-suggestions");
+  const status = document.getElementById("sug-status");
+  const list = document.getElementById("liste-suggestions");
+
   async function chargerSuggestions() {
     if (!list) return;
     try {
@@ -37,7 +113,8 @@
       const data = await res.json();
       const items = data.suggestions || [];
       if (!items.length) {
-        list.innerHTML = '<p class="suggest-empty">Aucune suggestion pour le moment — soyez le premier.</p>';
+        list.innerHTML =
+          '<p class="suggest-empty">Aucune suggestion pour le moment — soyez le premier.</p>';
         return;
       }
       list.innerHTML = items
@@ -54,7 +131,8 @@
         )
         .join("");
     } catch {
-      list.innerHTML = '<p class="suggest-empty">Impossible de charger les suggestions (relancez le site avec ./DEMARRER-SITE.sh).</p>';
+      list.innerHTML =
+        '<p class="suggest-empty">Les suggestions s’affichent lorsque le serveur local est lancé (<code>./DEMARRER-SITE.sh</code>).</p>';
     }
   }
 
@@ -89,10 +167,156 @@
         chargerSuggestions();
       } catch {
         status.classList.add("is-err");
-        status.textContent = "Serveur inaccessible. Lancez ./DEMARRER-SITE.sh puis réessayez.";
+        status.textContent =
+          "Serveur inaccessible. Lancez ./DEMARRER-SITE.sh puis réessayez.";
       }
     });
   }
 
+  /* ——— Downloads ——— */
+  const modal = document.getElementById("dl-modal");
+  const dlForm = document.getElementById("form-download");
+  const dlStatus = document.getElementById("dl-status");
+  const dlIfaceLabel = document.getElementById("dl-modal-iface");
+  let pending = null;
+
+  function openModal(button) {
+    pending = {
+      id: button.getAttribute("data-interface"),
+      label: button.getAttribute("data-label"),
+      file: button.getAttribute("data-file"),
+    };
+    if (dlIfaceLabel) dlIfaceLabel.textContent = pending.label || pending.id;
+    if (dlStatus) {
+      dlStatus.className = "suggest-status";
+      dlStatus.textContent = "";
+    }
+    if (dlForm) dlForm.reset();
+    if (modal) {
+      modal.hidden = false;
+      document.body.classList.add("modal-open");
+      const nom = document.getElementById("dl-nom");
+      if (nom) nom.focus();
+    }
+  }
+
+  function closeModal() {
+    if (modal) modal.hidden = true;
+    document.body.classList.remove("modal-open");
+    pending = null;
+  }
+
+  document.querySelectorAll(".btn-download[data-file]").forEach((btn) => {
+    btn.addEventListener("click", () => openModal(btn));
+  });
+
+  if (modal) {
+    modal.querySelectorAll("[data-dl-close]").forEach((el) => {
+      el.addEventListener("click", closeModal);
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal && !modal.hidden) closeModal();
+  });
+
+  function startFileDownload(filePath) {
+    const a = document.createElement("a");
+    a.href = filePath;
+    a.download = "";
+    a.rel = "noopener";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  async function notifyAuthor(payload) {
+    if (!NOTIFY_EMAIL) return false;
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(NOTIFY_EMAIL)}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `[HIADSI] Téléchargement — ${payload.interface}`,
+          _template: "table",
+          nom: payload.nom,
+          organisme: payload.organisme,
+          email: payload.email || "(non fourni)",
+          interface: payload.interface,
+          date: payload.date,
+        }),
+      });
+      return res.ok;
+    } catch {
+      return false;
+    }
+  }
+
+  async function logLocal(payload) {
+    try {
+      const res = await fetch("/api/telechargements", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data.ok ? data : null;
+    } catch {
+      return null;
+    }
+  }
+
+  if (dlForm) {
+    dlForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!pending) return;
+
+      const nom = dlForm.nom.value.trim();
+      const organisme = dlForm.organisme.value.trim();
+      const email = dlForm.email.value.trim();
+
+      if (nom.length < 2) {
+        dlStatus.className = "suggest-status is-err";
+        dlStatus.textContent = "Indiquez votre nom.";
+        return;
+      }
+      if (organisme.length < 2) {
+        dlStatus.className = "suggest-status is-err";
+        dlStatus.textContent = "Indiquez votre organisme ou laboratoire.";
+        return;
+      }
+
+      dlStatus.className = "suggest-status";
+      dlStatus.textContent = "Enregistrement…";
+
+      const payload = {
+        nom,
+        organisme,
+        email,
+        interface: pending.id,
+        date: new Date().toISOString().slice(0, 19).replace("T", " "),
+      };
+
+      const filePath = pending.file;
+      const ifaceId = pending.id;
+
+      await logLocal(payload);
+      await notifyAuthor(payload);
+      const newCount = await bumpCounter(ifaceId);
+      if (newCount != null) setCountDisplays(ifaceId, newCount);
+      await refreshCounts();
+
+      startFileDownload(filePath);
+      dlStatus.className = "suggest-status is-ok";
+      dlStatus.textContent = "Téléchargement lancé. Merci.";
+      setTimeout(closeModal, 700);
+    });
+  }
+
   chargerSuggestions();
+  refreshCounts();
 })();

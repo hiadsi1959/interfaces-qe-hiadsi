@@ -20,6 +20,7 @@
       <nav class="nav-links" aria-label="Navigation principale">
         <a href="#interfaces">Interfaces</a>
         <a href="#installer">Installer</a>
+        <a href="#statistiques">Stats</a>
         <a href="#suggestions">Suggestions</a>
         <a href="#licence">Licence</a>
       </nav>
@@ -53,9 +54,9 @@
           <p class="section-kicker">Dépôt public</p>
           <h2>Les cinq interfaces</h2>
           <p>
-            Téléchargez l’archive <code>.tar.gz</code>, extrayez-la, puis lancez
-            <code>./DEMARRER.sh</code>. Les interfaces fonctionnent normalement ;
-            le code source est protégé contre toute modification sans le mot de passe de l’auteur.
+            Avant chaque téléchargement, indiquez votre nom et votre organisme
+            (suivi scientifique). Puis extrayez l’archive et lancez
+            <code>./DEMARRER.sh</code>.
           </p>
         </div>
 
@@ -66,9 +67,16 @@
               <h3>Interface-QE v1</h3>
               <p>Workflows électronique, phonons et optique, avec visualisation des résultats.</p>
               <span class="tag">Port 5007</span>
+              <p class="dl-count" data-count-for="Interface-QE_v1">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <a class="btn btn-sm btn-download" href="telechargements/Interface-QE_v1.tar.gz" download>Télécharger</a>
+              <button
+                type="button"
+                class="btn btn-sm btn-download"
+                data-interface="Interface-QE_v1"
+                data-label="Interface-QE v1"
+                data-file="telechargements/Interface-QE_v1.tar.gz"
+              >Télécharger</button>
             </div>
           </article>
 
@@ -78,9 +86,16 @@
               <h3>Génération Inputs QE</h3>
               <p>Création d’inputs QE et conversion CIF → input pour démarrer un calcul rapidement.</p>
               <span class="tag">Port 5012</span>
+              <p class="dl-count" data-count-for="generation_inputs-QE">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <a class="btn btn-sm btn-download" href="telechargements/generation_inputs-QE.tar.gz" download>Télécharger</a>
+              <button
+                type="button"
+                class="btn btn-sm btn-download"
+                data-interface="generation_inputs-QE"
+                data-label="Génération Inputs QE"
+                data-file="telechargements/generation_inputs-QE.tar.gz"
+              >Télécharger</button>
             </div>
           </article>
 
@@ -90,9 +105,16 @@
               <h3>Génération Pseudopotentiels</h3>
               <p>Tableau périodique, ld1.x, APE, ATOMPAW, ONCVPSP et bibliothèques PSLibrary / PseudoDojo / SSSP.</p>
               <span class="tag">Port 5008</span>
+              <p class="dl-count" data-count-for="generation_pseudos">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <a class="btn btn-sm btn-download" href="telechargements/generation_pseudos.tar.gz" download>Télécharger</a>
+              <button
+                type="button"
+                class="btn btn-sm btn-download"
+                data-interface="generation_pseudos"
+                data-label="Génération Pseudopotentiels"
+                data-file="telechargements/generation_pseudos.tar.gz"
+              >Télécharger</button>
             </div>
           </article>
 
@@ -102,9 +124,16 @@
               <h3>Supra-QE</h3>
               <p>Propriétés supraconductrices : voie classique (λ, Tᶜ) et voie EPW / Éliashberg.</p>
               <span class="tag">Port 8765</span>
+              <p class="dl-count" data-count-for="supra-QE">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <a class="btn btn-sm btn-download" href="telechargements/supra-QE.tar.gz" download>Télécharger</a>
+              <button
+                type="button"
+                class="btn btn-sm btn-download"
+                data-interface="supra-QE"
+                data-label="Supra-QE"
+                data-file="telechargements/supra-QE.tar.gz"
+              >Télécharger</button>
             </div>
           </article>
 
@@ -114,11 +143,34 @@
               <h3>THERMO_PW</h3>
               <p>Orchestration thermo_pw : élasticité, QHA, phonons, constantes diélectriques — un clic.</p>
               <span class="tag">Port 8000</span>
+              <p class="dl-count" data-count-for="thermo_pw">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <a class="btn btn-sm btn-download" href="telechargements/thermo_pw.tar.gz" download>Télécharger</a>
+              <button
+                type="button"
+                class="btn btn-sm btn-download"
+                data-interface="thermo_pw"
+                data-label="THERMO_PW"
+                data-file="telechargements/thermo_pw.tar.gz"
+              >Télécharger</button>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="statistiques">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">Suivi</p>
+          <h2>Statistiques de téléchargement</h2>
+          <p>
+            Compteurs publics par interface. Les noms et organismes des téléchargeurs
+            sont transmis à l’auteur (pas affichés ici).
+          </p>
+        </div>
+        <div id="stats-grid" class="stats-grid reveal" aria-live="polite">
+          <p class="suggest-empty">Chargement des compteurs…</p>
         </div>
       </div>
     </section>
@@ -283,6 +335,41 @@ cd Interface-QE_v1
     </div>
   </footer>
 
+  <div id="dl-modal" class="dl-modal" hidden>
+    <div class="dl-modal-backdrop" data-dl-close></div>
+    <div class="dl-modal-panel" role="dialog" aria-modal="true" aria-labelledby="dl-modal-title">
+      <button type="button" class="dl-modal-x" data-dl-close aria-label="Fermer">×</button>
+      <h2 id="dl-modal-title">Avant de télécharger</h2>
+      <p class="dl-modal-lead">
+        Interface : <strong id="dl-modal-iface">—</strong>
+      </p>
+      <p class="dl-modal-note">
+        Ces informations permettent à Prof. S. HIADSI de connaître l’usage des interfaces
+        (recherche / enseignement). Elles ne sont pas publiées sur le site.
+      </p>
+      <form id="form-download" novalidate>
+        <div class="suggest-row">
+          <label for="dl-nom">Nom et prénom</label>
+          <input id="dl-nom" name="nom" type="text" maxlength="80" required placeholder="Votre nom" autocomplete="name" />
+        </div>
+        <div class="suggest-row">
+          <label for="dl-organisme">Organisme / laboratoire</label>
+          <input id="dl-organisme" name="organisme" type="text" maxlength="160" required placeholder="ex. LMESM, USTO-MB" autocomplete="organization" />
+        </div>
+        <div class="suggest-row">
+          <label for="dl-email">E-mail <span>(optionnel)</span></label>
+          <input id="dl-email" name="email" type="email" maxlength="120" placeholder="pour une éventuelle collaboration" autocomplete="email" />
+        </div>
+        <div class="suggest-actions">
+          <button class="btn btn-primary" type="submit">Télécharger l’archive</button>
+          <button class="btn btn-ghost" type="button" data-dl-close>Annuler</button>
+        </div>
+        <p id="dl-status" class="suggest-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

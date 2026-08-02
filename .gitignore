@@ -1,5 +1,6 @@
 config_acces.json
 suggestions.jsonl
+telechargements.jsonl
 __pycache__/
 *.pyc
 Untitled

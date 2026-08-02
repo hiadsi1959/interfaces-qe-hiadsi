@@ -55,3 +55,10 @@ Glissez-déposez le dossier (avec les archives copiées).
 
 Ces interfaces **calculent sur le PC du chercheur** (avec QE installé).
 Ce site ne lance pas les calculs en ligne.
+
+## Suivi des téléchargements
+
+- **Compteurs publics** : section Stats du site (et sous chaque interface).
+- **Qui télécharge** : formulaire obligatoire (nom + organisme) avant le téléchargement.
+- Sur le site GitHub Pages : renseignez votre e-mail dans `js/config.js` (`notificationEmail`) pour recevoir un message à chaque téléchargement.
+- En local (`./DEMARRER-SITE.sh`) : journal dans `telechargements.jsonl` via `./LIRE-TELECHARGEMENTS.sh`.
