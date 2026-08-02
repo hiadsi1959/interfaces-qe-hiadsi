@@ -1,6 +1,8 @@
 # Conditions d’utilisation — Interfaces HIADSI / Quantum ESPRESSO
 
-**Auteur :** S. Hiadsi · LMESM / USTO-MB  
+**Auteur :** Prof. S. HIADSI  
+**Laboratoire :** Laboratoire de Microscopie Électronique & Sciences des Matériaux (LMESM)  
+**Affiliation :** Faculté de Physique, Université USTO-MB, Oran, Algérie  
 **© Tous droits réservés — sauf autorisations ci-dessous**
 
 ## Ce qui est autorisé (libre)
@@ -8,7 +10,7 @@
 1. **Télécharger** les interfaces depuis ce site.
 2. **Installer et utiliser** les interfaces pour la recherche scientifique et l’enseignement.
 3. **Produire des résultats** (inputs, calculs, figures, données) avec ces outils.
-4. **Citer** le travail dans publications et thèses (mention : S. Hiadsi, LMESM / USTO-MB, interfaces QE).
+4. **Citer** le travail dans publications et thèses (mention : Prof. S. HIADSI, LMESM / USTO-MB, Oran, Algérie — interfaces QE).
 
 ## Ce qui est interdit sans collaboration
 
@@ -28,7 +30,7 @@ Si le code a été altéré sans autorisation, le démarrage est refusé.
 ## Collaboration
 
 Toute amélioration, correction ou évolution du contenu des interfaces doit se faire
-**en collaboration avec S. Hiadsi**. Contactez l’auteur pour proposer une contribution.
+**en collaboration avec Prof. S. HIADSI** (LMESM / USTO-MB). Contactez l’auteur pour proposer une contribution.
 
 ## Précision technique
 
