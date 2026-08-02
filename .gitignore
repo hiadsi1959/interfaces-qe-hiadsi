@@ -2,3 +2,5 @@ config_acces.json
 suggestions.jsonl
 __pycache__/
 *.pyc
+Untitled
+.DS_Store
