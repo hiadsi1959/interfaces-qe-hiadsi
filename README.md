@@ -1,7 +1,6 @@
 # S. HIADSI — Quantum ESPRESSO interfaces website
 
-Public portal to present and download the **5 interfaces** located in
-`/home/hiadsi/5-Interfaces-hiadsi`.
+Public website to present and download the **five Quantum ESPRESSO interfaces**.
 
 ## Usage rules
 
