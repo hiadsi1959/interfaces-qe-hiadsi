@@ -114,7 +114,7 @@
       const items = data.suggestions || [];
       if (!items.length) {
         list.innerHTML =
-          '<p class="suggest-empty">No feedback yet — be the first.</p>';
+          '<p class="suggest-empty">No feedback yet — be the first to share yours.</p>';
         return;
       }
       list.innerHTML = items
@@ -132,7 +132,7 @@
         .join("");
     } catch {
       list.innerHTML =
-        '<p class="suggest-empty">Feedback is shown when the local server is running (<code>./DEMARRER-SITE.sh</code>).</p>';
+        '<p class="suggest-empty">Feedback appears when the local site server is running (<code>./DEMARRER-SITE.sh</code>).</p>';
     }
   }
 
@@ -168,7 +168,7 @@
       } catch {
         status.classList.add("is-err");
         status.textContent =
-          "Server unavailable. Run ./DEMARRER-SITE.sh and try again.";
+          "Server unavailable. Start ./DEMARRER-SITE.sh and try again.";
       }
     });
   }
