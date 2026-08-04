@@ -892,6 +892,34 @@ body.modal-open {
   padding-left: 1rem;
 }
 
+.suite-overview {
+  margin-top: 2.75rem;
+  max-width: 46rem;
+  font-size: 1.02rem;
+  color: rgba(15, 28, 36, 0.78);
+  line-height: 1.6;
+}
+
+.suite-overview p {
+  margin: 0 0 1rem;
+}
+
+.suite-overview a {
+  color: var(--teal);
+  word-break: break-all;
+}
+
+.suite-overview ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.suite-overview li {
+  padding-left: 0.15rem;
+}
+
 .interface-item {
   border-left: 3px solid transparent;
 }
