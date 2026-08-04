@@ -18,7 +18,7 @@ CONFIG_PATH = ROOT / "config_acces.json"
 COOKIE_NAME = "hiadsi_session"
 SESSION_DAYS = 7
 
-# Accessible sans mot de passe (page de connexion uniquement)
+# Public without password (login page assets only)
 PUBLIC_EXACT = {
     "/login.html",
     "/css/style.css",
@@ -37,7 +37,7 @@ def default_config() -> dict:
     return {
         "password_hash": hash_password(password),
         "secret": secrets.token_hex(32),
-        "hint": "Changez ce mot de passe avec ./CHANGER-MOT-DE-PASSE.sh",
+        "hint": "Change this password with ./CHANGER-MOT-DE-PASSE.sh",
     }
 
 
@@ -47,7 +47,7 @@ def load_config() -> dict:
         CONFIG_PATH.write_text(json.dumps(cfg, indent=2) + "\n", encoding="utf-8")
         print("  [info] config_acces.json created")
         print("  Initial password : hiadsi-acces")
-        print("  Changez-le : ./CHANGER-MOT-DE-PASSE.sh")
+        print("  Change it : ./CHANGER-MOT-DE-PASSE.sh")
         return cfg
     return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
 
@@ -158,7 +158,7 @@ class ProtectedHandler(SimpleHTTPRequestHandler):
             self._send_redirect("/", cookie=token)
             return
 
-        self._send_redirect("/login.html?erreur=1")
+        self._send_redirect("/login.html?error=1")
 
 
 def main() -> None:

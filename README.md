@@ -11,7 +11,7 @@ Public portal to present and download the **5 interfaces** located in
 | Research & teaching | Redistribute a modified version |
 | Cite S. HIADSI / LMESM | Remove author credits |
 
-Details: [`CONDITIONS_UTILISATION.md`](CONDITIONS_UTILISATION.md)
+Details: [`TERMS_OF_USE.md`](TERMS_OF_USE.md)
 
 ## Preview locally (open access)
 

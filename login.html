@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/style.css?v=20260804en" />
+  <link rel="stylesheet" href="css/login.css?v=20260804en" />
 </head>
 <body class="login-page">
   <div class="bg-atmosphere" aria-hidden="true"></div>
@@ -40,7 +40,7 @@
   </main>
 
   <script>
-    if (new URLSearchParams(location.search).get("erreur") === "1") {
+    if (new URLSearchParams(location.search).get("error") === "1") {
       const el = document.getElementById("login-error");
       el.hidden = false;
     }

@@ -529,7 +529,7 @@ body.modal-open {
   line-height: 1.6;
 }
 
-/* ——— Suggestions ——— */
+/* ——— Feedback ——— */
 .suggest-form {
   display: grid;
   gap: 1rem;

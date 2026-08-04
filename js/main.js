@@ -101,12 +101,12 @@
     }
   }
 
-  /* ——— Suggestions ——— */
+  /* ——— Feedback ——— */
   const form = document.getElementById("form-suggestions");
   const status = document.getElementById("sug-status");
   const list = document.getElementById("liste-suggestions");
 
-  async function chargerSuggestions() {
+  async function loadFeedback() {
     if (!list) return;
     try {
       const res = await fetch("/api/suggestions");
@@ -164,7 +164,7 @@
         status.classList.add("is-ok");
         status.textContent = data.message || "Thank you!";
         form.reset();
-        chargerSuggestions();
+        loadFeedback();
       } catch {
         status.classList.add("is-err");
         status.textContent =
@@ -317,6 +317,6 @@
     });
   }
 
-  chargerSuggestions();
+  loadFeedback();
   refreshCounts();
 })();
