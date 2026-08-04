@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HIADSI — Interfaces Quantum ESPRESSO</title>
-  <meta name="description" content="Cinq interfaces de calcul Quantum ESPRESSO destinées aux chercheurs : inputs, pseudopotentiels, workflows, supra et thermo_pw." />
+  <title>S. HIADSI — Interfaces Quantum ESPRESSO</title>
+  <meta name="description" content="Suite intégrée de 5 interfaces web Quantum ESPRESSO pour la science des matériaux : inputs, pseudopotentiels, calculs DFT/DFPT, thermo_pw et Supra-QE." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
@@ -15,9 +15,10 @@
   <div class="bg-lattice" aria-hidden="true"></div>
 
   <header class="site-header">
-    <div class="wrap">
-      <a href="#top" class="nav-brand" aria-label="HIADSI — accueil">HIADSI</a>
+    <div class="wrap header-inner">
+      <a href="#top" class="nav-brand" aria-label="S. HIADSI — accueil">S.&nbsp;HIADSI</a>
       <nav class="nav-links" aria-label="Navigation principale">
+        <a href="#suite">Suite</a>
         <a href="#interfaces">Interfaces</a>
         <a href="#installer">Installer</a>
         <a href="#statistiques">Stats</a>
@@ -30,11 +31,11 @@
   <main id="top">
     <section class="hero">
       <div class="wrap">
-        <h1 class="brand">HIADSI<span>.</span></h1>
+        <h1 class="brand">S.&nbsp;HIADSI<span>.</span></h1>
         <p class="hero-lead">Interfaces Quantum ESPRESSO pour la recherche.</p>
         <p class="hero-sub">
-          Téléchargement et utilisation libres pour les chercheurs.
-          Le code source ne peut être modifié qu’en collaboration avec l’auteur.
+          Suite web intégrée pour simplifier et accélérer le travail quotidien
+          en science des matériaux — du fichier d’entrée au transport électronique.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#interfaces">Télécharger librement</a>
@@ -44,6 +45,31 @@
           <span class="hero-meta-name">Prof. S. HIADSI</span>
           <span class="hero-meta-aff">Laboratoire de Microscopie Électronique &amp; Sciences des Matériaux (LMESM)</span>
           <span class="hero-meta-aff">Faculté de Physique · Université USTO-MB · Oran, Algérie</span>
+        </p>
+      </div>
+    </section>
+
+    <section id="suite" class="suite-section">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-kicker">Plateforme</p>
+          <h2>Une suite intégrée de 5 interfaces</h2>
+          <p>
+            Conçue pour couvrir l’ensemble du workflow <em>ab initio</em> basé sur
+            <strong>Quantum ESPRESSO</strong> : génération d’inputs, pseudopotentiels,
+            exécution DFT/DFPT, propriétés thermodynamiques et couplage électron–phonon.
+          </p>
+        </div>
+        <ol class="suite-flow reveal">
+          <li><span class="flow-n">01</span><strong>Inputs QE</strong><span>création simplifiée des fichiers</span></li>
+          <li><span class="flow-n">02</span><strong>Pseudopotentiels</strong><span>recherche et sélection</span></li>
+          <li><span class="flow-n">03</span><strong>Calculs QE</strong><span>DFT / DFPT et suivi</span></li>
+          <li><span class="flow-n">04</span><strong>thermo_pw</strong><span>élasticité &amp; thermodynamique</span></li>
+          <li><span class="flow-n">05</span><strong>Supra-QE</strong><span>supraconductivité &amp; e–ph</span></li>
+        </ol>
+        <p class="suite-en reveal">
+          <em>An integrated suite of 5 physics web interfaces based on Quantum ESPRESSO —
+          designed to simplify and speed up the daily work of materials science researchers.</em>
         </p>
       </div>
     </section>
@@ -64,95 +90,80 @@
           <article class="interface-item reveal">
             <div class="iface-num">01</div>
             <div class="iface-body">
-              <h3>Interface-QE v1</h3>
-              <p>Workflows électronique, phonons et optique, avec visualisation des résultats.</p>
-              <span class="tag">Port 5007</span>
-              <p class="dl-count" data-count-for="Interface-QE_v1">— téléchargements</p>
+              <h3>Génération Inputs QE</h3>
+              <p>Création simplifiée d’inputs QE et conversion CIF → input pour démarrer un calcul rapidement.</p>
+              <span class="tag">Port 5012</span>
+              <p class="dl-count" data-count-for="generation_inputs-QE">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <button
-                type="button"
-                class="btn btn-sm btn-download"
-                data-interface="Interface-QE_v1"
-                data-label="Interface-QE v1"
-                data-file="telechargements/Interface-QE_v1.tar.gz"
-              >Télécharger</button>
+              <button type="button" class="btn btn-sm btn-download"
+                data-interface="generation_inputs-QE"
+                data-label="Génération Inputs QE"
+                data-file="telechargements/generation_inputs-QE.tar.gz">Télécharger</button>
             </div>
           </article>
 
           <article class="interface-item reveal">
             <div class="iface-num">02</div>
             <div class="iface-body">
-              <h3>Génération Inputs QE</h3>
-              <p>Création d’inputs QE et conversion CIF → input pour démarrer un calcul rapidement.</p>
-              <span class="tag">Port 5012</span>
-              <p class="dl-count" data-count-for="generation_inputs-QE">— téléchargements</p>
+              <h3>Génération Pseudopotentiels</h3>
+              <p>Base de pseudopotentiels : tableau périodique, ld1.x, APE, ATOMPAW, ONCVPSP et bibliothèques PSLibrary / PseudoDojo / SSSP.</p>
+              <span class="tag">Port 5008</span>
+              <p class="dl-count" data-count-for="generation_pseudos">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <button
-                type="button"
-                class="btn btn-sm btn-download"
-                data-interface="generation_inputs-QE"
-                data-label="Génération Inputs QE"
-                data-file="telechargements/generation_inputs-QE.tar.gz"
-              >Télécharger</button>
+              <button type="button" class="btn btn-sm btn-download"
+                data-interface="generation_pseudos"
+                data-label="Génération Pseudopotentiels"
+                data-file="telechargements/generation_pseudos.tar.gz">Télécharger</button>
             </div>
           </article>
 
           <article class="interface-item reveal">
             <div class="iface-num">03</div>
             <div class="iface-body">
-              <h3>Génération Pseudopotentiels</h3>
-              <p>Tableau périodique, ld1.x, APE, ATOMPAW, ONCVPSP et bibliothèques PSLibrary / PseudoDojo / SSSP.</p>
-              <span class="tag">Port 5008</span>
-              <p class="dl-count" data-count-for="generation_pseudos">— téléchargements</p>
+              <h3>Interface-QE v1</h3>
+              <p>Interface de calcul DFT/DFPT : workflows électronique, phonons et optique, avec suivi et visualisation des résultats.</p>
+              <span class="tag">Port 5007</span>
+              <p class="dl-count" data-count-for="Interface-QE_v1">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <button
-                type="button"
-                class="btn btn-sm btn-download"
-                data-interface="generation_pseudos"
-                data-label="Génération Pseudopotentiels"
-                data-file="telechargements/generation_pseudos.tar.gz"
-              >Télécharger</button>
+              <button type="button" class="btn btn-sm btn-download"
+                data-interface="Interface-QE_v1"
+                data-label="Interface-QE v1"
+                data-file="telechargements/Interface-QE_v1.tar.gz">Télécharger</button>
             </div>
           </article>
 
           <article class="interface-item reveal">
             <div class="iface-num">04</div>
             <div class="iface-body">
-              <h3>Supra-QE</h3>
-              <p>Propriétés supraconductrices : voie classique (λ, Tᶜ) et voie EPW / Éliashberg.</p>
-              <span class="tag">Port 8765</span>
-              <p class="dl-count" data-count-for="supra-QE">— téléchargements</p>
+              <h3>THERMO_PW</h3>
+              <p>Orchestration thermo_pw : élasticité, QHA, phonons, constantes diélectriques — propriétés thermodynamiques en un clic.</p>
+              <span class="tag">Port 8000</span>
+              <p class="dl-count" data-count-for="thermo_pw">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <button
-                type="button"
-                class="btn btn-sm btn-download"
-                data-interface="supra-QE"
-                data-label="Supra-QE"
-                data-file="telechargements/supra-QE.tar.gz"
-              >Télécharger</button>
+              <button type="button" class="btn btn-sm btn-download"
+                data-interface="thermo_pw"
+                data-label="THERMO_PW"
+                data-file="telechargements/thermo_pw.tar.gz">Télécharger</button>
             </div>
           </article>
 
           <article class="interface-item reveal">
             <div class="iface-num">05</div>
             <div class="iface-body">
-              <h3>THERMO_PW</h3>
-              <p>Orchestration thermo_pw : élasticité, QHA, phonons, constantes diélectriques — un clic.</p>
-              <span class="tag">Port 8000</span>
-              <p class="dl-count" data-count-for="thermo_pw">— téléchargements</p>
+              <h3>Supra-QE</h3>
+              <p>Supraconductivité et couplage électron–phonon : voie classique (λ, T<sub>c</sub>) et voie EPW / Éliashberg.</p>
+              <span class="tag">Port 8765</span>
+              <p class="dl-count" data-count-for="supra-QE">— téléchargements</p>
             </div>
             <div class="iface-actions">
-              <button
-                type="button"
-                class="btn btn-sm btn-download"
-                data-interface="thermo_pw"
-                data-label="THERMO_PW"
-                data-file="telechargements/thermo_pw.tar.gz"
-              >Télécharger</button>
+              <button type="button" class="btn btn-sm btn-download"
+                data-interface="supra-QE"
+                data-label="Supra-QE"
+                data-file="telechargements/supra-QE.tar.gz">Télécharger</button>
             </div>
           </article>
         </div>
@@ -233,26 +244,19 @@ cd Interface-QE_v1
             <label for="sug-interface">Interface testée</label>
             <select id="sug-interface" name="interface" required>
               <option value="">— Choisir —</option>
-              <option value="Interface-QE_v1">Interface-QE v1</option>
               <option value="generation_inputs-QE">Génération Inputs QE</option>
               <option value="generation_pseudos">Génération Pseudopotentiels</option>
-              <option value="supra-QE">Supra-QE</option>
+              <option value="Interface-QE_v1">Interface-QE v1</option>
               <option value="thermo_pw">THERMO_PW</option>
+              <option value="supra-QE">Supra-QE</option>
               <option value="plusieurs">Plusieurs interfaces</option>
               <option value="autre">Autre / site en général</option>
             </select>
           </div>
           <div class="suggest-row">
             <label for="sug-message">Vos suggestions d’amélioration</label>
-            <textarea
-              id="sug-message"
-              name="message"
-              required
-              minlength="10"
-              maxlength="4000"
-              rows="6"
-              placeholder="Après essai : ce qui marche bien, ce qui manque, bugs, idées de fonctions…"
-            ></textarea>
+            <textarea id="sug-message" name="message" required minlength="10" maxlength="4000" rows="6"
+              placeholder="Après essai : ce qui marche bien, ce qui manque, bugs, idées de fonctions…"></textarea>
           </div>
           <div class="suggest-actions">
             <button class="btn btn-primary" type="submit">Envoyer ma suggestion</button>
@@ -326,7 +330,7 @@ cd Interface-QE_v1
 
   <footer class="site-footer">
     <div class="wrap">
-      <div><strong>HIADSI</strong> — usage libre · modification sur collaboration</div>
+      <div><strong>S. HIADSI</strong> — usage libre · modification sur collaboration</div>
       <div class="footer-aff">
         Prof. S. HIADSI<br />
         Laboratoire de Microscopie Électronique &amp; Sciences des Matériaux (LMESM)<br />

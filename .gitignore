@@ -5,3 +5,9 @@ __pycache__/
 *.pyc
 Untitled
 .DS_Store
+
+*.bak-*
+_patch_qe_alamode.py
+_qe_alamode_fixes/
+_qe_alamode_ui/
+smoke.pattern_HARMONIC
