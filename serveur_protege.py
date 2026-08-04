@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Serveur HIADSI protégé par mot de passe (session cookie)."""
+"""Password-protected HIADSI server (session cookie)."""
 
 from __future__ import annotations
 
@@ -32,7 +32,7 @@ def hash_password(password: str) -> str:
 
 
 def default_config() -> dict:
-    # Mot de passe initial — à changer avec ./CHANGER-MOT-DE-PASSE.sh
+    # Initial password — change with ./CHANGER-MOT-DE-PASSE.sh
     password = "hiadsi-acces"
     return {
         "password_hash": hash_password(password),
@@ -45,8 +45,8 @@ def load_config() -> dict:
     if not CONFIG_PATH.exists():
         cfg = default_config()
         CONFIG_PATH.write_text(json.dumps(cfg, indent=2) + "\n", encoding="utf-8")
-        print("  [info] config_acces.json créé")
-        print("  Mot de passe initial : hiadsi-acces")
+        print("  [info] config_acces.json created")
+        print("  Initial password : hiadsi-acces")
         print("  Changez-le : ./CHANGER-MOT-DE-PASSE.sh")
         return cfg
     return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
@@ -112,7 +112,7 @@ class ProtectedHandler(SimpleHTTPRequestHandler):
         return path in PUBLIC_EXACT
 
     def _guard(self) -> bool:
-        """Retourne True si la requête peut continuer, sinon envoie la redirection."""
+        """Return True if the request may continue, otherwise send a redirect."""
         path = self.path.split("?", 1)[0]
 
         if path == "/logout":
@@ -169,14 +169,14 @@ def main() -> None:
 
     server = ThreadingHTTPServer((host, port), ProtectedHandler)
     print("")
-    print("  HIADSI — site protégé par mot de passe")
+    print("  HIADSI — password-protected site")
     print(f"  URL    : http://{host}:{port}/")
-    print("  Arrêt  : Ctrl+C")
+    print("  Stop   : Ctrl+C")
     print("")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
-        print("\n  Arrêt du serveur.")
+        print("\n  Server stopped.")
         server.server_close()
 
 

@@ -1,12 +1,12 @@
-/* Réglages du site public HIADSI */
+/* Public HIADSI site settings */
 window.HIADSI_CONFIG = {
   /**
-   * E-mail pour recevoir qui télécharge (via FormSubmit).
-   * Exemple : "votre.nom@univ-usto.dz"
-   * Laissez vide pour désactiver l’e-mail (les compteurs restent actifs).
+   * Email to receive download notifications (via FormSubmit).
+   * Example: "your.name@univ-usto.dz"
+   * Leave empty to disable email (counters still work).
    */
   notificationEmail: "",
 
-  /** Espace des compteurs publics (ne pas changer après mise en production) */
+  /** Public counter namespace (do not change after going live) */
   counterNamespace: "hiadsi1959-interfaces",
 };

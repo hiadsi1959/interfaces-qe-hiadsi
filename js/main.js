@@ -4,11 +4,11 @@
   const NOTIFY_EMAIL = String(cfg.notificationEmail || "").trim();
 
   const IFACES = [
+    { id: "generation_inputs-QE", label: "QE Input Generator" },
+    { id: "generation_pseudos", label: "Pseudopotential Generator" },
     { id: "Interface-QE_v1", label: "Interface-QE v1" },
-    { id: "generation_inputs-QE", label: "Génération Inputs QE" },
-    { id: "generation_pseudos", label: "Génération Pseudopotentiels" },
-    { id: "supra-QE", label: "Supra-QE" },
     { id: "thermo_pw", label: "THERMO_PW" },
+    { id: "supra-QE", label: "Supra-QE" },
   ];
 
   const nodes = document.querySelectorAll(".reveal");
@@ -40,7 +40,7 @@
 
   function formatCount(n) {
     const v = Number(n) || 0;
-    return v <= 1 ? `${v} téléchargement` : `${v} téléchargements`;
+    return v === 1 ? `${v} download` : `${v} downloads`;
   }
 
   async function fetchCounter(id) {
@@ -94,7 +94,7 @@
         <article class="stat-card">
           <h3>${escapeHtml(r.label)}</h3>
           <p class="stat-num" data-count-for="${escapeHtml(r.id)}">${r.count}</p>
-          <p class="stat-label">téléchargement${r.count > 1 ? "s" : ""}</p>
+          <p class="stat-label">download${r.count === 1 ? "" : "s"}</p>
         </article>`
         )
         .join("");
@@ -114,7 +114,7 @@
       const items = data.suggestions || [];
       if (!items.length) {
         list.innerHTML =
-          '<p class="suggest-empty">Aucune suggestion pour le moment — soyez le premier.</p>';
+          '<p class="suggest-empty">No feedback yet — be the first.</p>';
         return;
       }
       list.innerHTML = items
@@ -122,7 +122,7 @@
           (s) => `
         <article class="suggest-card">
           <header>
-            <span>${escapeHtml(s.nom || "Anonyme")}</span>
+            <span>${escapeHtml(s.nom || "Anonymous")}</span>
             <span class="iface">${escapeHtml(s.interface || "")}</span>
             <span>${escapeHtml(s.date || "")}</span>
           </header>
@@ -132,7 +132,7 @@
         .join("");
     } catch {
       list.innerHTML =
-        '<p class="suggest-empty">Les suggestions s’affichent lorsque le serveur local est lancé (<code>./DEMARRER-SITE.sh</code>).</p>';
+        '<p class="suggest-empty">Feedback is shown when the local server is running (<code>./DEMARRER-SITE.sh</code>).</p>';
     }
   }
 
@@ -140,7 +140,7 @@
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       status.className = "suggest-status";
-      status.textContent = "Envoi…";
+      status.textContent = "Sending…";
 
       const payload = {
         nom: form.nom.value.trim(),
@@ -158,17 +158,17 @@
         const data = await res.json();
         if (!res.ok || !data.ok) {
           status.classList.add("is-err");
-          status.textContent = data.error || "Envoi impossible.";
+          status.textContent = data.error || "Could not send.";
           return;
         }
         status.classList.add("is-ok");
-        status.textContent = data.message || "Merci !";
+        status.textContent = data.message || "Thank you!";
         form.reset();
         chargerSuggestions();
       } catch {
         status.classList.add("is-err");
         status.textContent =
-          "Serveur inaccessible. Lancez ./DEMARRER-SITE.sh puis réessayez.";
+          "Server unavailable. Run ./DEMARRER-SITE.sh and try again.";
       }
     });
   }
@@ -240,11 +240,11 @@
           Accept: "application/json",
         },
         body: JSON.stringify({
-          _subject: `[HIADSI] Téléchargement — ${payload.interface}`,
+          _subject: `[S. HIADSI] Download — ${payload.interface}`,
           _template: "table",
           nom: payload.nom,
           organisme: payload.organisme,
-          email: payload.email || "(non fourni)",
+          email: payload.email || "(not provided)",
           interface: payload.interface,
           date: payload.date,
         }),
@@ -281,17 +281,17 @@
 
       if (nom.length < 2) {
         dlStatus.className = "suggest-status is-err";
-        dlStatus.textContent = "Indiquez votre nom.";
+        dlStatus.textContent = "Please enter your name.";
         return;
       }
       if (organisme.length < 2) {
         dlStatus.className = "suggest-status is-err";
-        dlStatus.textContent = "Indiquez votre organisme ou laboratoire.";
+        dlStatus.textContent = "Please enter your institution or laboratory.";
         return;
       }
 
       dlStatus.className = "suggest-status";
-      dlStatus.textContent = "Enregistrement…";
+      dlStatus.textContent = "Saving…";
 
       const payload = {
         nom,
@@ -312,7 +312,7 @@
 
       startFileDownload(filePath);
       dlStatus.className = "suggest-status is-ok";
-      dlStatus.textContent = "Téléchargement lancé. Merci.";
+      dlStatus.textContent = "Download started. Thank you.";
       setTimeout(closeModal, 700);
     });
   }

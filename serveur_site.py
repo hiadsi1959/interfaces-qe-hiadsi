@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Serveur HIADSI : fichiers statiques + suggestions + journal des téléchargements."""
+"""HIADSI server: static files + feedback + download log."""
 
 from __future__ import annotations
 
@@ -76,7 +76,7 @@ class SiteHandler(SimpleHTTPRequestHandler):
                 if key in counts:
                     counts[key] += 1
             recent = list(reversed(items))[:100]
-            # Ne pas exposer les e-mails en lecture publique locale par défaut
+            # Do not expose emails in the default local public read API
             for row in recent:
                 if "email" in row and row["email"]:
                     row = row  # kept for local author use via LIRE-TELECHARGEMENTS.sh
@@ -104,7 +104,7 @@ class SiteHandler(SimpleHTTPRequestHandler):
     def _parse_body(self) -> dict | None:
         length = int(self.headers.get("Content-Length", 0))
         if length <= 0 or length > 200_000:
-            self._json(400, {"ok": False, "error": "Requête invalide."})
+            self._json(400, {"ok": False, "error": "Invalid request."})
             return None
         raw = self.rfile.read(length)
         ctype = (self.headers.get("Content-Type") or "").lower()
@@ -114,7 +114,7 @@ class SiteHandler(SimpleHTTPRequestHandler):
             parsed = parse_qs(raw.decode("utf-8"), keep_blank_values=True)
             return {k: (v[0] if v else "") for k, v in parsed.items()}
         except (UnicodeDecodeError, json.JSONDecodeError):
-            self._json(400, {"ok": False, "error": "Données illisibles."})
+            self._json(400, {"ok": False, "error": "Unreadable data."})
             return None
 
     def _post_suggestion(self) -> None:
@@ -128,18 +128,18 @@ class SiteHandler(SimpleHTTPRequestHandler):
         message = str(data.get("message") or "").strip()
 
         if interface not in INTERFACES:
-            return self._json(400, {"ok": False, "error": "Choisissez une interface."})
+            return self._json(400, {"ok": False, "error": "Please choose an interface."})
         if len(message) < 10:
             return self._json(
                 400,
-                {"ok": False, "error": "Écrivez une suggestion plus détaillée (10 caractères min.)."},
+                {"ok": False, "error": "Please write a more detailed message (at least 10 characters)."},
             )
         if len(message) > MAX_LEN:
-            return self._json(400, {"ok": False, "error": "Suggestion trop longue."})
+            return self._json(400, {"ok": False, "error": "Message is too long."})
 
         entry = {
             "date": time.strftime("%Y-%m-%d %H:%M:%S"),
-            "nom": nom or "Anonyme",
+            "nom": nom or "Anonymous",
             "email": email,
             "interface": interface,
             "message": message,
@@ -147,7 +147,7 @@ class SiteHandler(SimpleHTTPRequestHandler):
         with SUGGESTIONS_FILE.open("a", encoding="utf-8") as f:
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
-        return self._json(201, {"ok": True, "message": "Merci — votre suggestion a été enregistrée."})
+        return self._json(201, {"ok": True, "message": "Thank you — your feedback has been saved."})
 
     def _post_download(self) -> None:
         data = self._parse_body()
@@ -160,11 +160,11 @@ class SiteHandler(SimpleHTTPRequestHandler):
         interface = str(data.get("interface") or "").strip()
 
         if interface not in DOWNLOAD_INTERFACES:
-            return self._json(400, {"ok": False, "error": "Interface inconnue."})
+            return self._json(400, {"ok": False, "error": "Unknown interface."})
         if len(nom) < 2:
-            return self._json(400, {"ok": False, "error": "Indiquez votre nom."})
+            return self._json(400, {"ok": False, "error": "Please enter your name."})
         if len(organisme) < 2:
-            return self._json(400, {"ok": False, "error": "Indiquez votre organisme ou laboratoire."})
+            return self._json(400, {"ok": False, "error": "Please enter your institution or laboratory."})
 
         entry = {
             "date": time.strftime("%Y-%m-%d %H:%M:%S"),
@@ -182,7 +182,7 @@ class SiteHandler(SimpleHTTPRequestHandler):
             201,
             {
                 "ok": True,
-                "message": "Téléchargement enregistré.",
+                "message": "Download recorded.",
                 "count": count,
             },
         )
@@ -193,15 +193,15 @@ def main() -> None:
     host = os.environ.get("SITE_HOST", "127.0.0.1")
     server = ThreadingHTTPServer((host, port), SiteHandler)
     print("")
-    print("  HIADSI — site + suggestions + téléchargements")
+    print("  HIADSI — site + feedback + downloads")
     print(f"  URL    : http://{host}:{port}/")
     print(f"  Logs   : {SUGGESTIONS_FILE.name} · {DOWNLOADS_FILE.name}")
-    print("  Arrêt  : Ctrl+C")
+    print("  Stop   : Ctrl+C")
     print("")
     try:
         server.serve_forever()
     except KeyboardInterrupt:
-        print("\n  Arrêt du serveur.")
+        print("\n  Server stopped.")
         server.server_close()
 
 

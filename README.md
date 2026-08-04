@@ -1,19 +1,19 @@
-# S. HIADSI — Site des interfaces Quantum ESPRESSO
+# S. HIADSI — Quantum ESPRESSO interfaces website
 
-Portail public pour présenter et télécharger les **5 interfaces** situées dans
+Public portal to present and download the **5 interfaces** located in
 `/home/hiadsi/5-Interfaces-hiadsi`.
 
-## Règle d’usage
+## Usage rules
 
-| Autorisé | Interdit sans collaboration |
-|----------|-----------------------------|
-| Télécharger, installer, utiliser | Modifier le code source |
-| Recherche & enseignement | Redistribuer une version modifiée |
-| Citer S. Hiadsi / LMESM | Retirer les mentions d’auteur |
+| Allowed | Not allowed without collaboration |
+|----------|-----------------------------------|
+| Download, install, use | Modify the source code |
+| Research & teaching | Redistribute a modified version |
+| Cite S. HIADSI / LMESM | Remove author credits |
 
-Détail : [`CONDITIONS_UTILISATION.md`](CONDITIONS_UTILISATION.md)
+Details: [`CONDITIONS_UTILISATION.md`](CONDITIONS_UTILISATION.md)
 
-## Prévisualiser en local (accès libre)
+## Preview locally (open access)
 
 ```bash
 cd /home/hiadsi/site_web_hiadsi
@@ -21,44 +21,44 @@ chmod +x DEMARRER-SITE.sh
 ./DEMARRER-SITE.sh
 ```
 
-Ouvrez **http://127.0.0.1:8090/**
+Open **http://127.0.0.1:8090/**
 
-## Contenu
+## Contents
 
 | Interface | Archive |
 |-----------|---------|
 | Interface-QE v1 | `telechargements/Interface-QE_v1.tar.gz` |
-| Génération Inputs QE | `telechargements/generation_inputs-QE.tar.gz` |
-| Génération Pseudopotentiels | `telechargements/generation_pseudos.tar.gz` |
+| QE Input Generator | `telechargements/generation_inputs-QE.tar.gz` |
+| Pseudopotential Generator | `telechargements/generation_pseudos.tar.gz` |
 | Supra-QE | `telechargements/supra-QE.tar.gz` |
 | THERMO_PW | `telechargements/thermo_pw.tar.gz` |
 
-Les fichiers `.tar.gz` dans `telechargements/` sont des **liens** vers `5-Interfaces-hiadsi`.
+The `.tar.gz` files in `telechargements/` are **links** to `5-Interfaces-hiadsi`.
 
-## Publier pour que tout le monde y accède
+## Publish for everyone
 
-### Option A — GitHub Pages (recommandé, gratuit)
+### Option A — GitHub Pages (recommended, free)
 
-Compte cible : [hiadsi1959](https://github.com/hiadsi1959)  
-Dépôt prévu : `interfaces-qe-hiadsi`  
-URL publique : `https://hiadsi1959.github.io/interfaces-qe-hiadsi/`
+Target account: [hiadsi1959](https://github.com/hiadsi1959)  
+Repository: `interfaces-qe-hiadsi`  
+Public URL: `https://hiadsi1959.github.io/interfaces-qe-hiadsi/`
 
-1. Les archives `.tar.gz` doivent être **copiées** (pas seulement liées) dans `telechargements/`
-2. Poussez le site sur GitHub (branche `main`)
-3. Activez **Settings → Pages** (branche `main`, dossier `/`)
+1. Archives `.tar.gz` must be **copied** (not only linked) into `telechargements/`
+2. Push the site to GitHub (`main` branch)
+3. Enable **Settings → Pages** (`main` branch, `/` folder)
 
 ### Option B — Netlify / Vercel
 
-Glissez-déposez le dossier (avec les archives copiées).
+Drag and drop the folder (with archives copied).
 
 ## Important
 
-Ces interfaces **calculent sur le PC du chercheur** (avec QE installé).
-Ce site ne lance pas les calculs en ligne.
+These interfaces **run calculations on the researcher’s PC** (with QE installed).
+This site does not run calculations online.
 
-## Suivi des téléchargements
+## Download tracking
 
-- **Compteurs publics** : section Stats du site (et sous chaque interface).
-- **Qui télécharge** : formulaire obligatoire (nom + organisme) avant le téléchargement.
-- Sur le site GitHub Pages : renseignez votre e-mail dans `js/config.js` (`notificationEmail`) pour recevoir un message à chaque téléchargement.
-- En local (`./DEMARRER-SITE.sh`) : journal dans `telechargements.jsonl` via `./LIRE-TELECHARGEMENTS.sh`.
+- **Public counters**: Stats section of the site (and under each interface).
+- **Who downloads**: required form (name + institution) before download.
+- On GitHub Pages: set your email in `js/config.js` (`notificationEmail`) to receive a message for each download.
+- Locally (`./DEMARRER-SITE.sh`): log in `telechargements.jsonl` via `./LIRE-TELECHARGEMENTS.sh`.

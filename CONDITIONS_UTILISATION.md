@@ -1,39 +1,39 @@
-# Conditions d’utilisation — Interfaces HIADSI / Quantum ESPRESSO
+# Terms of use — S. HIADSI / Quantum ESPRESSO interfaces
 
-**Auteur :** Prof. S. HIADSI  
-**Laboratoire :** Laboratoire de Microscopie Électronique & Sciences des Matériaux (LMESM)  
-**Affiliation :** Faculté de Physique, Université USTO-MB, Oran, Algérie  
-**© Tous droits réservés — sauf autorisations ci-dessous**
+**Author:** Prof. S. HIADSI  
+**Laboratory:** Laboratory of Electron Microscopy & Materials Science (LMESM)  
+**Affiliation:** Faculty of Physics, USTO-MB University, Oran, Algeria  
+**© All rights reserved — except the permissions below**
 
-## Ce qui est autorisé (libre)
+## What is allowed (free)
 
-1. **Télécharger** les interfaces depuis ce site.
-2. **Installer et utiliser** les interfaces pour la recherche scientifique et l’enseignement.
-3. **Produire des résultats** (inputs, calculs, figures, données) avec ces outils.
-4. **Citer** le travail dans publications et thèses (mention : Prof. S. HIADSI, LMESM / USTO-MB, Oran, Algérie — interfaces QE).
+1. **Download** the interfaces from this site.
+2. **Install and use** the interfaces for scientific research and teaching.
+3. **Produce results** (inputs, calculations, figures, data) with these tools.
+4. **Cite** the work in publications and theses (credit: Prof. S. HIADSI, LMESM / USTO-MB, Oran, Algeria — QE interfaces).
 
-## Ce qui est interdit sans collaboration
+## What is not allowed without collaboration
 
-1. **Modifier le code source** des interfaces (HTML, JavaScript, Python, scripts, configuration métier).
-2. **Redistribuer une version modifiée** sous un autre nom ou comme travail propre.
-3. **Retirer** les mentions d’auteur, logos ou copyright.
-4. **Intégrer** le code dans un autre logiciel commercial ou public sans accord écrit.
+1. **Modify the source code** of the interfaces (HTML, JavaScript, Python, scripts, domain configuration).
+2. **Redistribute a modified version** under another name or as your own work.
+3. **Remove** author credits, logos or copyright notices.
+4. **Integrate** the code into another commercial or public software product without written agreement.
 
-## Protection technique
+## Technical protection
 
-Chaque interface vérifie l’intégrité du code au démarrage (`./DEMARRER.sh`).
-Si le code a été altéré sans autorisation, le démarrage est refusé.
+Each interface checks code integrity at startup (`./DEMARRER.sh`).
+If the code has been altered without authorization, startup is refused.
 
-- **Utiliser** : `./DEMARRER.sh` (libre)
-- **Modifier** (auteur / collaboration) : `./DEVERROUILLER-MODIFICATION.sh` puis `./VERROUILLER.sh`
+- **Use**: `./DEMARRER.sh` (free)
+- **Modify** (author / collaboration): `./DEVERROUILLER-MODIFICATION.sh` then `./VERROUILLER.sh`
 
 ## Collaboration
 
-Toute amélioration, correction ou évolution du contenu des interfaces doit se faire
-**en collaboration avec Prof. S. HIADSI** (LMESM / USTO-MB). Contactez l’auteur pour proposer une contribution.
+Any improvement, fix or evolution of the interface content must be done
+**in collaboration with Prof. S. HIADSI** (LMESM / USTO-MB). Contact the author to propose a contribution.
 
-## Précision technique
+## Technical note
 
-Ces conditions encadrent l’usage et la propriété intellectuelle.
-Elles ne constituent pas un verrou technique absolu une fois les fichiers téléchargés :
-le respect repose sur l’éthique scientifique et le droit d’auteur.
+These terms govern use and intellectual property.
+They are not an absolute technical lock once files are downloaded:
+compliance relies on scientific ethics and copyright law.
