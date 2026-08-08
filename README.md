@@ -1,6 +1,7 @@
 # S. HIADSI — Quantum ESPRESSO interfaces website
 
-Public website to present and download the **five Quantum ESPRESSO interfaces**.
+Public website to present and download the **six Quantum ESPRESSO interfaces**
+(including **QE–ALAMODE** for anharmonic phonons and κ<sub>L</sub>).
 
 ## Usage rules
 
@@ -31,6 +32,7 @@ Open **http://127.0.0.1:8090/**
 | Pseudopotential Generator | `telechargements/generation_pseudos.tar.gz` |
 | Supra-QE | `telechargements/supra-QE.tar.gz` |
 | THERMO_PW | `telechargements/thermo_pw.tar.gz` |
+| QE–ALAMODE | `telechargements/QE-Alamode_interface.tar.gz` |
 
 The `.tar.gz` files in `telechargements/` are **links** to `5-Interfaces-hiadsi`.
 
