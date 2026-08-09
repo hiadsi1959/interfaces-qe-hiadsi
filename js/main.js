@@ -12,6 +12,36 @@
     { id: "QE-Alamode_interface", label: "QE–ALAMODE" },
   ];
 
+  /* Presentation language toggle (FR / EN) */
+  const langBtns = document.querySelectorAll("[data-pres-lang]");
+  const langPanels = document.querySelectorAll("[data-pres-panel]");
+  function setPresLang(lang) {
+    langBtns.forEach((btn) => {
+      const on = btn.getAttribute("data-pres-lang") === lang;
+      btn.classList.toggle("is-active", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    langPanels.forEach((panel) => {
+      const on = panel.getAttribute("data-pres-panel") === lang;
+      panel.hidden = !on;
+      panel.classList.toggle("is-active", on);
+    });
+    try {
+      localStorage.setItem("hiadsi.presLang", lang);
+    } catch (_) {
+      /* ignore */
+    }
+  }
+  langBtns.forEach((btn) => {
+    btn.addEventListener("click", () => setPresLang(btn.getAttribute("data-pres-lang") || "fr"));
+  });
+  try {
+    const saved = localStorage.getItem("hiadsi.presLang");
+    if (saved === "en" || saved === "fr") setPresLang(saved);
+  } catch (_) {
+    /* ignore */
+  }
+
   const nodes = document.querySelectorAll(".reveal");
   if (nodes.length) {
     if (!("IntersectionObserver" in window)) {

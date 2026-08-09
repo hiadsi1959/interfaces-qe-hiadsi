@@ -847,11 +847,122 @@ body.modal-open {
 
 .suite-flow {
   list-style: none;
-  margin: 0 0 1.75rem;
+  margin: 1.75rem 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+/* ——— Presentation (FR / EN) ——— */
+.presentation-section {
+  padding: 3.25rem 0 2.5rem;
+  border-top: 1px solid rgba(15, 28, 36, 0.06);
+}
+
+.lang-switch {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin: 0 0 1.5rem;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.lang-btn.is-active {
+  background: var(--teal);
+  color: #fff;
+}
+
+.pres-panel[hidden] {
+  display: none !important;
+}
+
+.pres-intro {
+  margin: 0 0 1.5rem;
+  max-width: 48rem;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: rgba(15, 28, 36, 0.82);
+}
+
+.pres-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.pres-list > li {
+  padding: 1.15rem 1.25rem 1.2rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 28px rgba(15, 28, 36, 0.04);
+}
+
+.pres-list h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.pres-n {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--copper);
+}
+
+.pres-list p {
+  margin: 0.35rem 0 0;
+  font-size: 0.98rem;
+  color: rgba(15, 28, 36, 0.78);
+  line-height: 1.5;
+}
+
+.pres-list code {
+  font-size: 0.9em;
+  background: rgba(13, 110, 110, 0.08);
+  padding: 0.05rem 0.3rem;
+  border-radius: 3px;
+}
+
+.pres-note {
+  margin: 1.5rem 0 0;
+  max-width: 48rem;
+  font-size: 0.95rem;
+  color: rgba(15, 28, 36, 0.68);
+  border-left: 3px solid rgba(184, 107, 46, 0.45);
+  padding-left: 1rem;
+  line-height: 1.5;
+}
+
+.pres-cta {
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
+  margin: 1.75rem 0 0;
 }
 
 .suite-flow li {
@@ -928,6 +1039,12 @@ body.modal-open {
   border-left-color: var(--teal);
 }
 
+
+@media (max-width: 1100px) {
+  .suite-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 900px) {
   .suite-flow {

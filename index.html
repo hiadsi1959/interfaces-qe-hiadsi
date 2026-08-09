@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20260804en3" />
+  <link rel="stylesheet" href="css/style.css?v=20260809pres6" />
 </head>
 <body>
   <div class="bg-atmosphere" aria-hidden="true"></div>
@@ -18,8 +18,8 @@
     <div class="wrap header-inner">
       <a href="#top" class="nav-brand" aria-label="S. HIADSI — home">S.&nbsp;HIADSI</a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#suite">Suite</a>
-        <a href="#interfaces">Interfaces</a>
+        <a href="#presentation">Overview</a>
+        <a href="#interfaces">Download</a>
         <a href="#install">Install</a>
         <a href="#stats">Stats</a>
         <a href="#feedback">Feedback</a>
@@ -39,8 +39,8 @@
           and lattice thermal conductivity with ALAMODE.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#interfaces">Free download</a>
-          <a class="btn btn-ghost" href="#license">Terms of use</a>
+          <a class="btn btn-primary" href="#presentation">Discover the 6 interfaces</a>
+          <a class="btn btn-ghost" href="#interfaces">Free download</a>
         </div>
         <p class="hero-meta">
           <span class="hero-meta-name">Prof. S. HIADSI</span>
@@ -50,29 +50,154 @@
       </div>
     </section>
 
-    <section id="suite" class="suite-section">
+    <section id="presentation" class="presentation-section">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="section-kicker">Platform</p>
-          <h2>An integrated suite of six interfaces</h2>
+          <p class="section-kicker">Presentation · Présentation</p>
+          <h2>Six specialized interfaces for materials science</h2>
           <p>
-            Built to cover the full <em>ab initio</em> workflow with
-            <strong>Quantum ESPRESSO</strong>: input generation, pseudopotentials,
-            DFT/DFPT calculations, thermodynamic properties, electron–phonon coupling,
-            and anharmonic lattice dynamics with <strong>ALAMODE</strong>.
+            This platform brings together <strong>6 computational web interfaces</strong>
+            designed to simplify, automate, and enrich everyday research in materials science
+            and condensed-matter physics — from input preparation to phonon transport and superconductivity.
+            All tools run <strong>locally on your computer</strong> with Quantum&nbsp;ESPRESSO installed.
           </p>
         </div>
-        <ol class="suite-flow reveal">
-          <li><span class="flow-n">01</span><strong>QE Inputs</strong><span>create input files easily</span></li>
-          <li><span class="flow-n">02</span><strong>Pseudopotentials</strong><span>search and choose</span></li>
-          <li><span class="flow-n">03</span><strong>QE Calculations</strong><span>DFT / DFPT and job tracking</span></li>
-          <li><span class="flow-n">04</span><strong>thermo_pw</strong><span>elasticity &amp; thermodynamics</span></li>
-          <li><span class="flow-n">05</span><strong>Supra-QE</strong><span>superconductivity &amp; e–ph</span></li>
-          <li><span class="flow-n">06</span><strong>QE–ALAMODE</strong><span>anharmonic phonons &amp; κ<sub>L</sub></span></li>
+
+        <div class="lang-switch reveal" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-pres-lang="fr" aria-pressed="true">Français</button>
+          <button type="button" class="lang-btn" data-pres-lang="en" aria-pressed="false">English</button>
+        </div>
+
+        <!-- 🇫🇷 Français -->
+        <div class="pres-panel is-active" data-pres-panel="fr" lang="fr">
+          <p class="pres-intro">
+            Cette plateforme regroupe <strong>6 interfaces de calcul spécialisées</strong>, conçues pour
+            simplifier, automatiser et enrichir le travail des chercheurs en sciences des matériaux
+            et en physique de la matière condensée. Elles couvrent l’ensemble du parcours
+            <em>ab initio</em> autour de <strong>Quantum&nbsp;ESPRESSO</strong> — et, pour la dynamique
+            de réseau anharmonique, <strong>ALAMODE</strong>.
+          </p>
+          <ol class="pres-list">
+            <li>
+              <h3><span class="pres-n">01</span> Générateur d’inputs QE</h3>
+              <p><strong>Description.</strong> Interface intuitive pour préparer rapidement les fichiers d’entrée
+              (<code>.in</code> de Quantum&nbsp;ESPRESSO (v7.x / 7.5+), y compris à partir de structures CIF.</p>
+              <p><strong>Fonctionnalités clés.</strong> Validation des paramètres, gestion des structures cristallines,
+              génération de jeux d’inputs pour divers types de calculs (scf, nscf, bands, dos, relax, etc.).</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">02</span> Génération &amp; base de pseudopotentiels</h3>
+              <p><strong>Description.</strong> Unité centralisée pour rechercher, sélectionner et générer des pseudopotentiels
+              adaptés à vos calculs DFT.</p>
+              <p><strong>Fonctionnalités clés.</strong> Accès aux principales bibliothèques (PSLibrary, PseudoDojo, SSSP…),
+              prise en charge de formats variés (PAW, USPP, ONCVPSP, relativiste / non relativiste),
+              filtres par élément et contrôles de compatibilité.</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">03</span> Interface de calcul QE</h3>
+              <p><strong>Description.</strong> Environnement d’exécution et de suivi des calculs
+              DFT (<em>Density Functional Theory</em>) et DFPT (<em>Density Functional Perturbation Theory</em>).</p>
+              <p><strong>Fonctionnalités clés.</strong> Lancement des modules (<code>pw.x</code>, <code>ph.x</code>, …),
+              suivi de la convergence (énergie, forces), gestion des jobs et visualisation / analyse des sorties.</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">04</span> Interface thermo_pw</h3>
+              <p><strong>Description.</strong> Outil dédié aux propriétés thermodynamiques et élastiques
+              des matériaux en fonction de la température et de la pression (routines <code>thermo_pw</code>).</p>
+              <p><strong>Fonctionnalités clés.</strong> Constantes élastiques, vitesses du son, température de Debye,
+              capacité calorifique, expansion thermique, phonons et constantes diélectriques.</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">05</span> Interface Supra-QE</h3>
+              <p><strong>Description.</strong> Plateforme axée sur la supraconductivité conventionnelle
+              et le couplage électron–phonon.</p>
+              <p><strong>Fonctionnalités clés.</strong> Fonction spectrale d’Eliashberg α²F(ω), constante de couplage λ,
+              estimation de la température critique T<sub>c</sub> (Allen–Dynes / McMillan), et voie EPW / Eliashberg.</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">06</span> Interface QE–ALAMODE</h3>
+              <p><strong>Description.</strong> Interface hybride associant Quantum&nbsp;ESPRESSO (forces DFT, supercellules)
+              aux méthodes d’anharmonicité d’ALAMODE pour la dynamique de réseau et le transport thermique.</p>
+              <p><strong>Fonctionnalités clés.</strong> Constantes de force interatomiques (IFC, NORDER≥2),
+              dispersion de phonons, conductivité thermique de réseau κ<sub>L</sub> (RTA),
+              et export de fiche technique pour l’analyse des résultats.</p>
+            </li>
+          </ol>
+          <p class="pres-note">
+            Auteur : <strong>Prof. S. HIADSI</strong> — LMESM / Faculté de Physique / USTO-MB, Oran, Algérie.
+            Utilisation libre pour la recherche et l’enseignement ; toute modification du code nécessite une collaboration avec l’auteur.
+          </p>
+        </div>
+
+        <!-- 🇬🇧 English -->
+        <div class="pres-panel" data-pres-panel="en" lang="en" hidden>
+          <p class="pres-intro">
+            This platform brings together <strong>6 specialized computational interfaces</strong> designed to
+            streamline, automate, and enhance research workflows in materials science and condensed-matter physics.
+            Together they cover the full <em>ab initio</em> path around <strong>Quantum&nbsp;ESPRESSO</strong> —
+            and, for anharmonic lattice dynamics, <strong>ALAMODE</strong>.
+          </p>
+          <ol class="pres-list">
+            <li>
+              <h3><span class="pres-n">01</span> QE Input Generator</h3>
+              <p><strong>Description.</strong> An intuitive interface for the rapid setup of Quantum&nbsp;ESPRESSO
+              (v7.x / 7.5+) input files (<code>.in</code>), including CIF → input conversion.</p>
+              <p><strong>Key features.</strong> Parameter validation, crystal-structure handling, and fast generation
+              of input sets for scf, nscf, bands, dos, relax, and related calculation types.</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">02</span> Pseudopotential Generator &amp; Database</h3>
+              <p><strong>Description.</strong> A centralized tool to search, select, and generate pseudopotentials
+              for DFT calculations.</p>
+              <p><strong>Key features.</strong> Access to major libraries (PSLibrary, PseudoDojo, SSSP, …),
+              support for PAW, USPP, ONCVPSP (relativistic / non-relativistic), element filters, and compatibility checks.</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">03</span> QE Calculation Interface</h3>
+              <p><strong>Description.</strong> An execution and monitoring environment for DFT and DFPT simulations.</p>
+              <p><strong>Key features.</strong> Launch of core modules (<code>pw.x</code>, <code>ph.x</code>, …),
+              tracking of energy/force convergence, job management, and rapid parsing / visualization of outputs.</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">04</span> thermo_pw Interface</h3>
+              <p><strong>Description.</strong> A dedicated workflow for thermodynamic and elastic properties
+              under varying temperature and pressure, driven by <code>thermo_pw</code>.</p>
+              <p><strong>Key features.</strong> Elastic constants, sound velocities, Debye temperature,
+              heat capacity, thermal expansion, phonons, and dielectric constants.</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">05</span> Supra-QE Interface</h3>
+              <p><strong>Description.</strong> An analysis module focused on conventional superconductivity
+              and electron–phonon coupling.</p>
+              <p><strong>Key features.</strong> Eliashberg spectral function α²F(ω), coupling constant λ,
+              critical temperature T<sub>c</sub> (Allen–Dynes / McMillan), and the EPW / Eliashberg route.</p>
+            </li>
+            <li>
+              <h3><span class="pres-n">06</span> QE–ALAMODE Interface</h3>
+              <p><strong>Description.</strong> A hybrid interface coupling Quantum&nbsp;ESPRESSO (DFT forces, supercells)
+              with ALAMODE’s anharmonic solvers for lattice dynamics and heat transport.</p>
+              <p><strong>Key features.</strong> Interatomic force constants (IFCs, NORDER≥2), phonon dispersions,
+              lattice thermal conductivity κ<sub>L</sub> (RTA), and technical-sheet export for result analysis.</p>
+            </li>
+          </ol>
+          <p class="pres-note">
+            Author: <strong>Prof. S. HIADSI</strong> — LMESM / Faculty of Physics / USTO-MB, Oran, Algeria.
+            Free to use for research and teaching; modifying the source code requires collaboration with the author.
+          </p>
+        </div>
+
+        <ol class="suite-flow reveal" aria-hidden="true">
+          <li><span class="flow-n">01</span><strong>QE Inputs</strong><span>input files</span></li>
+          <li><span class="flow-n">02</span><strong>Pseudos</strong><span>search &amp; generate</span></li>
+          <li><span class="flow-n">03</span><strong>QE Calc.</strong><span>DFT / DFPT</span></li>
+          <li><span class="flow-n">04</span><strong>thermo_pw</strong><span>thermo &amp; elastic</span></li>
+          <li><span class="flow-n">05</span><strong>Supra-QE</strong><span>e–ph &amp; T<sub>c</sub></span></li>
+          <li><span class="flow-n">06</span><strong>QE–ALAMODE</strong><span>phonons &amp; κ<sub>L</sub></span></li>
         </ol>
-        <p class="suite-en reveal">
-          Made for materials scientists who want a clearer, faster path through
-          everyday Quantum ESPRESSO workflows — running locally on their own computer.
+
+        <p class="pres-cta reveal">
+          <a class="btn btn-primary" href="#interfaces">Download an interface</a>
+          <a class="btn btn-ghost" href="#install">Installation guide</a>
         </p>
       </div>
     </section>
