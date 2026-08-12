@@ -21,11 +21,11 @@ window.HIADSI_CONFIG = {
    * Keys must match data-interface / IFACES ids in js/main.js.
    */
   baselineCounts: {
-    "generation_inputs-QE": 0,
-    "generation_pseudos": 0,
-    "Interface-QE_v1": 0,
-    "thermo_pw": 0,
-    "supra-QE": 0,
-    "QE-Alamode_interface": 0,
+    "generation_inputs-QE": 10,
+    "generation_pseudos": 10,
+    "Interface-QE_v1": 10,
+    "thermo_pw": 10,
+    "supra-QE": 10,
+    "QE-Alamode_interface": 10,
   },
 };
