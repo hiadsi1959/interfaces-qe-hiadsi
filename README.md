@@ -59,7 +59,8 @@ This site does not run calculations online.
 
 ## Download tracking
 
-- **Public counters**: Stats section of the site (and under each interface).
+- **Public counters**: Stats section of the site (and under each interface), via [CountAPI](https://countapi.mileshilliard.com/) (CounterAPI v1 was shut down on 2026-08-07).
+- To restore totals lost with CounterAPI v1, set known values in `js/config.js` → `baselineCounts`.
 - **Who downloads**: required form (name + institution) before download.
 - On GitHub Pages: set your email in `js/config.js` (`notificationEmail`) to receive a message for each download.
 - Locally (`./DEMARRER-SITE.sh`): log in `telechargements.jsonl` via `./LIRE-TELECHARGEMENTS.sh`.

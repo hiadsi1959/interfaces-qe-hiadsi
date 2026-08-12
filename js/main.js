@@ -1,6 +1,8 @@
 (() => {
   const cfg = window.HIADSI_CONFIG || {};
   const COUNTER_NS = cfg.counterNamespace || "hiadsi1959-interfaces";
+  const COUNTER_API = String(cfg.counterApiBase || "https://countapi.mileshilliard.com/api/v1").replace(/\/$/, "");
+  const BASELINE = cfg.baselineCounts || {};
   const NOTIFY_EMAIL = String(cfg.notificationEmail || "").trim();
 
   const IFACES = [
@@ -11,6 +13,18 @@
     { id: "supra-QE", label: "Supra-QE" },
     { id: "QE-Alamode_interface", label: "QE–ALAMODE" },
   ];
+
+  function counterKey(id) {
+    return `${COUNTER_NS}_${id}`;
+  }
+
+  function baselineFor(id) {
+    return Number(BASELINE[id]) || 0;
+  }
+
+  function totalCount(id, live) {
+    return baselineFor(id) + (Number(live) || 0);
+  }
 
   /* Presentation language toggle (FR / EN) */
   const langBtns = document.querySelectorAll("[data-pres-lang]");
@@ -74,29 +88,34 @@
     return v === 1 ? `${v} download` : `${v} downloads`;
   }
 
-  async function fetchCounter(id) {
+  async function fetchCounterLive(id) {
     try {
       const res = await fetch(
-        `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_NS)}/${encodeURIComponent(id)}/`,
+        `${COUNTER_API}/get/${encodeURIComponent(counterKey(id))}`,
         { cache: "no-store" }
       );
-      if (!res.ok) return 0;
+      if (res.status === 404) return 0;
+      if (!res.ok) return null;
       const data = await res.json();
-      return Number(data.count) || 0;
+      if (data && data.error) return 0;
+      const n = Number(data.value);
+      return Number.isFinite(n) ? n : 0;
     } catch {
-      return 0;
+      return null;
     }
   }
 
   async function bumpCounter(id) {
     try {
       const res = await fetch(
-        `https://api.counterapi.dev/v1/${encodeURIComponent(COUNTER_NS)}/${encodeURIComponent(id)}/up`,
+        `${COUNTER_API}/hit/${encodeURIComponent(counterKey(id))}`,
         { cache: "no-store" }
       );
       if (!res.ok) return null;
       const data = await res.json();
-      return Number(data.count) || null;
+      const live = Number(data.value);
+      if (!Number.isFinite(live)) return null;
+      return totalCount(id, live);
     } catch {
       return null;
     }
@@ -112,7 +131,12 @@
     const grid = document.getElementById("stats-grid");
     const results = await Promise.all(
       IFACES.map(async (iface) => {
-        const count = await fetchCounter(iface.id);
+        const live = await fetchCounterLive(iface.id);
+        if (live == null) {
+          setCountDisplays(iface.id, baselineFor(iface.id));
+          return { ...iface, count: baselineFor(iface.id), unavailable: true };
+        }
+        const count = totalCount(iface.id, live);
         setCountDisplays(iface.id, count);
         return { ...iface, count };
       })
