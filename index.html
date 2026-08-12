@@ -3,12 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>S. HIADSI — Quantum ESPRESSO Interfaces</title>
-  <meta name="description" content="Integrated suite of six Quantum ESPRESSO web interfaces for materials science: inputs, pseudopotentials, DFT/DFPT, thermo_pw, Supra-QE, and QE–ALAMODE (anharmonic phonons &amp; lattice thermal conductivity)." />
+  <title>S. HIADSI — Quantum ESPRESSO Interfaces | DFT, DFPT, thermo_pw, Supra-QE, ALAMODE</title>
+  <meta name="description" content="Free suite of six Quantum ESPRESSO web interfaces for materials science researchers: QE input generator, pseudopotentials, DFT/DFPT calculations, thermo_pw thermodynamics, Supra-QE superconductivity, and QE–ALAMODE anharmonic phonons &amp; lattice thermal conductivity κ_L." />
+  <meta name="author" content="Prof. S. HIADSI, LMESM, Faculty of Physics, USTO-MB, Oran, Algeria" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Quantum ESPRESSO, QE interfaces, DFT, DFPT, ab initio, materials science, condensed matter physics, pseudopotential, PAW, USPP, ONCVPSP, PSLibrary, PseudoDojo, SSSP, pw.x, ph.x, thermo_pw, elastic constants, Debye temperature, heat capacity, superconductivity, electron-phonon coupling, Eliashberg, Allen-Dynes, McMillan, Tc, EPW, ALAMODE, anharmonic phonons, lattice thermal conductivity, kappa_L, IFC, force constants, RTA, phonon dispersion, CIF to QE, SCF, NSCF, bands, DOS, HIADSI, LMESM, USTO-MB, Oran, Algeria, web interface Quantum ESPRESSO, générateur input QE, pseudopotentiel, conductivité thermique de réseau, phonons anharmoniques" />
+  <link rel="canonical" href="https://hiadsi1959.github.io/interfaces-qe-hiadsi/" />
+  <meta property="og:title" content="S. HIADSI — Six Quantum ESPRESSO Interfaces for Materials Science" />
+  <meta property="og:description" content="Free local web tools for QE inputs, pseudopotentials, DFT/DFPT, thermo_pw, superconductivity (Supra-QE), and QE–ALAMODE phonon / κ_L workflows." />
+  <meta property="og:url" content="https://hiadsi1959.github.io/interfaces-qe-hiadsi/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "S. HIADSI — Quantum ESPRESSO Interfaces",
+    "url": "https://hiadsi1959.github.io/interfaces-qe-hiadsi/",
+    "description": "Suite of six free Quantum ESPRESSO web interfaces for materials science and condensed-matter research.",
+    "author": {
+      "@type": "Person",
+      "name": "S. HIADSI",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "LMESM — Faculty of Physics, USTO-MB, Oran, Algeria"
+      }
+    },
+    "keywords": [
+      "Quantum ESPRESSO", "DFT", "DFPT", "pseudopotential", "thermo_pw",
+      "superconductivity", "ALAMODE", "lattice thermal conductivity", "phonons",
+      "materials science", "ab initio", "electron-phonon coupling"
+    ],
+    "hasPart": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "QE Input Generator",
+        "applicationCategory": "ScientificApplication",
+        "keywords": "Quantum ESPRESSO input, QE .in file, CIF to QE, pw.x input, SCF, NSCF, bands, DOS, relax, crystal structure, DFT input generator, QE 7.5, materials science GUI"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Pseudopotential Generator",
+        "applicationCategory": "ScientificApplication",
+        "keywords": "pseudopotential, PAW, USPP, ONCVPSP, PSLibrary, PseudoDojo, SSSP, ld1.x, ATOMPAW, APE, norm-conserving, ultrasoft"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Interface-QE v1",
+        "applicationCategory": "ScientificApplication",
+        "keywords": "DFT, DFPT, pw.x, ph.x, phonon calculation, electronic structure, optical properties, job tracking, convergence, ab initio, QE workflow, condensed matter"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "THERMO_PW",
+        "applicationCategory": "ScientificApplication",
+        "keywords": "thermo_pw, elastic constants, Debye temperature, heat capacity, thermal expansion, QHA, sound velocity, thermodynamic properties, dielectric constant, high pressure"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Supra-QE",
+        "applicationCategory": "ScientificApplication",
+        "keywords": "superconductivity, electron-phonon coupling, Eliashberg, Allen-Dynes, McMillan, critical temperature Tc, lambda, EPW, alpha2F, phonon-mediated superconductivity"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "QE–ALAMODE",
+        "applicationCategory": "ScientificApplication",
+        "keywords": "ALAMODE, lattice thermal conductivity, anharmonic phonons, IFC, force constants, RTA, kappa_L, phonon dispersion, finite displacement, heat transport, alm, anphon"
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20260809pres6" />
+  <link rel="stylesheet" href="css/style.css?v=20260812kw" />
 </head>
 <body>
   <div class="bg-atmosphere" aria-hidden="true"></div>
@@ -215,12 +285,27 @@
         </div>
 
         <div class="interface-list">
-          <article class="interface-item reveal">
+          <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">01</div>
             <div class="iface-body">
-              <h3>QE Input Generator</h3>
-              <p>Create Quantum ESPRESSO input files more easily, including CIF → input conversion, so you can start a calculation quickly.</p>
+              <h3 itemprop="name">QE Input Generator</h3>
+              <p itemprop="description">Create Quantum ESPRESSO input files more easily, including CIF → input conversion, so you can start a calculation quickly.</p>
               <span class="tag">Port 5012</span>
+              <p class="kw-label">Keywords</p>
+              <ul class="iface-keywords" aria-label="Keywords for QE Input Generator">
+                <li>Quantum ESPRESSO input</li>
+                <li>QE .in file</li>
+                <li>CIF to QE</li>
+                <li>pw.x input</li>
+                <li>SCF / NSCF</li>
+                <li>bands &amp; DOS</li>
+                <li>relax / vc-relax</li>
+                <li>crystal structure</li>
+                <li>DFT input generator</li>
+                <li>QE 7.5</li>
+                <li>materials science GUI</li>
+                <li>générateur input QE</li>
+              </ul>
               <p class="dl-count" data-count-for="generation_inputs-QE">— downloads</p>
             </div>
             <div class="iface-actions">
@@ -231,12 +316,27 @@
             </div>
           </article>
 
-          <article class="interface-item reveal">
+          <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">02</div>
             <div class="iface-body">
-              <h3>Pseudopotential Generator</h3>
-              <p>Browse and generate pseudopotentials: periodic table, ld1.x, APE, ATOMPAW, ONCVPSP, plus PSLibrary, PseudoDojo, and SSSP.</p>
+              <h3 itemprop="name">Pseudopotential Generator</h3>
+              <p itemprop="description">Browse and generate pseudopotentials: periodic table, ld1.x, APE, ATOMPAW, ONCVPSP, plus PSLibrary, PseudoDojo, and SSSP.</p>
               <span class="tag">Port 5008</span>
+              <p class="kw-label">Keywords</p>
+              <ul class="iface-keywords" aria-label="Keywords for Pseudopotential Generator">
+                <li>pseudopotential</li>
+                <li>PAW</li>
+                <li>USPP</li>
+                <li>ONCVPSP</li>
+                <li>PSLibrary</li>
+                <li>PseudoDojo</li>
+                <li>SSSP</li>
+                <li>ld1.x</li>
+                <li>ATOMPAW</li>
+                <li>APE</li>
+                <li>norm-conserving</li>
+                <li>ultrasoft potential</li>
+              </ul>
               <p class="dl-count" data-count-for="generation_pseudos">— downloads</p>
             </div>
             <div class="iface-actions">
@@ -247,12 +347,27 @@
             </div>
           </article>
 
-          <article class="interface-item reveal">
+          <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">03</div>
             <div class="iface-body">
-              <h3>Interface-QE v1</h3>
-              <p>Run DFT/DFPT calculations: electronic, phonon, and optical workflows, with job tracking and result visualization.</p>
+              <h3 itemprop="name">Interface-QE v1</h3>
+              <p itemprop="description">Run DFT/DFPT calculations: electronic, phonon, and optical workflows, with job tracking and result visualization.</p>
               <span class="tag">Port 5007</span>
+              <p class="kw-label">Keywords</p>
+              <ul class="iface-keywords" aria-label="Keywords for Interface-QE v1">
+                <li>DFT</li>
+                <li>DFPT</li>
+                <li>pw.x</li>
+                <li>ph.x</li>
+                <li>phonon calculation</li>
+                <li>electronic structure</li>
+                <li>optical properties</li>
+                <li>job tracking</li>
+                <li>convergence monitoring</li>
+                <li>ab initio</li>
+                <li>QE workflow</li>
+                <li>condensed matter</li>
+              </ul>
               <p class="dl-count" data-count-for="Interface-QE_v1">— downloads</p>
             </div>
             <div class="iface-actions">
@@ -263,12 +378,27 @@
             </div>
           </article>
 
-          <article class="interface-item reveal">
+          <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">04</div>
             <div class="iface-body">
-              <h3>THERMO_PW</h3>
-              <p>Drive thermo_pw for elasticity, QHA, phonons, and dielectric constants — thermodynamic properties in a few steps.</p>
+              <h3 itemprop="name">THERMO_PW</h3>
+              <p itemprop="description">Drive thermo_pw for elasticity, QHA, phonons, and dielectric constants — thermodynamic properties in a few steps.</p>
               <span class="tag">Port 8000</span>
+              <p class="kw-label">Keywords</p>
+              <ul class="iface-keywords" aria-label="Keywords for THERMO_PW">
+                <li>thermo_pw</li>
+                <li>elastic constants</li>
+                <li>Debye temperature</li>
+                <li>heat capacity</li>
+                <li>thermal expansion</li>
+                <li>QHA</li>
+                <li>sound velocity</li>
+                <li>thermodynamic properties</li>
+                <li>dielectric constant</li>
+                <li>high pressure</li>
+                <li>phonons thermo_pw</li>
+                <li>matériaux thermodynamique</li>
+              </ul>
               <p class="dl-count" data-count-for="thermo_pw">— downloads</p>
             </div>
             <div class="iface-actions">
@@ -279,12 +409,27 @@
             </div>
           </article>
 
-          <article class="interface-item reveal">
+          <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">05</div>
             <div class="iface-body">
-              <h3>Supra-QE</h3>
-              <p>Study superconductivity and electron–phonon coupling: standard λ / T<sub>c</sub> workflow, and the EPW / Eliashberg route.</p>
+              <h3 itemprop="name">Supra-QE</h3>
+              <p itemprop="description">Study superconductivity and electron–phonon coupling: standard λ / T<sub>c</sub> workflow, and the EPW / Eliashberg route.</p>
               <span class="tag">Port 8765</span>
+              <p class="kw-label">Keywords</p>
+              <ul class="iface-keywords" aria-label="Keywords for Supra-QE">
+                <li>superconductivity</li>
+                <li>electron-phonon coupling</li>
+                <li>Eliashberg</li>
+                <li>Allen-Dynes</li>
+                <li>McMillan</li>
+                <li>critical temperature T<sub>c</sub></li>
+                <li>λ (lambda)</li>
+                <li>EPW</li>
+                <li>α²F(ω)</li>
+                <li>phonon-mediated</li>
+                <li>supraconductivité</li>
+                <li>couplage électron-phonon</li>
+              </ul>
               <p class="dl-count" data-count-for="supra-QE">— downloads</p>
             </div>
             <div class="iface-actions">
@@ -295,17 +440,32 @@
             </div>
           </article>
 
-          <article class="interface-item reveal">
+          <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">06</div>
             <div class="iface-body">
-              <h3>QE–ALAMODE</h3>
-              <p>
+              <h3 itemprop="name">QE–ALAMODE</h3>
+              <p itemprop="description">
                 A combined <strong>Quantum ESPRESSO + ALAMODE</strong> workflow for finite-displacement
                 force constants, phonon dispersions, and lattice thermal conductivity κ<sub>L</sub> (RTA).
                 From SCF and supercell forces to <code>alm</code> / <code>anphon</code>, with a guided
                 web interface and technical sheet export.
               </p>
               <span class="tag">Port 5020</span>
+              <p class="kw-label">Keywords</p>
+              <ul class="iface-keywords" aria-label="Keywords for QE–ALAMODE">
+                <li>ALAMODE</li>
+                <li>lattice thermal conductivity</li>
+                <li>κ<sub>L</sub> / kappa_L</li>
+                <li>anharmonic phonons</li>
+                <li>IFC / force constants</li>
+                <li>RTA</li>
+                <li>phonon dispersion</li>
+                <li>finite displacement</li>
+                <li>heat transport</li>
+                <li>alm / anphon</li>
+                <li>phonons anharmoniques</li>
+                <li>conductivité thermique de réseau</li>
+              </ul>
               <p class="dl-count" data-count-for="QE-Alamode_interface">— downloads</p>
             </div>
             <div class="iface-actions">
@@ -549,7 +709,7 @@ source /opt/intel/oneapi/setvars.sh   # required for bundled alm/anphon
     </div>
   </div>
 
-  <script src="js/config.js?v=20260809pres6"></script>
-  <script src="js/main.js?v=20260809pres6"></script>
+  <script src="js/config.js?v=20260812kw"></script>
+  <script src="js/main.js?v=20260812kw"></script>
 </body>
 </html>
