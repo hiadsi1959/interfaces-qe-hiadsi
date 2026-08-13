@@ -1,24 +1,30 @@
 /* Public HIADSI site settings */
 window.HIADSI_CONFIG = {
   /**
-   * Email to receive download notifications (via FormSubmit).
+   * Email to receive a notice for each download (via FormSubmit).
    * Example: "your.name@univ-usto.dz"
-   * Leave empty to disable email (counters still work).
+   * Leave empty to disable email (silent counters still work).
    */
   notificationEmail: "",
 
   /**
-   * Public counters (no API key). CounterAPI v1 was shut down on 2026-08-07;
-   * we now use CountAPI (mileshilliard) + optional baselines below.
+   * Silent counters (not shown on the public site).
+   * View totals on compteurs.html (author access code).
    * Do not change counterNamespace after going live.
    */
   counterNamespace: "hiadsi1959-interfaces",
   counterApiBase: "https://countapi.mileshilliard.com/api/v1",
 
   /**
-   * Historical downloads lost when CounterAPI v1 closed (add known totals here).
-   * Displayed total = baseline + new CountAPI hits since migration.
-   * Keys must match data-interface / IFACES ids in js/main.js.
+   * SHA-256 (hex) of the access code for compteurs.html.
+   * Default code: hiadsi1959  — change by updating this hash.
+   */
+  statsAccessHash:
+    "8da5f67a646696283c2d8ad3b745c885a2ad6f78a838a01b2e4c4409312e28c8",
+
+  /**
+   * Historical baseline (added to live CountAPI hits).
+   * Keys must match data-interface ids in js/main.js.
    */
   baselineCounts: {
     "generation_inputs-QE": 10,

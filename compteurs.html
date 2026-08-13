@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Compteurs privés — S. HIADSI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=20260813priv" />
+  <link rel="stylesheet" href="css/login.css?v=20260813priv" />
+</head>
+<body class="login-page">
+  <div class="bg-atmosphere" aria-hidden="true"></div>
+  <div class="bg-lattice" aria-hidden="true"></div>
+
+  <main class="login-wrap" style="max-width: 52rem;">
+    <p class="login-brand">S. HIADSI</p>
+    <h1>Compteurs de téléchargement</h1>
+    <p class="login-text">
+      Page réservée à l’auteur. Les totaux ne sont pas affichés sur le site public.
+      Code d’accès par défaut&nbsp;: <code>hiadsi1959</code> (modifiable dans <code>js/config.js</code>).
+    </p>
+
+    <form id="stats-gate" class="login-form" autocomplete="current-password">
+      <label for="stats-code">Code d’accès</label>
+      <input
+        id="stats-code"
+        name="code"
+        type="password"
+        required
+        autofocus
+        placeholder="Code auteur"
+      />
+      <button class="btn btn-primary" type="submit">Voir les compteurs</button>
+    </form>
+    <p id="stats-error" class="login-error" hidden>Code incorrect.</p>
+
+    <div id="stats-panel" hidden>
+      <p class="login-note" style="margin-top: 1.5rem;">
+        Total affiché = baseline + nouveaux téléchargements (CountAPI).
+        <button type="button" id="stats-refresh" class="btn btn-ghost" style="margin-left: 0.5rem;">Actualiser</button>
+      </p>
+      <div id="stats-grid" class="stats-grid" style="margin-top: 1.25rem;" aria-live="polite">
+        <p class="suggest-empty">Chargement…</p>
+      </div>
+      <p class="login-note" style="margin-top: 1.5rem;">
+        <a href="index.html">← Retour au site</a>
+        · Option e-mail&nbsp;: renseigner <code>notificationEmail</code> dans <code>js/config.js</code>
+        pour recevoir un message à chaque téléchargement (avec le total).
+      </p>
+    </div>
+  </main>
+
+  <script src="js/config.js?v=20260813priv"></script>
+  <script src="js/compteurs.js?v=20260813priv"></script>
+</body>
+</html>

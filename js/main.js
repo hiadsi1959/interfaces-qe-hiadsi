@@ -83,28 +83,6 @@
       .replace(/"/g, "&quot;");
   }
 
-  function formatCount(n) {
-    const v = Number(n) || 0;
-    return v === 1 ? `${v} download` : `${v} downloads`;
-  }
-
-  async function fetchCounterLive(id) {
-    try {
-      const res = await fetch(
-        `${COUNTER_API}/get/${encodeURIComponent(counterKey(id))}`,
-        { cache: "no-store" }
-      );
-      if (res.status === 404) return 0;
-      if (!res.ok) return null;
-      const data = await res.json();
-      if (data && data.error) return 0;
-      const n = Number(data.value);
-      return Number.isFinite(n) ? n : 0;
-    } catch {
-      return null;
-    }
-  }
-
   async function bumpCounter(id) {
     try {
       const res = await fetch(
@@ -118,41 +96,6 @@
       return totalCount(id, live);
     } catch {
       return null;
-    }
-  }
-
-  function setCountDisplays(id, count) {
-    document.querySelectorAll(`[data-count-for="${id}"]`).forEach((el) => {
-      el.textContent = formatCount(count);
-    });
-  }
-
-  async function refreshCounts() {
-    const grid = document.getElementById("stats-grid");
-    const results = await Promise.all(
-      IFACES.map(async (iface) => {
-        const live = await fetchCounterLive(iface.id);
-        if (live == null) {
-          setCountDisplays(iface.id, baselineFor(iface.id));
-          return { ...iface, count: baselineFor(iface.id), unavailable: true };
-        }
-        const count = totalCount(iface.id, live);
-        setCountDisplays(iface.id, count);
-        return { ...iface, count };
-      })
-    );
-
-    if (grid) {
-      grid.innerHTML = results
-        .map(
-          (r) => `
-        <article class="stat-card">
-          <h3>${escapeHtml(r.label)}</h3>
-          <p class="stat-num" data-count-for="${escapeHtml(r.id)}">${r.count}</p>
-          <p class="stat-label">download${r.count === 1 ? "" : "s"}</p>
-        </article>`
-        )
-        .join("");
     }
   }
 
@@ -301,6 +244,7 @@
           organisme: payload.organisme,
           email: payload.email || "(not provided)",
           interface: payload.interface,
+          total_downloads: payload.total != null ? String(payload.total) : "(n/a)",
           date: payload.date,
         }),
       });
@@ -360,10 +304,8 @@
       const ifaceId = pending.id;
 
       await logLocal(payload);
-      await notifyAuthor(payload);
       const newCount = await bumpCounter(ifaceId);
-      if (newCount != null) setCountDisplays(ifaceId, newCount);
-      await refreshCounts();
+      await notifyAuthor({ ...payload, total: newCount });
 
       startFileDownload(filePath);
       dlStatus.className = "suggest-status is-ok";
@@ -373,5 +315,4 @@
   }
 
   loadFeedback();
-  refreshCounts();
 })();

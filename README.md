@@ -57,10 +57,14 @@ Drag and drop the folder (with archives copied).
 These interfaces **run calculations on the researcher’s PC** (with QE installed).
 This site does not run calculations online.
 
-## Download tracking
+## Download tracking (private)
 
-- **Public counters**: Stats section of the site (and under each interface), via [CountAPI](https://countapi.mileshilliard.com/) (CounterAPI v1 was shut down on 2026-08-07).
-- To restore totals lost with CounterAPI v1, set known values in `js/config.js` → `baselineCounts`.
+Public download statistics were removed from the main page.
+
+- **Private counters page**: [compteurs.html](compteurs.html)  
+  Default access code: `hiadsi1959` (change via `statsAccessHash` in `js/config.js`).
+- Counters still increment silently via [CountAPI](https://countapi.mileshilliard.com/).
+- Adjust historical baselines in `js/config.js` → `baselineCounts`.
 - **Who downloads**: required form (name + institution) before download.
-- On GitHub Pages: set your email in `js/config.js` (`notificationEmail`) to receive a message for each download.
+- **E-mail (optional)**: set `notificationEmail` in `js/config.js` to receive a FormSubmit message for each download (includes the total).
 - Locally (`./DEMARRER-SITE.sh`): log in `telechargements.jsonl` via `./LIRE-TELECHARGEMENTS.sh`.
