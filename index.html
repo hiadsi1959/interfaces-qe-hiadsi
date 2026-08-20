@@ -377,8 +377,8 @@
           <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">04</div>
             <div class="iface-body">
-              <h3 itemprop="name">THERMO_PW</h3>
-              <p itemprop="description">Drive thermo_pw for elasticity, QHA, phonons, and dielectric constants — thermodynamic properties in a few steps.</p>
+              <h3 itemprop="name">THERMO_PW <span class="tag tag-version">v1 · 2026-08-20</span></h3>
+              <p itemprop="description">5 profiles (P1–P5), 4-step workflow, guided thermo_pw resume after QHA failure — elasticity, QHA, phonons, and dielectric constants in a few steps.</p>
               <span class="tag">Port 8000</span>
               <p class="kw-label">Keywords</p>
               <ul class="iface-keywords" aria-label="Keywords for THERMO_PW">
@@ -399,8 +399,8 @@
             <div class="iface-actions">
               <button type="button" class="btn btn-sm btn-download"
                 data-interface="thermo_pw"
-                data-label="THERMO_PW"
-                data-file="telechargements/thermo_pw.tar.gz">Download</button>
+                data-label="THERMO_PW v1 (2026-08-20)"
+                data-file="telechargements/thermo_pw_20260820.tar.gz">Download</button>
             </div>
           </article>
 
@@ -521,6 +521,12 @@ cd Interface-QE_v1
 ./CONFIGURER-PC.sh
 ./DEMARRER.sh
 # → http://127.0.0.1:5007/interface/</pre>
+          <p style="margin-top:1rem"><strong>Example — THERMO_PW v1 (2026-08-20)</strong></p>
+          <pre>tar -xzf thermo_pw_20260820.tar.gz -C ~/
+cd ~/thermo_pw
+./config_autre_pc.sh
+./DEMARRER.sh
+# → http://127.0.0.1:8000/</pre>
           <p style="margin-top:1rem"><strong>Example — QE–ALAMODE</strong></p>
           <pre>tar -xzf QE-Alamode_interface.tar.gz
 cd QE-Alamode_interface
