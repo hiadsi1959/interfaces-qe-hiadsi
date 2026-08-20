@@ -31,7 +31,7 @@ Open **http://127.0.0.1:8090/**
 | QE Input Generator | `telechargements/generation_inputs-QE.tar.gz` |
 | Pseudopotential Generator | `telechargements/generation_pseudos.tar.gz` |
 | Supra-QE | `telechargements/supra-QE.tar.gz` |
-| THERMO_PW v1 (2026-08-20) | `telechargements/thermo_pw_20260820.tar.gz` (~916 Ko, sans résultats de calcul) |
+| THERMO_PW v:20/08/2026 | `telechargements/thermo_pw_20260820.tar.gz` (~916 Ko, sans résultats de calcul) |
 | QE–ALAMODE | `telechargements/QE-Alamode_interface.tar.gz` |
 
 The `.tar.gz` files in `telechargements/` are **links** to `5-Interfaces-hiadsi`.

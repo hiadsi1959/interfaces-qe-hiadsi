@@ -513,6 +513,15 @@ body.modal-open {
   color: var(--gold, #ffb066);
   vertical-align: middle;
 }
+.iface-release-date {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--gold, #ffb066);
+  text-align: center;
+}
 
 /* ——— How it works ——— */
 .steps {
