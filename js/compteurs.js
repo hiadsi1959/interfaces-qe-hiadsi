@@ -13,7 +13,7 @@
     { id: "generation_inputs-QE", label: "QE Input Generator" },
     { id: "generation_pseudos", label: "Pseudopotential Generator" },
     { id: "Interface-QE_v1", label: "Interface-QE v1" },
-    { id: "thermo_pw", label: "THERMO_PW v:20/08/2026" },
+    { id: "thermo_pw", label: "THERMO_PW v1.1" },
     { id: "supra-QE", label: "Supra-QE" },
     { id: "QE-Alamode_interface", label: "QE–ALAMODE" },
   ];

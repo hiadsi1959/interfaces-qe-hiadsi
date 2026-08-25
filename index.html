@@ -56,9 +56,9 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "THERMO_PW v:20/08/2026",
+        "name": "THERMO_PW v1.1",
         "applicationCategory": "ScientificApplication",
-        "keywords": "thermo_pw, elastic constants, Debye temperature, heat capacity, thermal expansion, QHA, sound velocity, thermodynamic properties, dielectric constant, high pressure"
+        "keywords": "thermo_pw, elastic constants, Debye temperature, heat capacity, thermal expansion, QHA, sound velocity, thermodynamic properties, dielectric constant, high pressure, CALPHAD, ESPEI, calphad_espei, mono-phase thermodynamics"
       },
       {
         "@type": "SoftwareApplication",
@@ -170,11 +170,13 @@
               suivi de la convergence (énergie, forces), gestion des jobs et visualisation / analyse des sorties.</p>
             </li>
             <li>
-              <h3><span class="pres-n">04</span> Interface thermo_pw <span class="tag tag-version">v:20/08/2026</span></h3>
+              <h3><span class="pres-n">04</span> Interface thermo_pw <span class="tag tag-version">v1.1 · 2026-08-25</span></h3>
               <p><strong>Description.</strong> Outil dédié aux propriétés thermodynamiques et élastiques
               des matériaux en fonction de la température et de la pression (routines <code>thermo_pw</code>).</p>
-              <p><strong>Fonctionnalités clés.</strong> Constantes élastiques, vitesses du son, température de Debye,
-              capacité calorifique, expansion thermique, phonons et constantes diélectriques.</p>
+              <p><strong>Fonctionnalités clés.</strong> Profils P1–P5 entièrement fonctionnels : constantes élastiques,
+              vitesses du son, température de Debye, capacité calorifique, expansion thermique, phonons et constantes
+              diélectriques. En P2 (option) : diagramme thermodynamique mono-phase (C<sub>p</sub>, S, H vs T) et export
+              ESPEI dans <code>calphad_espei/</code>.</p>
             </li>
             <li>
               <h3><span class="pres-n">05</span> Interface Supra-QE</h3>
@@ -228,11 +230,12 @@
               tracking of energy/force convergence, job management, and rapid parsing / visualization of outputs.</p>
             </li>
             <li>
-              <h3><span class="pres-n">04</span> thermo_pw Interface <span class="tag tag-version">v:20/08/2026</span></h3>
+              <h3><span class="pres-n">04</span> thermo_pw Interface <span class="tag tag-version">v1.1 · 2026-08-25</span></h3>
               <p><strong>Description.</strong> A dedicated workflow for thermodynamic and elastic properties
               under varying temperature and pressure, driven by <code>thermo_pw</code>.</p>
-              <p><strong>Key features.</strong> Elastic constants, sound velocities, Debye temperature,
-              heat capacity, thermal expansion, phonons, and dielectric constants.</p>
+              <p><strong>Key features.</strong> All P1–P5 profiles fully operational: elastic constants, sound velocities,
+              Debye temperature, heat capacity, thermal expansion, phonons, and dielectric constants. P2 optionally adds
+              a mono-phase thermodynamic plot (C<sub>p</sub>, S, H vs T) and ESPEI export to <code>calphad_espei/</code>.</p>
             </li>
             <li>
               <h3><span class="pres-n">05</span> Supra-QE Interface</h3>
@@ -259,7 +262,7 @@
           <li><span class="flow-n">01</span><strong>QE Inputs</strong><span>input files</span></li>
           <li><span class="flow-n">02</span><strong>Pseudos</strong><span>search &amp; generate</span></li>
           <li><span class="flow-n">03</span><strong>QE Calc.</strong><span>DFT / DFPT</span></li>
-          <li><span class="flow-n">04</span><strong>thermo_pw</strong><span>v:20/08/2026</span></li>
+          <li><span class="flow-n">04</span><strong>thermo_pw</strong><span>v1.1</span></li>
           <li><span class="flow-n">05</span><strong>Supra-QE</strong><span>e–ph &amp; T<sub>c</sub></span></li>
           <li><span class="flow-n">06</span><strong>QE–ALAMODE</strong><span>phonons &amp; κ<sub>L</sub></span></li>
         </ol>
@@ -377,8 +380,8 @@
           <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">04</div>
             <div class="iface-body">
-              <h3 itemprop="name">THERMO_PW <span class="tag tag-version">v:20/08/2026</span></h3>
-              <p itemprop="description">5 profiles (P1–P5), 4-step workflow, guided thermo_pw resume after QHA failure — elasticity, QHA, phonons, and dielectric constants in a few steps.</p>
+              <h3 itemprop="name">THERMO_PW <span class="tag tag-version">v1.1 · 2026-08-25</span></h3>
+              <p itemprop="description">All 5 profiles (P1–P5) operational, 4-step workflow, guided thermo_pw resume after QHA failure — elasticity, QHA, phonons, and dielectric constants. P2 optionally exports ESPEI datasets to <code>calphad_espei/</code> and plots mono-phase thermodynamics (C<sub>p</sub>, S, H vs T).</p>
               <span class="tag">Port 8000</span>
               <p class="kw-label">Keywords</p>
               <ul class="iface-keywords" aria-label="Keywords for THERMO_PW">
@@ -393,15 +396,17 @@
                 <li>dielectric constant</li>
                 <li>high pressure</li>
                 <li>phonons thermo_pw</li>
-                <li>matériaux thermodynamique</li>
+                <li>CALPHAD / ESPEI</li>
+                <li>calphad_espei</li>
+                <li>Cp S H vs T</li>
               </ul>
             </div>
             <div class="iface-actions">
-              <span class="iface-release-date" title="Release date">v:20/08/2026</span>
+              <span class="iface-release-date" title="Release date">v1.1 · 2026-08-25</span>
               <button type="button" class="btn btn-sm btn-download"
                 data-interface="thermo_pw"
-                data-label="THERMO_PW v:20/08/2026"
-                data-file="telechargements/thermo_pw_20260820.tar.gz">Download</button>
+                data-label="THERMO_PW v1.1"
+                data-file="telechargements/thermo_pw_v1.1_2026-08-25.tar.gz">Download</button>
             </div>
           </article>
 
@@ -484,7 +489,7 @@
             <li><strong>QE Input Generator</strong> — simplified creation of input files</li>
             <li><strong>Pseudopotential Database</strong> — search and selection</li>
             <li><strong>QE Calculation Interface</strong> — DFT/DFPT execution and tracking</li>
-            <li><strong>thermo_pw Interface</strong> — thermodynamic and elastic properties <span class="tag tag-version">v:20/08/2026</span></li>
+            <li><strong>thermo_pw Interface</strong> — thermodynamic and elastic properties <span class="tag tag-version">v1.1 · 2026-08-25</span> (P1–P5 operational; P2 CALPHAD opt-in)</li>
             <li><strong>Supra-QE Interface</strong> — superconductivity and electron–phonon coupling</li>
             <li><strong>QE–ALAMODE Interface</strong> — anharmonic phonons and lattice thermal conductivity (QE + ALAMODE)</li>
           </ul>
@@ -522,8 +527,8 @@ cd Interface-QE_v1
 ./CONFIGURER-PC.sh
 ./DEMARRER.sh
 # → http://127.0.0.1:5007/interface/</pre>
-          <p style="margin-top:1rem"><strong>Example — THERMO_PW v:20/08/2026</strong></p>
-          <pre>tar -xzf thermo_pw_20260820.tar.gz -C ~/
+          <p style="margin-top:1rem"><strong>Example — THERMO_PW v1.1</strong></p>
+          <pre>tar -xzf thermo_pw_v1.1_2026-08-25.tar.gz -C ~/
 cd ~/thermo_pw
 ./config_autre_pc.sh
 ./DEMARRER.sh
@@ -566,7 +571,7 @@ source /opt/intel/oneapi/setvars.sh   # required for bundled alm/anphon
               <option value="generation_inputs-QE">QE Input Generator</option>
               <option value="generation_pseudos">Pseudopotential Generator</option>
               <option value="Interface-QE_v1">Interface-QE v1</option>
-              <option value="thermo_pw">THERMO_PW v:20/08/2026</option>
+              <option value="thermo_pw">THERMO_PW v1.1</option>
               <option value="supra-QE">Supra-QE</option>
               <option value="QE-Alamode_interface">QE–ALAMODE</option>
               <option value="plusieurs">Several interfaces</option>
