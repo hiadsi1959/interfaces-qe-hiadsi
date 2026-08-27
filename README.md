@@ -32,7 +32,7 @@ Open **http://127.0.0.1:8090/**
 | Pseudopotential Generator | `telechargements/generation_pseudos.tar.gz` |
 | Supra-QE | `telechargements/supra-QE.tar.gz` |
 | THERMO_PW v1.1 | `telechargements/thermo_pw_v1.1_2026-08-25.tar.gz` (~968 Ko, sans résultats de calcul ; P1–P5 opérationnels ; opt-in P2 CALPHAD/ESPEI) |
-| QE–ALAMODE | `telechargements/QE-Alamode_interface.tar.gz` |
+| QE–ALAMODE v1.1 | `telechargements/QE-Alamode_v1.1_2026-08-27.tar.gz` (aussi `QE-Alamode_interface.tar.gz`) — testée & corrigée, ALAMODE portable inclus (sans oneAPI) |
 
 The `.tar.gz` files in `telechargements/` are **links** to `5-Interfaces-hiadsi`.
 
