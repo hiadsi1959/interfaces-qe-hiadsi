@@ -62,9 +62,9 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "Supra-QE",
+        "name": "Supra-QE v1.1",
         "applicationCategory": "ScientificApplication",
-        "keywords": "superconductivity, electron-phonon coupling, Eliashberg, Allen-Dynes, McMillan, critical temperature Tc, lambda, EPW, alpha2F, phonon-mediated superconductivity"
+        "keywords": "superconductivity, electron-phonon coupling, Eliashberg, Allen-Dynes, McMillan, critical temperature Tc, lambda, EPW, alpha2F, phonon-mediated superconductivity, Supra-QE v1.1"
       },
       {
         "@type": "SoftwareApplication",
@@ -179,11 +179,12 @@
               ESPEI dans <code>calphad_espei/</code>.</p>
             </li>
             <li>
-              <h3><span class="pres-n">05</span> Interface Supra-QE</h3>
+              <h3><span class="pres-n">05</span> Interface Supra-QE <span class="tag tag-version">v1.1 · 2026-08-27</span></h3>
               <p><strong>Description.</strong> Plateforme axée sur la supraconductivité conventionnelle
-              et le couplage électron–phonon.</p>
-              <p><strong>Fonctionnalités clés.</strong> Fonction spectrale d’Eliashberg α²F(ω), constante de couplage λ,
-              estimation de la température critique T<sub>c</sub> (Allen–Dynes / McMillan), et voie EPW / Eliashberg.</p>
+              et le couplage électron–phonon (Quantum&nbsp;ESPRESSO).</p>
+              <p><strong>Fonctionnalités clés.</strong> Voie classique (McMillan / Allen–Dynes) et voie EPW (Éliashberg) :
+              α²F(ω), λ, ω<sub>log</sub>, T<sub>c</sub>, Δ(T) ; association des binaires QE/EPW sans recompiler ;
+              guide de protocole et ordres de grandeur wall-clock.</p>
             </li>
             <li>
               <h3><span class="pres-n">06</span> Interface QE–ALAMODE <span class="tag tag-version">v1.1 · 2026-08-27</span></h3>
@@ -239,11 +240,12 @@
               a mono-phase thermodynamic plot (C<sub>p</sub>, S, H vs T) and ESPEI export to <code>calphad_espei/</code>.</p>
             </li>
             <li>
-              <h3><span class="pres-n">05</span> Supra-QE Interface</h3>
+              <h3><span class="pres-n">05</span> Supra-QE Interface <span class="tag tag-version">v1.1 · 2026-08-27</span></h3>
               <p><strong>Description.</strong> An analysis module focused on conventional superconductivity
-              and electron–phonon coupling.</p>
-              <p><strong>Key features.</strong> Eliashberg spectral function α²F(ω), coupling constant λ,
-              critical temperature T<sub>c</sub> (Allen–Dynes / McMillan), and the EPW / Eliashberg route.</p>
+              and electron–phonon coupling (Quantum&nbsp;ESPRESSO).</p>
+              <p><strong>Key features.</strong> Classic route (McMillan / Allen–Dynes) and EPW (Éliashberg):
+              α²F(ω), λ, ω<sub>log</sub>, T<sub>c</sub>, Δ(T); link QE/EPW binaries without recompiling;
+              protocol guide and wall-clock timing estimates.</p>
             </li>
             <li>
               <h3><span class="pres-n">06</span> QE–ALAMODE Interface <span class="tag tag-version">v1.1 · 2026-08-27</span></h3>
@@ -265,7 +267,7 @@
           <li><span class="flow-n">02</span><strong>Pseudos</strong><span>search &amp; generate</span></li>
           <li><span class="flow-n">03</span><strong>QE Calc.</strong><span>DFT / DFPT</span></li>
           <li><span class="flow-n">04</span><strong>thermo_pw</strong><span>v1.1</span></li>
-          <li><span class="flow-n">05</span><strong>Supra-QE</strong><span>e–ph &amp; T<sub>c</sub></span></li>
+          <li><span class="flow-n">05</span><strong>Supra-QE</strong><span>v1.1</span></li>
           <li><span class="flow-n">06</span><strong>QE–ALAMODE</strong><span>v1.1</span></li>
         </ol>
 
@@ -415,8 +417,12 @@
           <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">05</div>
             <div class="iface-body">
-              <h3 itemprop="name">Supra-QE</h3>
-              <p itemprop="description">Study superconductivity and electron–phonon coupling: standard λ / T<sub>c</sub> workflow, and the EPW / Eliashberg route.</p>
+              <h3 itemprop="name">Supra-QE <span class="tag tag-version">v1.1 · 2026-08-27</span></h3>
+              <p itemprop="description">
+                Conventional superconductivity and electron–phonon coupling: WF1 classic (λ / ω<sub>log</sub> / T<sub>c</sub>,
+                McMillan–Allen–Dynes) and WF2 EPW (Éliashberg). <strong>v1.1</strong> — QE/EPW binary linking,
+                Norm-Conserving pseudos, results explorer, protocol guide with wall-clock estimates.
+              </p>
               <span class="tag">Port 8765</span>
               <p class="kw-label">Keywords</p>
               <ul class="iface-keywords" aria-label="Keywords for Supra-QE">
@@ -433,12 +439,13 @@
                 <li>supraconductivité</li>
                 <li>couplage électron-phonon</li>
               </ul>
+              <span class="iface-release-date" title="Release date">v1.1 · 2026-08-27</span>
             </div>
             <div class="iface-actions">
               <button type="button" class="btn btn-sm btn-download"
                 data-interface="supra-QE"
-                data-label="Supra-QE"
-                data-file="telechargements/supra-QE.tar.gz">Download</button>
+                data-label="Supra-QE v1.1"
+                data-file="telechargements/supra-QE_v1.1_2026-08-27.tar.gz">Download</button>
             </div>
           </article>
 
@@ -493,7 +500,7 @@
             <li><strong>Pseudopotential Database</strong> — search and selection</li>
             <li><strong>QE Calculation Interface</strong> — DFT/DFPT execution and tracking</li>
             <li><strong>thermo_pw Interface</strong> — thermodynamic and elastic properties <span class="tag tag-version">v1.1 · 2026-08-25</span> (P1–P5 operational; P2 CALPHAD opt-in)</li>
-            <li><strong>Supra-QE Interface</strong> — superconductivity and electron–phonon coupling</li>
+            <li><strong>Supra-QE Interface</strong> — superconductivity and electron–phonon coupling <span class="tag tag-version">v1.1 · 2026-08-27</span> (classic + EPW; binary linking)</li>
             <li><strong>QE–ALAMODE Interface</strong> — anharmonic phonons and lattice thermal conductivity <span class="tag tag-version">v1.1 · 2026-08-27</span> (tested &amp; corrected; ALAMODE bundled)</li>
           </ul>
         </div>
@@ -524,18 +531,20 @@
         </div>
 
         <div class="note-panel reveal">
-          <p><strong>Example — Interface-QE v1</strong></p>
-          <pre>tar -xzf Interface-QE_v1.tar.gz
-cd Interface-QE_v1
-./CONFIGURER-PC.sh
-./DEMARRER.sh
-# → http://127.0.0.1:5007/interface/</pre>
-          <p style="margin-top:1rem"><strong>Example — THERMO_PW v1.1</strong></p>
+          <p><strong>Example — THERMO_PW v1.1</strong></p>
           <pre>tar -xzf thermo_pw_v1.1_2026-08-25.tar.gz -C ~/
 cd ~/thermo_pw
-./config_autre_pc.sh
+./config_autre_pc.sh          # prérequis + chemins QE (une fois)
 ./DEMARRER.sh
 # → http://127.0.0.1:8000/</pre>
+          <p style="margin-top:1rem"><strong>Example — Supra-QE v1.1</strong></p>
+          <pre>tar -xzf supra-QE_v1.1_2026-08-27.tar.gz
+cd supra-QE
+./configurer.sh --qe-bin /chemin/vers/qe/bin   # associe pw.x / ph.x / epw.x → bin/
+# ou one-shot : ./INSTALL_AUTOMATIQUE.sh -y --qe-bin /chemin/vers/qe/bin
+./DEMARRER.sh
+# → http://127.0.0.1:8765/interface/
+# Pseudos NC (.UPF) dans pseudos/ · si epw.x manque : ./scripts/installer_epw.sh</pre>
           <p style="margin-top:1rem"><strong>Example — QE–ALAMODE v1.1</strong></p>
           <pre>tar -xzf QE-Alamode_v1.1_2026-08-27.tar.gz
 cd QE-Alamode_interface
@@ -544,6 +553,10 @@ export ALAMODE_BIN_DIR=$PWD/bin          # alm + anphon inclus (pas de oneAPI)
 ./INSTALLER_AUTRE_PC.sh --non-interactif
 ./DEMARRER.sh
 # → http://127.0.0.1:5020/</pre>
+          <p style="margin-top:1rem;font-size:0.92em;opacity:0.9">
+            <strong>Note.</strong> Quantum ESPRESSO must be installed on the machine (except ALAMODE binaries,
+            which are bundled in QE–ALAMODE v1.1). Always open the UI via <code>./DEMARRER.sh</code>, never as <code>file://</code>.
+          </p>
         </div>
       </div>
     </section>
@@ -576,7 +589,7 @@ export ALAMODE_BIN_DIR=$PWD/bin          # alm + anphon inclus (pas de oneAPI)
               <option value="generation_pseudos">Pseudopotential Generator</option>
               <option value="Interface-QE_v1">Interface-QE v1</option>
               <option value="thermo_pw">THERMO_PW v1.1</option>
-              <option value="supra-QE">Supra-QE</option>
+              <option value="supra-QE">Supra-QE v1.1</option>
               <option value="QE-Alamode_interface">QE–ALAMODE v1.1</option>
               <option value="plusieurs">Several interfaces</option>
               <option value="autre">Other / general comments</option>
