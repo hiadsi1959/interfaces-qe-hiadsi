@@ -7,7 +7,7 @@
 
   const IFACES = [
     { id: "generation_inputs-QE", label: "QE Input Generator" },
-    { id: "generation_pseudos", label: "Pseudopotential Generator" },
+    { id: "generation_pseudos", label: "Pseudopotential Generator v1.1" },
     { id: "Interface-QE_v1", label: "Interface-QE v1" },
     { id: "thermo_pw", label: "THERMO_PW v1.1" },
     { id: "supra-QE", label: "Supra-QE v1.1" },
