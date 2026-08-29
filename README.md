@@ -29,7 +29,7 @@ Open **http://127.0.0.1:8090/**
 |-----------|---------|
 | Interface-QE v1 | `telechargements/Interface-QE_v1.tar.gz` |
 | QE Input Generator | `telechargements/generation_inputs-QE.tar.gz` |
-| Pseudopotential Generator v1.1 | `telechargements/generation_pseudos_v1.1_2026-08-28.tar.gz` (aussi `generation_pseudos.tar.gz`) — autonome ; générateurs ld1/APE/ATOMPAW/ONCV embarqués · 2026-08-28 |
+| Pseudopotential Generator v1.1 | `telechargements/generation_pseudos_v1.1_2026-08-29.tar.gz` (aussi `generation_pseudos-v1.1.tar.gz` / `generation_pseudos.tar.gz`) — autonome ; lanthanides 4f PseudoDojo · 2026-08-29 |
 | Supra-QE v1.1 | `telechargements/supra-QE_v1.1_2026-08-27.tar.gz` (aussi `supra-QE.tar.gz`) — WF1 classique + WF2 EPW, association binaires QE/EPW |
 | THERMO_PW v1.1 | `telechargements/thermo_pw_v1.1_2026-08-25.tar.gz` (~968 Ko, sans résultats de calcul ; P1–P5 opérationnels ; opt-in P2 CALPHAD/ESPEI) |
 | QE–ALAMODE v1.1 | `telechargements/QE-Alamode_v1.1_2026-08-27.tar.gz` (aussi `QE-Alamode_interface.tar.gz`) — testée & corrigée, ALAMODE portable inclus (sans oneAPI) |
