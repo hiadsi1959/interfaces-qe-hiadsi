@@ -166,7 +166,7 @@
               génération de jeux d’inputs pour divers types de calculs (scf, nscf, bands, dos, relax, etc.).</p>
             </li>
             <li>
-              <h3><span class="pres-n">02</span> Génération &amp; base de pseudopotentiels <span class="tag tag-version">v1.1 · 2026-08-29</span></h3>
+              <h3><span class="pres-n">02</span> Génération &amp; base de pseudopotentiels <span class="tag tag-version">v1.1 · 2026-08-31</span></h3>
               <p><strong>Description.</strong> Unité centralisée pour rechercher, sélectionner et générer des pseudopotentiels
               adaptés à vos calculs DFT.
               <strong>Version 1.1</strong> — <strong>autonome</strong> (générateurs ld1.x, APE, ATOMPAW, ONCVPSP embarqués) ;
@@ -232,7 +232,7 @@
               of input sets for scf, nscf, bands, dos, relax, and related calculation types.</p>
             </li>
             <li>
-              <h3><span class="pres-n">02</span> Pseudopotential Generator &amp; Database <span class="tag tag-version">v1.1 · 2026-08-29</span></h3>
+              <h3><span class="pres-n">02</span> Pseudopotential Generator &amp; Database <span class="tag tag-version">v1.1 · 2026-08-31</span></h3>
               <p><strong>Description.</strong> A centralized tool to search, select, and generate pseudopotentials
               for DFT calculations.
               <strong>Version 1.1</strong> — <strong>standalone</strong> (ld1.x, APE, ATOMPAW, ONCVPSP generators bundled);
@@ -339,12 +339,13 @@
           <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">02</div>
             <div class="iface-body">
-              <h3 itemprop="name">Pseudopotential Generator <span class="tag tag-version">v1.1 · 2026-08-29</span></h3>
+              <h3 itemprop="name">Pseudopotential Generator <span class="tag tag-version">v1.1 · 2026-08-31</span></h3>
               <p itemprop="description">
                 Browse and generate pseudopotentials: periodic table, ld1.x, APE, ATOMPAW, ONCVPSP,
                 plus PSLibrary, PseudoDojo, and SSSP.
                 <strong>v1.1</strong> — <strong>autonome</strong> (generators bundled in <code>./bin/</code>;
-                no separate install). Lanthanides 4f: PseudoDojo templates + collapsible science note before ONCV runs.
+                no separate install). Physics matrix per generator, optimal XC/rel/f auto-selection,
+                pw.x hints (z_valence, ecutwfc), unified run indicators, ONCV physics controls.
               </p>
               <span class="tag">Port 5008</span>
               <p class="kw-label">Keywords</p>
@@ -369,7 +370,7 @@
               <button type="button" class="btn btn-sm btn-download"
                 data-interface="generation_pseudos"
                 data-label="Pseudopotential Generator v1.1"
-                data-file="telechargements/generation_pseudos_v1.1_2026-08-29.tar.gz">Download</button>
+                data-file="telechargements/generation_pseudos_v1.1_2026-08-31.tar.gz">Download</button>
             </div>
           </article>
 
@@ -519,7 +520,7 @@
           </p>
           <ul>
             <li><strong>QE Input Generator</strong> — simplified creation of input files</li>
-            <li><strong>Pseudopotential Generator</strong> — search, select &amp; generate <span class="tag tag-version">v1.1 · 2026-08-29</span> (autonome ; générateurs embarqués)</li>
+            <li><strong>Pseudopotential Generator</strong> — search, select &amp; generate <span class="tag tag-version">v1.1 · 2026-08-31</span> (autonome ; générateurs embarqués)</li>
             <li><strong>QE Calculation Interface</strong> — DFT/DFPT execution and tracking</li>
             <li><strong>thermo_pw Interface</strong> — thermodynamic and elastic properties <span class="tag tag-version">v1.1 · 2026-08-25</span> (P1–P5 operational; P2 CALPHAD opt-in)</li>
             <li><strong>Supra-QE Interface</strong> — superconductivity and electron–phonon coupling <span class="tag tag-version">v1.1 · 2026-08-27</span> (classic + EPW; binary linking)</li>
@@ -554,7 +555,7 @@
 
         <div class="note-panel reveal">
           <p><strong>Example — Pseudopotential Generator v1.1</strong></p>
-          <pre>tar -xzf generation_pseudos_v1.1_2026-08-29.tar.gz
+          <pre>tar -xzf generation_pseudos_v1.1_2026-08-31.tar.gz
 cd generation_pseudos
 ./DEMARRER.sh
 # → http://127.0.0.1:5008/
