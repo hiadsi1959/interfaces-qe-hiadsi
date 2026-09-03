@@ -50,9 +50,9 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "Interface-QE v1",
+        "name": "Interface-QE v1.2",
         "applicationCategory": "ScientificApplication",
-        "keywords": "DFT, DFPT, pw.x, ph.x, phonon calculation, electronic structure, optical properties, job tracking, convergence, ab initio, QE workflow, condensed matter"
+        "keywords": "DFT, DFPT, pw.x, ph.x, phonon calculation, electronic structure, optical properties, job tracking, convergence, ab initio, QE workflow, condensed matter, technical sheet, HTML PDF, Interface-QE v1.2"
       },
       {
         "@type": "SoftwareApplication",
@@ -178,11 +178,13 @@
               filtres par élément, catalogue guidé et contrôles de compatibilité.</p>
             </li>
             <li>
-              <h3><span class="pres-n">03</span> Interface de calcul QE</h3>
+              <h3><span class="pres-n">03</span> Interface de calcul QE <span class="tag tag-version">v1.2 · 2026-09-03</span></h3>
               <p><strong>Description.</strong> Environnement d’exécution et de suivi des calculs
-              DFT (<em>Density Functional Theory</em>) et DFPT (<em>Density Functional Perturbation Theory</em>).</p>
+              DFT (<em>Density Functional Theory</em>) et DFPT (<em>Density Functional Perturbation Theory</em>).
+              <strong>Version 1.2</strong> — workflows E-P-O portables, fiche technique HTML/PDF, chemins dynamiques, audit API.</p>
               <p><strong>Fonctionnalités clés.</strong> Lancement des modules (<code>pw.x</code>, <code>ph.x</code>, …),
-              suivi de la convergence (énergie, forces), gestion des jobs et visualisation / analyse des sorties.</p>
+              suivi de la convergence (énergie, forces), gestion des jobs, visualisation / analyse des sorties
+              et fiche technique des résultats (HTML, PDF, Markdown).</p>
             </li>
             <li>
               <h3><span class="pres-n">04</span> Interface thermo_pw <span class="tag tag-version">v1.1 · 2026-08-25</span></h3>
@@ -243,10 +245,12 @@
               support for PAW, USPP, ONCVPSP (relativistic / non-relativistic), element filters, guided catalogue, and compatibility checks.</p>
             </li>
             <li>
-              <h3><span class="pres-n">03</span> QE Calculation Interface</h3>
-              <p><strong>Description.</strong> An execution and monitoring environment for DFT and DFPT simulations.</p>
+              <h3><span class="pres-n">03</span> QE Calculation Interface <span class="tag tag-version">v1.2 · 2026-09-03</span></h3>
+              <p><strong>Description.</strong> An execution and monitoring environment for DFT and DFPT simulations.
+              <strong>Version 1.2</strong> — portable E-P-O workflows, HTML/PDF technical results sheet, dynamic paths, API audit.</p>
               <p><strong>Key features.</strong> Launch of core modules (<code>pw.x</code>, <code>ph.x</code>, …),
-              tracking of energy/force convergence, job management, and rapid parsing / visualization of outputs.</p>
+              tracking of energy/force convergence, job management, output visualization,
+              and a technical results sheet (HTML, PDF, Markdown).</p>
             </li>
             <li>
               <h3><span class="pres-n">04</span> thermo_pw Interface <span class="tag tag-version">v1.1 · 2026-08-25</span></h3>
@@ -282,7 +286,7 @@
         <ol class="suite-flow reveal" aria-hidden="true">
           <li><span class="flow-n">01</span><strong>QE Inputs</strong><span>v1.2</span></li>
           <li><span class="flow-n">02</span><strong>Pseudos</strong><span>v1.1</span></li>
-          <li><span class="flow-n">03</span><strong>QE Calc.</strong><span>DFT / DFPT</span></li>
+          <li><span class="flow-n">03</span><strong>QE Calc.</strong><span>v1.2</span></li>
           <li><span class="flow-n">04</span><strong>thermo_pw</strong><span>v1.1</span></li>
           <li><span class="flow-n">05</span><strong>Supra-QE</strong><span>v1.2</span></li>
           <li><span class="flow-n">06</span><strong>QE–ALAMODE</strong><span>v1.2</span></li>
@@ -380,11 +384,11 @@
           <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">03</div>
             <div class="iface-body">
-              <h3 itemprop="name">Interface-QE v1</h3>
-              <p itemprop="description">Run DFT/DFPT calculations: electronic, phonon, and optical workflows, with job tracking and result visualization.</p>
+              <h3 itemprop="name">Interface-QE <span class="tag tag-version">v1.2 · 2026-09-03</span></h3>
+              <p itemprop="description">Run DFT/DFPT calculations: electronic, phonon, and optical workflows, with job tracking and result visualization. <strong>v1.2</strong> — portable E-P-O workflows, HTML/PDF technical results sheet, dynamic paths, API security audit.</p>
               <span class="tag">Port 5007</span>
               <p class="kw-label">Keywords</p>
-              <ul class="iface-keywords" aria-label="Keywords for Interface-QE v1">
+              <ul class="iface-keywords" aria-label="Keywords for Interface-QE v1.2">
                 <li>DFT</li>
                 <li>DFPT</li>
                 <li>pw.x</li>
@@ -396,14 +400,17 @@
                 <li>convergence monitoring</li>
                 <li>ab initio</li>
                 <li>QE workflow</li>
+                <li>technical results sheet</li>
+                <li>HTML / PDF</li>
                 <li>condensed matter</li>
               </ul>
             </div>
             <div class="iface-actions">
+              <span class="iface-release-date" title="Release date">v1.2 · 2026-09-03</span>
               <button type="button" class="btn btn-sm btn-download"
                 data-interface="Interface-QE_v1"
-                data-label="Interface-QE v1"
-                data-file="telechargements/Interface-QE_v1.tar.gz">Download</button>
+                data-label="Interface-QE v1.2"
+                data-file="telechargements/Interface-QE_v1.2_2026-09-03.tar.gz">Download</button>
             </div>
           </article>
 
@@ -524,7 +531,7 @@
           <ul>
             <li><strong>QE Input Generator</strong> — simplified creation of input files <span class="tag tag-version">v1.2 · 2026-09-03</span> (direct + CIF, API pw.x, vue 3D intégrée)</li>
             <li><strong>Pseudopotential Generator</strong> — search, select &amp; generate <span class="tag tag-version">v1.1 · 2026-08-31</span> (autonome ; générateurs embarqués)</li>
-            <li><strong>QE Calculation Interface</strong> — DFT/DFPT execution and tracking</li>
+            <li><strong>QE Calculation Interface</strong> — DFT/DFPT execution and tracking <span class="tag tag-version">v1.2 · 2026-09-03</span> (E-P-O, fiche technique HTML/PDF)</li>
             <li><strong>thermo_pw Interface</strong> — thermodynamic and elastic properties <span class="tag tag-version">v1.1 · 2026-08-25</span> (P1–P5 operational; P2 CALPHAD opt-in)</li>
             <li><strong>Supra-QE Interface</strong> — superconductivity and electron–phonon coupling <span class="tag tag-version">v1.2 · 2026-09-03</span> (classic + EPW; binary linking)</li>
             <li><strong>QE–ALAMODE Interface</strong> — anharmonic phonons and lattice thermal conductivity <span class="tag tag-version">v1.2 · 2026-09-03</span> (audited &amp; corrected; ALAMODE bundled)</li>
@@ -570,6 +577,13 @@ cd generation_pseudos
 ./DEMARRER.sh
 # → http://127.0.0.1:5008/
 # Interface autonome : générateurs ld1 / APE / ATOMPAW / ONCV dans ./bin/</pre>
+          <p style="margin-top:1rem"><strong>Example — Interface-QE v1.2</strong></p>
+          <pre>tar -xzf Interface-QE_v1.2_2026-09-03.tar.gz
+cd Interface-QE_v1
+./CONFIGURER-PC.sh --yes
+./DEMARRER.sh
+# → http://127.0.0.1:5007/interface/
+# Fiches résultats : outputs/&lt;matériau&gt;/fiche_technique_*.{html,pdf,md}</pre>
           <p style="margin-top:1rem"><strong>Example — THERMO_PW v1.1</strong></p>
           <pre>tar -xzf thermo_pw_v1.1_2026-08-25.tar.gz -C ~/
 cd ~/thermo_pw
@@ -625,7 +639,7 @@ export QE_BIN_DIR=/chemin/vers/qe/bin    # pw.x (facultatif si pw.x est dans le 
               <option value="">— Choose —</option>
               <option value="generation_inputs-QE">QE Input Generator v1.2</option>
               <option value="generation_pseudos">Pseudopotential Generator v1.1</option>
-              <option value="Interface-QE_v1">Interface-QE v1</option>
+              <option value="Interface-QE_v1">Interface-QE v1.2</option>
               <option value="thermo_pw">THERMO_PW v1.1</option>
               <option value="supra-QE">Supra-QE v1.2</option>
               <option value="QE-Alamode_interface">QE–ALAMODE v1.2</option>

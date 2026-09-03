@@ -27,7 +27,7 @@ Open **http://127.0.0.1:8090/**
 
 | Interface | Archive |
 |-----------|---------|
-| Interface-QE v1 | `telechargements/Interface-QE_v1.tar.gz` |
+| Interface-QE v1.2 | `telechargements/Interface-QE_v1.2_2026-09-03.tar.gz` (aussi `Interface-QE_v1.tar.gz`) — workflows E-P-O, fiche technique HTML/PDF · 2026-09-03 |
 | QE Input Generator | `telechargements/generation_inputs-QE.tar.gz` |
 | Pseudopotential Generator v1.1 | `telechargements/generation_pseudos_v1.1_2026-08-29.tar.gz` (aussi `generation_pseudos-v1.1.tar.gz` / `generation_pseudos.tar.gz`) — autonome ; lanthanides 4f PseudoDojo · 2026-08-29 |
 | Supra-QE v1.1 | `telechargements/supra-QE_v1.1_2026-08-27.tar.gz` (aussi `supra-QE.tar.gz`) — WF1 classique + WF2 EPW, association binaires QE/EPW |
