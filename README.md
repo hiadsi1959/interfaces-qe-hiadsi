@@ -29,7 +29,7 @@ Open **http://127.0.0.1:8090/**
 |-----------|---------|
 | Interface-QE v1.2 | `telechargements/Interface-QE_v1.2_2026-09-03.tar.gz` (aussi `Interface-QE_v1.tar.gz`) — workflows E-P-O, fiche technique HTML/PDF · 2026-09-03 |
 | QE Input Generator | `telechargements/generation_inputs-QE.tar.gz` |
-| Pseudopotential Generator v1.1 | `telechargements/generation_pseudos_v1.1_2026-08-29.tar.gz` (aussi `generation_pseudos-v1.1.tar.gz` / `generation_pseudos.tar.gz`) — autonome ; lanthanides 4f PseudoDojo · 2026-08-29 |
+| Pseudopotential Generator v1.2 | `telechargements/generation_pseudos_v1.2_2026-09-05.tar.gz` (aussi `generation_pseudos-v1.2.tar.gz` / `generation_pseudos.tar.gz`) — autonome ; audit physique ; support théorique · 2026-09-05 |
 | Supra-QE v1.1 | `telechargements/supra-QE_v1.1_2026-08-27.tar.gz` (aussi `supra-QE.tar.gz`) — WF1 classique + WF2 EPW, association binaires QE/EPW |
 | THERMO_PW v1.2 | `telechargements/thermo_pw_v1.2_2026-09-04.tar.gz` (~980 Ko, sans résultats de calcul ; P1–P5 opérationnels ; électronique avant phonons ; reprise P2→P3 ; opt-in P2 CALPHAD/ESPEI) · 2026-09-04 |
 | QE–ALAMODE v1.2 | `telechargements/QE-Alamode_v1.2_2026-09-03.tar.gz` (aussi `QE-Alamode_interface.tar.gz`) — auditée & corrigée, ALAMODE portable inclus (sans oneAPI) |
