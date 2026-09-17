@@ -30,7 +30,7 @@ Open **http://127.0.0.1:8090/**
 | Interface-QE v1.2 | `telechargements/Interface-QE_v1.2_2026-09-03.tar.gz` (aussi `Interface-QE_v1.tar.gz`) — workflows E-P-O, fiche technique HTML/PDF · 2026-09-03 |
 | QE Input Generator | `telechargements/generation_inputs-QE_v1.2_2026-09-07.tar.gz` (aussi `generation_inputs-QE.tar.gz`) — flux espèces, pseudos et positions automatiques corrigé · 2026-09-07 |
 | Pseudopotential Generator v1.3 | Release GitHub [`v1.3`](https://github.com/hiadsi1959/interfaces-qe-hiadsi/releases/tag/v1.3) → asset `generation_pseudos_v1.3_2026-09-15.tar.gz` (131 Mo, > limite 100 Mo du dépôt) — autonome ; installation assistée sur un autre PC ; gabarits 4d/actinides · 2026-09-15 |
-| Supra-QE v1.3 | `telechargements/supra-QE_v1.3_2026-09-15.tar.gz` — WF1 + WF2, `configure.sh` (prérequis auto), binaires QE (`fs.x`, EPW…), surface de Fermi XCrySDen · **2026-09-15** |
+| Supra-QE v1.4 | `telechargements/supra-QE_v1.4_2026-09-17.tar.gz` — WF1 + WF2, magnétisme (SCF/NSCF), chrono/chapitre Aide, synthèse voies · **2026-09-17** |
 | THERMO_PW v1.2 | `telechargements/thermo_pw_v1.2_2026-09-04.tar.gz` (~980 Ko, sans résultats de calcul ; P1–P5 opérationnels ; électronique avant phonons ; reprise P2→P3 ; opt-in P2 CALPHAD/ESPEI) · 2026-09-04 |
 | QE–ALAMODE v1.2 | `telechargements/QE-Alamode_v1.2_2026-09-03.tar.gz` (aussi `QE-Alamode_interface.tar.gz`) — auditée & corrigée, ALAMODE portable inclus (sans oneAPI) |
 
