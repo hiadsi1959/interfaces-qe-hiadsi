@@ -15,7 +15,7 @@
     { id: "Interface-QE_v1", label: "Interface-QE v1.2" },
     { id: "thermo_pw", label: "THERMO_PW v1.2" },
     { id: "supra-QE", label: "Supra-QE v1.4" },
-    { id: "QE-Alamode_interface", label: "QE–ALAMODE v1.1" },
+    { id: "QE-Alamode_interface", label: "QE–ALAMODE v1.2" },
   ];
 
   const gate = document.getElementById("stats-gate");
