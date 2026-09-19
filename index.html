@@ -210,7 +210,7 @@
               <h3><span class="pres-n">06</span> Interface QE–ALAMODE <span class="tag tag-version">v1.2 · 2026-09-19</span></h3>
               <p><strong>Description.</strong> Interface hybride associant Quantum&nbsp;ESPRESSO (forces DFT, supercellules)
               aux méthodes d’anharmonicité d’ALAMODE pour la dynamique de réseau et le transport thermique.
-              <strong>Version 1.2 auditée et corrigée</strong> — <strong>ALAMODE embarqué</strong> (portable, sans Intel oneAPI / MKL) ;
+              <strong>Version 1.2 auditée et corrigée</strong> — pack <strong>autonome</strong> : <code>bin/pw.x</code>, <code>bin/alm</code>, <code>bin/anphon</code> + <code>lib/</code> ;
               <code>tools/alamode/displace.py</code> pour les motifs « alm suggest » ; garde-fous anphon / DFSET.</p>
               <p><strong>Fonctionnalités clés.</strong> Constantes de force interatomiques (IFC, NORDER≥2),
               dispersion de phonons, conductivité thermique de réseau κ<sub>L</sub> (RTA),
@@ -279,7 +279,7 @@
               <h3><span class="pres-n">06</span> QE–ALAMODE Interface <span class="tag tag-version">v1.2 · 2026-09-19</span></h3>
               <p><strong>Description.</strong> A hybrid interface coupling Quantum&nbsp;ESPRESSO (DFT forces, supercells)
               with ALAMODE’s anharmonic solvers for lattice dynamics and heat transport.
-              <strong>Version 1.2 audited and corrected</strong> — <strong>ALAMODE bundled</strong> (portable; no Intel oneAPI / MKL);
+              <strong>Version 1.2 audited and corrected</strong> — <strong>standalone pack</strong>: <code>bin/pw.x</code>, <code>bin/alm</code>, <code>bin/anphon</code> + <code>lib/</code>;
               <code>tools/alamode/displace.py</code> for alm-suggest displacements; anphon / DFSET safeguards.</p>
               <p><strong>Key features.</strong> Interatomic force constants (IFCs, NORDER≥2), phonon dispersions,
               lattice thermal conductivity κ<sub>L</sub> (RTA), and technical-sheet export for result analysis.</p>
@@ -500,9 +500,10 @@
               <p itemprop="description">
                 A combined <strong>Quantum ESPRESSO + ALAMODE</strong> workflow for finite-displacement
                 force constants, phonon dispersions, and lattice thermal conductivity κ<sub>L</sub> (RTA).
-                <strong>v1.2 audited &amp; corrected</strong> — <strong>ALAMODE included</strong> (portable;
-                no oneAPI). <code>displace.py</code> bundled; anphon / DFSET checks; setup on a new PC via
-                <code>configure.sh</code> (prerequisites + paths). Guided web UI and technical-sheet export.
+                <strong>v1.2 audited &amp; corrected</strong> — <strong>standalone pack</strong> (~78&nbsp;Mo) :
+                <code>pw.x</code>, <code>alm</code>, <code>anphon</code> in <code>bin/</code>, runtime libs in <code>lib/</code>.
+                <code>displace.py</code> bundled; setup via <code>configure.sh</code> (Python + system deps only).
+                Guided web UI and technical-sheet export.
               </p>
               <span class="tag">Port 5020</span>
               <p class="kw-label">Keywords</p>
@@ -522,7 +523,7 @@
               </ul>
             </div>
             <div class="iface-actions">
-              <span class="iface-release-date" title="Release date">v1.2 · auditée &amp; corrigée · ALAMODE inclus · 2026-09-19</span>
+              <span class="iface-release-date" title="Release date">v1.2 · autonome (pw.x+ALAMODE) · 2026-09-19</span>
               <button type="button" class="btn btn-sm btn-download"
                 data-interface="QE-Alamode_interface"
                 data-label="QE–ALAMODE v1.2"
@@ -546,7 +547,7 @@
             <li><strong>QE Calculation Interface</strong> — DFT/DFPT execution and tracking <span class="tag tag-version">v1.2 · 2026-09-03</span> (E-P-O, fiche technique HTML/PDF)</li>
             <li><strong>thermo_pw Interface</strong> — thermodynamic and elastic properties <span class="tag tag-version">v1.2 · 2026-09-04</span> (electronics before phonons; continue P2→P3; P2 CALPHAD opt-in)</li>
             <li><strong>Supra-QE Interface</strong> — superconductivity and electron–phonon coupling <span class="tag tag-version">v1.4 · 2026-09-17</span> (classic + EPW; magnetism v1.4; fs.x / XCrySDen; configure.sh)</li>
-            <li><strong>QE–ALAMODE Interface</strong> — anharmonic phonons and lattice thermal conductivity <span class="tag tag-version">v1.2 · 2026-09-19</span> (audited &amp; corrected; ALAMODE bundled, displace.py)</li>
+            <li><strong>QE–ALAMODE Interface</strong> — anharmonic phonons and lattice thermal conductivity <span class="tag tag-version">v1.2 · 2026-09-19</span> (standalone: pw.x + ALAMODE in bin/, lib/ bundled)</li>
           </ul>
         </div>
       </div>
@@ -615,22 +616,20 @@ cd supra-QE
           <p style="margin-top:1rem"><strong>Example — QE–ALAMODE v1.2 · 2026-09-19</strong></p>
           <pre>tar -xzf QE-Alamode_interface.tar.gz
 cd QE-Alamode_interface
-chmod +x configure.sh DEMARRER.sh ARRETER.sh CONFIGURER.sh
-export QE_BIN_DIR=/chemin/vers/qe/bin    # dossier pw.x (facultatif si pw.x est dans le PATH)
+chmod +x configure.sh DEMARRER.sh ARRETER.sh
 
-./configure.sh --install-deps              # une fois : apt Python + libs ALAMODE (sudo)
-./configure.sh --install-alamode           # seulement si bin/alm absent
-./configure.sh --non-interactif -y         # chemins QE / ALAMODE ./bin / pseudos → config_local.sh
-./configure.sh --check-only                # diagnostic sans écrire la config
+./configure.sh --install-deps              # une fois : apt + Python (sudo)
+./configure.sh --non-interactif -y         # détecte ./bin (pw.x, alm, anphon) + lib/ → config_local.sh
+./configure.sh --check-only                # diagnostic
 
 ./DEMARRER.sh
 # → http://127.0.0.1:5020/
-# Raccourcis : ./CONFIGURER.sh (≈ configure.sh --paths-only) · ./INSTALLER_AUTRE_PC.sh -y
-# Ubuntu 24.04+ recommandé (glibc des binaires ALAMODE) ; libs manquantes : ldd bin/alm</pre>
+# Pack autonome : pas d’installation QE séparée si bin/pw.x et lib/ sont présents
+# Ubuntu 24.04+ · Linux x86_64 · pseudos .UPF dans pseudos/</pre>
           <p style="margin-top:1rem;font-size:0.92em;opacity:0.9">
-            <strong>Note.</strong> Install <strong>Quantum ESPRESSO</strong> (<code>pw.x</code>) separately; ALAMODE
-            (<code>alm</code>, <code>anphon</code>) is already in <code>bin/</code> (no Intel oneAPI).
-            Download archive: <code>QE-Alamode_interface.tar.gz</code>.
+            <strong>Note.</strong> This archive (~78&nbsp;Mo) bundles <code>pw.x</code>, ALAMODE (<code>alm</code>, <code>anphon</code>)
+            and shared libraries in <code>lib/</code> (loaded via <code>LD_LIBRARY_PATH</code> at startup).
+            You still need Python dependencies (<code>configure.sh --install-deps</code>) and pseudopotentials for your material.
             Always open the UI via <code>./DEMARRER.sh</code>, never as <code>file://</code>.
           </p>
         </div>

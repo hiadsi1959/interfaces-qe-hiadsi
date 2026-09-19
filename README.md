@@ -32,7 +32,7 @@ Open **http://127.0.0.1:8090/**
 | Pseudopotential Generator v1.3 | Release GitHub [`v1.3`](https://github.com/hiadsi1959/interfaces-qe-hiadsi/releases/tag/v1.3) → asset `generation_pseudos_v1.3_2026-09-15.tar.gz` (131 Mo, > limite 100 Mo du dépôt) — autonome ; installation assistée sur un autre PC ; gabarits 4d/actinides · 2026-09-15 |
 | Supra-QE v1.4 | `telechargements/supra-QE_v1.4_2026-09-17.tar.gz` — WF1 + WF2, magnétisme (SCF/NSCF), chrono/chapitre Aide, synthèse voies · **2026-09-17** |
 | THERMO_PW v1.2 | `telechargements/thermo_pw_v1.2_2026-09-04.tar.gz` (~980 Ko, sans résultats de calcul ; P1–P5 opérationnels ; électronique avant phonons ; reprise P2→P3 ; opt-in P2 CALPHAD/ESPEI) · 2026-09-04 |
-| QE–ALAMODE v1.2 | `telechargements/QE-Alamode_interface.tar.gz` — auditée & corrigée, ALAMODE portable + `configure.sh` (prérequis + chemins) · **2026-09-19** |
+| QE–ALAMODE v1.2 | `telechargements/QE-Alamode_interface.tar.gz` (~78 Mo) — **autonome** : `pw.x` + ALAMODE dans `bin/`, libs dans `lib/` · `configure.sh` · **2026-09-19** |
 
 The `.tar.gz` files in `telechargements/` are **links** to `5-Interfaces-hiadsi`.
 
