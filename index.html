@@ -68,9 +68,9 @@
       },
       {
         "@type": "SoftwareApplication",
-        "name": "QE–ALAMODE v1.2",
+        "name": "QE–ALAMODE v1.3",
         "applicationCategory": "ScientificApplication",
-        "keywords": "ALAMODE, lattice thermal conductivity, anharmonic phonons, IFC, force constants, RTA, kappa_L, phonon dispersion, finite displacement, heat transport, alm, anphon, QE-ALAMODE v1.2"
+        "keywords": "ALAMODE, lattice thermal conductivity, anharmonic phonons, IFC, force constants, RTA, kappa_L, phonon dispersion, finite displacement, heat transport, alm, anphon, MPI OpenMP, QE-ALAMODE v1.3, materials science DFT"
       }
     ]
   }
@@ -207,14 +207,13 @@
               binaires QE via <code>scripts/supra_qe_bins.sh</code>.</p>
             </li>
             <li>
-              <h3><span class="pres-n">06</span> Interface QE–ALAMODE <span class="tag tag-version">v1.2 · 2026-09-19</span></h3>
-              <p><strong>Description.</strong> Interface hybride associant Quantum&nbsp;ESPRESSO (forces DFT, supercellules)
-              aux méthodes d’anharmonicité d’ALAMODE pour la dynamique de réseau et le transport thermique.
-              <strong>Version 1.2 auditée et corrigée</strong> — pack <strong>autonome</strong> : <code>bin/pw.x</code>, <code>bin/alm</code>, <code>bin/anphon</code> + <code>lib/</code> ;
-              <code>tools/alamode/displace.py</code> pour les motifs « alm suggest » ; garde-fous anphon / DFSET.</p>
-              <p><strong>Fonctionnalités clés.</strong> Constantes de force interatomiques (IFC, NORDER≥2),
-              dispersion de phonons, conductivité thermique de réseau κ<sub>L</sub> (RTA),
-              et export de fiche technique pour l’analyse des résultats.</p>
+              <h3><span class="pres-n">06</span> Interface QE–ALAMODE <span class="tag tag-version">v1.3 · 2026-09-20</span></h3>
+              <p><strong>Description.</strong> <strong>Outil de calcul local</strong> pour chercheurs en sciences des matériaux :
+              chaîne QE → ALAMODE (forces DFT, supercellules, IFC, phonons, κ<sub>L</sub> RTA).
+              <strong>Version 1.3</strong> — pack <strong>autonome</strong> (~78&nbsp;Mo) : <code>bin/pw.x</code>, <code>alm</code>, <code>anphon</code> + <code>lib/</code> ;
+              parallélisme <code>QE_NPROC</code> / <code>OMP_NUM_THREADS</code> ; suivi de jobs longs ; garde-fous DFSET / anphon.</p>
+              <p><strong>Fonctionnalités clés.</strong> Optimisation → Calculs (SCF, supercellule, pw.x, alm, anphon) → Résultats
+              (fiche technique, bandes, κ(T), DOS, τ/MFP) ; motifs « alm suggest » via <code>displace.py</code>.</p>
             </li>
           </ol>
           <p class="pres-note">
@@ -276,13 +275,13 @@
               <code>scripts/supra_qe_bins.sh</code>.</p>
             </li>
             <li>
-              <h3><span class="pres-n">06</span> QE–ALAMODE Interface <span class="tag tag-version">v1.2 · 2026-09-19</span></h3>
-              <p><strong>Description.</strong> A hybrid interface coupling Quantum&nbsp;ESPRESSO (DFT forces, supercells)
-              with ALAMODE’s anharmonic solvers for lattice dynamics and heat transport.
-              <strong>Version 1.2 audited and corrected</strong> — <strong>standalone pack</strong>: <code>bin/pw.x</code>, <code>bin/alm</code>, <code>bin/anphon</code> + <code>lib/</code>;
-              <code>tools/alamode/displace.py</code> for alm-suggest displacements; anphon / DFSET safeguards.</p>
-              <p><strong>Key features.</strong> Interatomic force constants (IFCs, NORDER≥2), phonon dispersions,
-              lattice thermal conductivity κ<sub>L</sub> (RTA), and technical-sheet export for result analysis.</p>
+              <h3><span class="pres-n">06</span> QE–ALAMODE Interface <span class="tag tag-version">v1.3 · 2026-09-20</span></h3>
+              <p><strong>Description.</strong> A <strong>local research workflow</strong> for materials scientists:
+              Quantum&nbsp;ESPRESSO + ALAMODE from DFT forces to anharmonic phonons and lattice κ<sub>L</sub> (RTA).
+              <strong>Version 1.3</strong> — <strong>standalone pack</strong> (~78&nbsp;MB): <code>pw.x</code>, <code>alm</code>, <code>anphon</code> + <code>lib/</code>;
+              MPI/OpenMP via <code>QE_NPROC</code> / <code>OMP_NUM_THREADS</code>; long-job monitoring; DFSET / anphon safeguards.</p>
+              <p><strong>Key features.</strong> Optimization → Calculations → Results (technical sheet, bands, κ(T), DOS, τ/MFP);
+              alm-suggest displacements via bundled <code>displace.py</code>.</p>
             </li>
           </ol>
           <p class="pres-note">
@@ -297,7 +296,7 @@
           <li><span class="flow-n">03</span><strong>QE Calc.</strong><span>v1.2</span></li>
           <li><span class="flow-n">04</span><strong>thermo_pw</strong><span>v1.2</span></li>
           <li><span class="flow-n">05</span><strong>Supra-QE</strong><span>v1.4</span></li>
-          <li><span class="flow-n">06</span><strong>QE–ALAMODE</strong><span>v1.2</span></li>
+          <li><span class="flow-n">06</span><strong>QE–ALAMODE</strong><span>v1.3</span></li>
         </ol>
 
         <p class="pres-cta reveal">
@@ -496,14 +495,13 @@
           <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
             <div class="iface-num">06</div>
             <div class="iface-body">
-              <h3 itemprop="name">QE–ALAMODE <span class="tag tag-version">v1.2 · 2026-09-19</span></h3>
+              <h3 itemprop="name">QE–ALAMODE <span class="tag tag-version">v1.3 · 2026-09-20</span></h3>
               <p itemprop="description">
-                A combined <strong>Quantum ESPRESSO + ALAMODE</strong> workflow for finite-displacement
-                force constants, phonon dispersions, and lattice thermal conductivity κ<sub>L</sub> (RTA).
-                <strong>v1.2 audited &amp; corrected</strong> — <strong>standalone pack</strong> (~78&nbsp;Mo) :
-                <code>pw.x</code>, <code>alm</code>, <code>anphon</code> in <code>bin/</code>, runtime libs in <code>lib/</code>.
-                <code>displace.py</code> bundled; setup via <code>configure.sh</code> (Python + system deps only).
-                Guided web UI and technical-sheet export.
+                A <strong>materials-science calculation suite</strong> (local web UI + API): finite-displacement
+                IFCs, phonon dispersions, and lattice thermal conductivity κ<sub>L</sub> (RTA) with
+                <strong>Quantum ESPRESSO + ALAMODE</strong>.
+                <strong>v1.3</strong> — standalone pack (~78&nbsp;MB): <code>pw.x</code>, <code>alm</code>, <code>anphon</code>, <code>lib/</code>;
+                MPI/OpenMP; long-run progress; DOS, τ/MFP, publication figures; technical sheet export.
               </p>
               <span class="tag">Port 5020</span>
               <p class="kw-label">Keywords</p>
@@ -523,10 +521,10 @@
               </ul>
             </div>
             <div class="iface-actions">
-              <span class="iface-release-date" title="Release date">v1.2 · autonome (pw.x+ALAMODE) · 2026-09-19</span>
+              <span class="iface-release-date" title="Release date">v1.3 · autonome · 2026-09-20</span>
               <button type="button" class="btn btn-sm btn-download"
                 data-interface="QE-Alamode_interface"
-                data-label="QE–ALAMODE v1.2"
+                data-label="QE–ALAMODE v1.3"
                 data-file="telechargements/QE-Alamode_interface.tar.gz">Download</button>
             </div>
           </article>
@@ -547,7 +545,7 @@
             <li><strong>QE Calculation Interface</strong> — DFT/DFPT execution and tracking <span class="tag tag-version">v1.2 · 2026-09-03</span> (E-P-O, fiche technique HTML/PDF)</li>
             <li><strong>thermo_pw Interface</strong> — thermodynamic and elastic properties <span class="tag tag-version">v1.2 · 2026-09-04</span> (electronics before phonons; continue P2→P3; P2 CALPHAD opt-in)</li>
             <li><strong>Supra-QE Interface</strong> — superconductivity and electron–phonon coupling <span class="tag tag-version">v1.4 · 2026-09-17</span> (classic + EPW; magnetism v1.4; fs.x / XCrySDen; configure.sh)</li>
-            <li><strong>QE–ALAMODE Interface</strong> — anharmonic phonons and lattice thermal conductivity <span class="tag tag-version">v1.2 · 2026-09-19</span> (standalone: pw.x + ALAMODE in bin/, lib/ bundled)</li>
+            <li><strong>QE–ALAMODE Interface</strong> — anharmonic phonons and lattice κ<sub>L</sub> <span class="tag tag-version">v1.3 · 2026-09-20</span> (standalone pack; MPI/OpenMP; research workflow)</li>
           </ul>
         </div>
       </div>
@@ -613,24 +611,27 @@ cd supra-QE
 ./DEMARRER.sh
 # → http://127.0.0.1:8765/interface/
 # Pseudos NC (.upf) dans pseudos/ · archive sans outputs/ · XCrySDen pour la SF 3D (sur le PC API)</pre>
-          <p style="margin-top:1rem"><strong>Example — QE–ALAMODE v1.2 · 2026-09-19</strong></p>
+          <p style="margin-top:1rem"><strong>Example — QE–ALAMODE v1.3 · 2026-09-20</strong></p>
           <pre>tar -xzf QE-Alamode_interface.tar.gz
 cd QE-Alamode_interface
 chmod +x configure.sh DEMARRER.sh ARRETER.sh
 
-./configure.sh --install-deps              # une fois : apt + Python (sudo)
-./configure.sh --non-interactif -y         # détecte ./bin (pw.x, alm, anphon) + lib/ → config_local.sh
+./configure.sh --install-deps              # once : apt + Python (sudo)
+./configure.sh --non-interactif -y         # ./bin (pw.x, alm, anphon) + lib/ → config_local.sh
 ./configure.sh --check-only                # diagnostic
+
+# Parallelism (edit config_local.sh, then restart API) — e.g. i9 · 64 GB :
+#   OpenMP-only QE : QE_NPROC=1  OMP_NUM_THREADS=24
+#   MPI+OpenMP     : QE_NPROC=8  OMP_NUM_THREADS=3
+#   Long 3×3×3 runs: QE_TIMEOUT=36000
 
 ./DEMARRER.sh
 # → http://127.0.0.1:5020/
-# Pack autonome : pas d’installation QE séparée si bin/pw.x et lib/ sont présents
-# Ubuntu 24.04+ · Linux x86_64 · pseudos .UPF dans pseudos/</pre>
+# Standalone pack if bin/pw.x + lib/ present · Ubuntu 24.04+ · pseudos .UPF in pseudos/</pre>
           <p style="margin-top:1rem;font-size:0.92em;opacity:0.9">
-            <strong>Note.</strong> This archive (~78&nbsp;Mo) bundles <code>pw.x</code>, ALAMODE (<code>alm</code>, <code>anphon</code>)
-            and shared libraries in <code>lib/</code> (loaded via <code>LD_LIBRARY_PATH</code> at startup).
-            You still need Python dependencies (<code>configure.sh --install-deps</code>) and pseudopotentials for your material.
-            Always open the UI via <code>./DEMARRER.sh</code>, never as <code>file://</code>.
+            <strong>Note.</strong> Archive (~78&nbsp;MB): <code>pw.x</code>, ALAMODE (<code>alm</code>, <code>anphon</code>, optional <code>analyze_phonons</code>)
+            and <code>lib/</code> (<code>LD_LIBRARY_PATH</code> at startup). Python deps via <code>configure.sh --install-deps</code>.
+            Calculations run <em>on your PC</em> — this website is download only. Use <code>./DEMARRER.sh</code>, never <code>file://</code>.
           </p>
         </div>
 
@@ -752,6 +753,36 @@ cd supra-QE
 # Si epw.x manque : ./scripts/installer_epw.sh puis ./scripts/associer_binaires_qe.sh
 # Guides : README.md, docs/workflow_supra.md, docs/AUTRE_PC.md</pre>
         </div>
+
+        <div class="note-panel reveal" id="install-qe-alamode-autre-pc">
+          <p><strong>Installation détaillée — QE–ALAMODE v1.3 sur un PC de calcul</strong>
+          <span style="font-size:0.92em;opacity:0.9">(materials science · phonons · κ<sub>L</sub>) · 2026-09-20</span></p>
+          <p style="font-size:0.95em">
+            Archive <code>QE-Alamode_interface.tar.gz</code> (~78&nbsp;Mo) : interface web + API Flask, chaîne complète
+            <strong>Optimisation → Calculs → Résultats</strong>, fiche technique, export <code>outputs/</code>.
+            Pack <strong>autonome</strong> si <code>bin/pw.x</code>, <code>bin/alm</code>, <code>bin/anphon</code> et <code>lib/</code> sont présents.
+            Calculs 3×3×3 (κ<sub>L</sub> publiable) : poste type <strong>i9 · 64&nbsp;Go</strong>, plusieurs jours de CPU ;
+            régler <code>QE_TIMEOUT</code>, <code>QE_NPROC</code>, <code>OMP_NUM_THREADS</code> dans <code>config_local.sh</code>.
+          </p>
+          <ol style="margin:0.6rem 0 0.6rem 1.2rem;font-size:0.95em">
+            <li>Télécharger via le bouton <em>Download</em> de l’interface 06 (fichier <code>telechargements/QE-Alamode_interface.tar.gz</code>).</li>
+            <li>Extraire : <code>tar xzf QE-Alamode_interface.tar.gz && cd QE-Alamode_interface</code>.</li>
+            <li><strong>Une fois</strong> : <code>./configure.sh --install-deps</code> puis <code>./configure.sh --non-interactif -y</code>
+            (écrit <code>config_local.sh</code>, vérifie <code>ldd bin/*</code>).</li>
+            <li>Parallélisme (recommandé) : éditer <code>config_local.sh</code> — ex. OpenMP seul
+            <code>QE_NPROC=1</code>, <code>OMP_NUM_THREADS=24</code> ; ou MPI+OpenMP <code>8×3</code> si <code>pw.x</code> est compilé MPI.</li>
+            <li>Chaque session : <code>./DEMARRER.sh</code> → <strong>http://127.0.0.1:5020/</strong> (arrêt : <code>./ARRETER.sh</code>).</li>
+            <li>Reprise après coupure : bouton « Reprendre les forces » ou <code>scripts/resume_job.sh &lt;job_id&gt;</code>.</li>
+          </ol>
+          <pre>tar xzf QE-Alamode_interface.tar.gz
+cd QE-Alamode_interface
+./configure.sh --install-deps
+./configure.sh --non-interactif -y
+# éditer config_local.sh (QE_NPROC, OMP_NUM_THREADS, QE_TIMEOUT)
+./DEMARRER.sh
+# Parcours : Optimisation (VC-RELAX/SCF) → Calculs (supercellule, pw.x, alm, anphon) → Résultats
+# Guides : README.md, GUIDE.md, README_DEPLOIEMENT.md (dans l’archive)</pre>
+        </div>
       </div>
     </section>
 
@@ -784,7 +815,7 @@ cd supra-QE
               <option value="Interface-QE_v1">Interface-QE v1.2</option>
               <option value="thermo_pw">THERMO_PW v1.2</option>
               <option value="supra-QE">Supra-QE v1.4</option>
-              <option value="QE-Alamode_interface">QE–ALAMODE v1.2</option>
+              <option value="QE-Alamode_interface">QE–ALAMODE v1.3</option>
               <option value="plusieurs">Several interfaces</option>
               <option value="autre">Other / general comments</option>
             </select>
