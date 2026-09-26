@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>S. HIADSI — Quantum ESPRESSO Interfaces | DFT, DFPT, thermo_pw, Supra-QE, ALAMODE</title>
-  <meta name="description" content="Free suite of six Quantum ESPRESSO web interfaces for materials science researchers: QE input generator, pseudopotentials, DFT/DFPT calculations, thermo_pw thermodynamics, Supra-QE superconductivity, and QE–ALAMODE anharmonic phonons &amp; lattice thermal conductivity κ_L." />
+  <title>S. HIADSI — Quantum ESPRESSO Interfaces | DFT, DFPT, thermo_pw, Optimisation, Supra-QE, ALAMODE</title>
+  <meta name="description" content="Free suite of seven Quantum ESPRESSO web interfaces for materials science researchers: QE input generator, pseudopotentials, DFT/DFPT calculations, thermo_pw thermodynamics, VC-RELAX/RELAX/SCF structure optimization with metal/insulator gap screening, Supra-QE superconductivity, and QE–ALAMODE anharmonic phonons &amp; lattice thermal conductivity κ_L." />
   <meta name="author" content="Prof. S. HIADSI, LMESM, Faculty of Physics, USTO-MB, Oran, Algeria" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="Quantum ESPRESSO, QE interfaces, DFT, DFPT, ab initio, materials science, condensed matter physics, pseudopotential, PAW, USPP, ONCVPSP, PSLibrary, PseudoDojo, SSSP, pw.x, ph.x, thermo_pw, elastic constants, Debye temperature, heat capacity, superconductivity, electron-phonon coupling, Eliashberg, Allen-Dynes, McMillan, Tc, EPW, ALAMODE, anharmonic phonons, lattice thermal conductivity, kappa_L, IFC, force constants, RTA, phonon dispersion, CIF to QE, SCF, NSCF, bands, DOS, HIADSI, LMESM, USTO-MB, Oran, Algeria, web interface Quantum ESPRESSO, générateur input QE, pseudopotentiel, conductivité thermique de réseau, phonons anharmoniques" />
   <link rel="canonical" href="https://hiadsi1959.github.io/interfaces-qe-hiadsi/" />
-  <meta property="og:title" content="S. HIADSI — Six Quantum ESPRESSO Interfaces for Materials Science" />
-  <meta property="og:description" content="Free local web tools for QE inputs, pseudopotentials, DFT/DFPT, thermo_pw, superconductivity (Supra-QE), and QE–ALAMODE phonon / κ_L workflows." />
+  <meta property="og:title" content="S. HIADSI — Seven Quantum ESPRESSO Interfaces for Materials Science" />
+  <meta property="og:description" content="Free local web tools for QE inputs, pseudopotentials, DFT/DFPT, thermo_pw, structure optimization (VC-RELAX/RELAX/SCF), superconductivity (Supra-QE), and QE–ALAMODE phonon / κ_L workflows." />
   <meta property="og:url" content="https://hiadsi1959.github.io/interfaces-qe-hiadsi/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
@@ -21,7 +21,7 @@
     "@type": "WebSite",
     "name": "S. HIADSI — Quantum ESPRESSO Interfaces",
     "url": "https://hiadsi1959.github.io/interfaces-qe-hiadsi/",
-    "description": "Suite of six free Quantum ESPRESSO web interfaces for materials science and condensed-matter research.",
+    "description": "Suite of seven free Quantum ESPRESSO web interfaces for materials science and condensed-matter research.",
     "author": {
       "@type": "Person",
       "name": "S. HIADSI",
@@ -71,6 +71,12 @@
         "name": "QE–ALAMODE v1.3",
         "applicationCategory": "ScientificApplication",
         "keywords": "ALAMODE, lattice thermal conductivity, anharmonic phonons, IFC, force constants, RTA, kappa_L, phonon dispersion, finite displacement, heat transport, alm, anphon, MPI OpenMP, QE-ALAMODE v1.3, materials science DFT"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Optimisation-QE v1.0",
+        "applicationCategory": "ScientificApplication",
+        "keywords": "VC-RELAX, RELAX, SCF, structure optimization, cell parameters, atomic positions, metal, insulator, gap, HOMO-LUMO, density of states at Fermi level, N(EF), Pauli paramagnetism, LSDA, nspin, pw.x, Quantum ESPRESSO, standalone pack, conductor screening, superconductivity workflow, Optimisation-QE"
       }
     ]
   }
@@ -119,7 +125,7 @@
           and lattice thermal conductivity with ALAMODE.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#presentation">Discover the 6 interfaces</a>
+          <a class="btn btn-primary" href="#presentation">Discover the 7 interfaces</a>
           <a class="btn btn-ghost" href="#interfaces">Free download</a>
         </div>
         <p class="hero-meta">
@@ -134,11 +140,11 @@
       <div class="wrap">
         <div class="section-head reveal">
           <p class="section-kicker">Presentation · Présentation</p>
-          <h2>Six specialized interfaces for materials science</h2>
+          <h2>Seven specialized interfaces for materials science</h2>
           <p>
-            This platform brings together <strong>6 computational web interfaces</strong>
+            This platform brings together <strong>7 computational web interfaces</strong>
             designed to simplify, automate, and enrich everyday research in materials science
-            and condensed-matter physics — from input preparation to phonon transport and superconductivity.
+            and condensed-matter physics — from structure optimization and input preparation to phonon transport and superconductivity.
             All tools run <strong>locally on your computer</strong> with Quantum&nbsp;ESPRESSO installed.
           </p>
         </div>
@@ -151,7 +157,7 @@
         <!-- 🇫🇷 Français -->
         <div class="pres-panel is-active" data-pres-panel="fr" lang="fr">
           <p class="pres-intro">
-            Cette plateforme regroupe <strong>6 interfaces de calcul spécialisées</strong>, conçues pour
+            Cette plateforme regroupe <strong>7 interfaces de calcul spécialisées</strong>, conçues pour
             simplifier, automatiser et enrichir le travail des chercheurs en sciences des matériaux
             et en physique de la matière condensée. Elles couvrent l’ensemble du parcours
             <em>ab initio</em> autour de <strong>Quantum&nbsp;ESPRESSO</strong> — et, pour la dynamique
@@ -215,6 +221,20 @@
               <p><strong>Fonctionnalités clés.</strong> Optimisation → Calculs (SCF, supercellule, pw.x, alm, anphon) → Résultats
               (fiche technique, bandes, κ(T), DOS, τ/MFP) ; motifs « alm suggest » via <code>displace.py</code>.</p>
             </li>
+            <li>
+              <h3><span class="pres-n">07</span> Interface Optimisation-QE <span class="tag tag-version">v1.0 · 2026-09-26</span></h3>
+              <p><strong>Description.</strong> <strong>Optimisation de structure</strong> dédiée pw.x&nbsp;: chaîne
+              <strong>VC-RELAX → RELAX → SCF</strong> (maille + positions atomiques, puis champ auto-cohérent).
+              <strong>Version 1.0</strong> — pack <strong>autonome</strong> (~77&nbsp;Mo) : <code>bin/pw.x</code> (QE&nbsp;7.5 MKL) + <code>lib/</code> ;
+              édition des inputs avec validation, suivi live toutes les 2&nbsp;s, régénération automatique des inputs suivants
+              avec la structure optimisée, parallélisme Série / OpenMP / MPI+OpenMP, fiche technique imprimable.</p>
+              <p><strong>Fonctionnalités clés.</strong> Après le SCF, l’interface <strong>analyse la densité d’états à E<sub>F</sub></strong> :
+              si N(E<sub>F</sub>) ≠ 0 le matériau est déclaré <strong>conducteur (métal)</strong> — s’il présente un
+              <strong>gap HOMO–LUMO</strong> avec N(E<sub>F</sub>) ≈ 0, il est <strong>isolant / semi-conducteur</strong>.
+              Un matériau <strong>conducteur</strong> (métal à N(E<sub>F</sub>) ≠ 0, paramagnétisme de Pauli) est le candidat idéal
+              pour la suite du workflow&nbsp;: poursuivez avec <strong>Supra-QE</strong> pour la supraconductivité
+              conventionnelle (couplage électron–phonon, λ, ω<sub>log</sub>, T<sub>c</sub> McMillan–Allen–Dynes / Éliashberg, EPW).</p>
+            </li>
           </ol>
           <p class="pres-note">
             Auteur : <strong>Prof. S. HIADSI</strong> — LMESM / Faculté de Physique / USTO-MB, Oran, Algérie.
@@ -225,7 +245,7 @@
         <!-- 🇬🇧 English -->
         <div class="pres-panel" data-pres-panel="en" lang="en" hidden>
           <p class="pres-intro">
-            This platform brings together <strong>6 specialized computational interfaces</strong> designed to
+            This platform brings together <strong>7 specialized computational interfaces</strong> designed to
             streamline, automate, and enhance research workflows in materials science and condensed-matter physics.
             Together they cover the full <em>ab initio</em> path around <strong>Quantum&nbsp;ESPRESSO</strong> —
             and, for anharmonic lattice dynamics, <strong>ALAMODE</strong>.
@@ -283,6 +303,20 @@
               <p><strong>Key features.</strong> Optimization → Calculations → Results (technical sheet, bands, κ(T), DOS, τ/MFP);
               alm-suggest displacements via bundled <code>displace.py</code>.</p>
             </li>
+            <li>
+              <h3><span class="pres-n">07</span> Optimisation-QE Interface <span class="tag tag-version">v1.0 · 2026-09-26</span></h3>
+              <p><strong>Description.</strong> Dedicated <strong>pw.x structure optimization</strong>: the
+              <strong>VC-RELAX → RELAX → SCF</strong> chain (cell + atomic positions, then self-consistent field).
+              <strong>Version 1.0</strong> — <strong>standalone pack</strong> (~77&nbsp;MB): <code>bin/pw.x</code> (QE&nbsp;7.5 MKL) + <code>lib/</code>;
+              input editing with structure validation, live monitoring every 2&nbsp;s, automatic regeneration of follow-up inputs
+              with the optimized structure, Serial / OpenMP / MPI+OpenMP parallelism, printable technical sheet.</p>
+              <p><strong>Key features.</strong> After SCF, the interface <strong>analyzes the density of states at E<sub>F</sub></strong>:
+              if N(E<sub>F</sub>) ≠ 0 the material is identified as a <strong>conductor (metal)</strong> — if it shows a
+              <strong>HOMO–LUMO gap</strong> with N(E<sub>F</sub>) ≈ 0, it is an <strong>insulator / semiconductor</strong>.
+              A <strong>conducting</strong> material (metal with N(E<sub>F</sub>) ≠ 0, Pauli paramagnetism) is the ideal candidate
+              for the next step of the workflow: continue with <strong>Supra-QE</strong> for conventional superconductivity
+              (electron–phonon coupling, λ, ω<sub>log</sub>, McMillan–Allen–Dynes / Eliashberg T<sub>c</sub>, EPW).</p>
+            </li>
           </ol>
           <p class="pres-note">
             Author: <strong>Prof. S. HIADSI</strong> — LMESM / Faculty of Physics / USTO-MB, Oran, Algeria.
@@ -297,6 +331,7 @@
           <li><span class="flow-n">04</span><strong>thermo_pw</strong><span>v1.2</span></li>
           <li><span class="flow-n">05</span><strong>Supra-QE</strong><span>v1.4</span></li>
           <li><span class="flow-n">06</span><strong>QE–ALAMODE</strong><span>v1.3</span></li>
+          <li><span class="flow-n">07</span><strong>Optimisation-QE</strong><span>v1.0</span></li>
         </ol>
 
         <p class="pres-cta reveal">
@@ -310,7 +345,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <p class="section-kicker">Public repository</p>
-          <h2>The six interfaces</h2>
+          <h2>The seven interfaces</h2>
           <p>
             Before each download, please enter your name and institution
             (used only to track scientific usage). Then extract the archive and run
@@ -528,13 +563,53 @@
                 data-file="telechargements/QE-Alamode_interface.tar.gz">Download</button>
             </div>
           </article>
+
+          <article class="interface-item reveal" itemscope itemtype="https://schema.org/SoftwareApplication">
+            <div class="iface-num">07</div>
+            <div class="iface-body">
+              <h3 itemprop="name">Optimisation-QE <span class="tag tag-version">v1.0 · 2026-09-26</span></h3>
+              <p itemprop="description">
+                Dedicated <strong>pw.x structure optimization</strong> with the <strong>VC-RELAX → RELAX → SCF</strong> chain,
+                then an automatic electronic screening: the SCF results tell you whether your material is a
+                <strong>conductor (metal, N(E<sub>F</sub>) ≠ 0, Pauli paramagnetism)</strong> or shows a
+                <strong>gap (insulator / semiconductor, N(E<sub>F</sub>) ≈ 0)</strong>. A conductor is the ideal
+                starting point for <strong>Supra-QE</strong> (electron–phonon superconductivity: λ, ω<sub>log</sub>, T<sub>c</sub>, EPW).
+                <strong>v1.0</strong> — standalone pack (~77&nbsp;MB): <code>pw.x</code> (QE&nbsp;7.5 MKL) + <code>lib/</code>;
+                input editor with validation, live run monitoring, optimized-structure regeneration, serial/OpenMP/MPI,
+                printable technical sheet.
+              </p>
+              <span class="tag">Port 5030</span>
+              <p class="kw-label">Keywords</p>
+              <ul class="iface-keywords" aria-label="Keywords for Optimisation-QE">
+                <li>VC-RELAX / RELAX / SCF</li>
+                <li>structure optimization</li>
+                <li>cell &amp; positions</li>
+                <li>conductor / metal</li>
+                <li>gap (HOMO-LUMO)</li>
+                <li>N(E<sub>F</sub>)</li>
+                <li>Pauli paramagnetism</li>
+                <li>nspin / LSDA</li>
+                <li>pw.x</li>
+                <li>standalone pack</li>
+                <li>supraconductivity screening</li>
+                <li>optimisation de structure</li>
+              </ul>
+            </div>
+            <div class="iface-actions">
+              <span class="iface-release-date" title="Release date">v1.0 · autonome · 2026-09-26</span>
+              <button type="button" class="btn btn-sm btn-download"
+                data-interface="optimisation-QE"
+                data-label="Optimisation-QE v1.0"
+                data-file="telechargements/optimisation-QE_v1.0_2026-09-26.tar.gz">Download</button>
+            </div>
+          </article>
         </div>
 
         <div class="suite-overview reveal">
           <p>
             The website
             <a href="https://hiadsi1959.github.io/interfaces-qe-hiadsi/">https://hiadsi1959.github.io/interfaces-qe-hiadsi/</a>
-            offers an integrated suite of 6 physics web interfaces based on the
+            offers an integrated suite of 7 physics web interfaces based on the
             Quantum&nbsp;ESPRESSO code (and ALAMODE for anharmonic phonons). Designed to simplify
             and speed up the daily work of materials science researchers, this platform covers the entire
             <em>ab initio</em> workflow:
@@ -546,6 +621,7 @@
             <li><strong>thermo_pw Interface</strong> — thermodynamic and elastic properties <span class="tag tag-version">v1.2 · 2026-09-04</span> (electronics before phonons; continue P2→P3; P2 CALPHAD opt-in)</li>
             <li><strong>Supra-QE Interface</strong> — superconductivity and electron–phonon coupling <span class="tag tag-version">v1.4 · 2026-09-17</span> (classic + EPW; magnetism v1.4; fs.x / XCrySDen; configure.sh)</li>
             <li><strong>QE–ALAMODE Interface</strong> — anharmonic phonons and lattice κ<sub>L</sub> <span class="tag tag-version">v1.3 · 2026-09-20</span> (standalone pack; MPI/OpenMP; research workflow)</li>
+            <li><strong>Optimisation-QE Interface</strong> — VC-RELAX → RELAX → SCF optimization <span class="tag tag-version">v1.0 · 2026-09-26</span> (standalone pack; conductor vs gap screening after SCF → continue with Supra-QE for metals)</li>
           </ul>
         </div>
       </div>
@@ -632,6 +708,26 @@ chmod +x configure.sh DEMARRER.sh ARRETER.sh
             <strong>Note.</strong> Archive (~78&nbsp;MB): <code>pw.x</code>, ALAMODE (<code>alm</code>, <code>anphon</code>, optional <code>analyze_phonons</code>)
             and <code>lib/</code> (<code>LD_LIBRARY_PATH</code> at startup). Python deps via <code>configure.sh --install-deps</code>.
             Calculations run <em>on your PC</em> — this website is download only. Use <code>./DEMARRER.sh</code>, never <code>file://</code>.
+          </p>
+          <p style="margin-top:1rem"><strong>Example — Optimisation-QE v1.0 · 2026-09-26</strong></p>
+          <pre>tar -xzf optimisation-QE_v1.0_2026-09-26.tar.gz
+cd optimisation-QE
+chmod +x CONFIGURER.sh DEMARRER.sh ARRETER.sh
+
+./CONFIGURER.sh --install-deps   # une fois : python3 + flask/ase/numpy (sudo)
+./CONFIGURER.sh                  # écrit config_local.sh (chemins relatifs, pw.x, pseudos)
+
+# Parallélisme (éditer config_local.sh) : QE_NPROC=4 · OMP_NUM_THREADS=1 · QE_TIMEOUT=21600
+
+./DEMARRER.sh
+# → http://127.0.0.1:5030/
+# Chaîne : VC-RELAX → RELAX → SCF · inputs bruts dans inputs/&lt;Mat&gt;/
+# Après SCF : conducteur (N(EF) ≠ 0) ou gap (N(EF) ≈ 0) → conducteur = candidat Supra-QE</pre>
+          <p style="margin-top:1rem;font-size:0.92em;opacity:0.9">
+            <strong>Note.</strong> Archive (~77&nbsp;MB): <code>pw.x</code> (QE&nbsp;7.5 MKL) + <code>lib/</code> (<code>LD_LIBRARY_PATH</code> at startup).
+            Pseudopotentials <code>.UPF</code> in <code>pseudos/</code> (Nb, Si included). Only Python 3 required —
+            Quantum&nbsp;ESPRESSO <em>not required</em> (bundled <code>pw.x</code>). Calculations run <em>on your PC</em> —
+            this website is download only. Use <code>./DEMARRER.sh</code>, never <code>file://</code>.
           </p>
         </div>
 
@@ -816,6 +912,7 @@ cd QE-Alamode_interface
               <option value="thermo_pw">THERMO_PW v1.2</option>
               <option value="supra-QE">Supra-QE v1.4</option>
               <option value="QE-Alamode_interface">QE–ALAMODE v1.3</option>
+              <option value="optimisation-QE">Optimisation-QE v1.0</option>
               <option value="plusieurs">Several interfaces</option>
               <option value="autre">Other / general comments</option>
             </select>

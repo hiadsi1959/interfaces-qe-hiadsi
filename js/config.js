@@ -33,5 +33,6 @@ window.HIADSI_CONFIG = {
     "thermo_pw": 10,
     "supra-QE": 10,
     "QE-Alamode_interface": 10,
+    "optimisation-QE": 10,
   },
 };

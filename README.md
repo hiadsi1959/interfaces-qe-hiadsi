@@ -1,7 +1,8 @@
 # S. HIADSI — Quantum ESPRESSO interfaces website
 
-Public website to present and download the **six Quantum ESPRESSO interfaces**
-(including **QE–ALAMODE** for anharmonic phonons and κ<sub>L</sub>).
+Public website to present and download the **seven Quantum ESPRESSO interfaces**
+(including **QE–ALAMODE** for anharmonic phonons and κ<sub>L</sub>, and **Optimisation-QE**
+for VC-RELAX → RELAX → SCF structure optimization with metal/gap screening).
 
 ## Usage rules
 
@@ -33,6 +34,7 @@ Open **http://127.0.0.1:8090/**
 | Supra-QE v1.4 | `telechargements/supra-QE_v1.4_2026-09-17.tar.gz` — WF1 + WF2, magnétisme (SCF/NSCF), chrono/chapitre Aide, synthèse voies · **2026-09-17** |
 | THERMO_PW v1.2 | `telechargements/thermo_pw_v1.2_2026-09-04.tar.gz` (~980 Ko, sans résultats de calcul ; P1–P5 opérationnels ; électronique avant phonons ; reprise P2→P3 ; opt-in P2 CALPHAD/ESPEI) · 2026-09-04 |
 | QE–ALAMODE v1.3 | `telechargements/QE-Alamode_interface.tar.gz` (~78 Mo) — **autonome** : `pw.x` + ALAMODE dans `bin/`, libs dans `lib/` · MPI/OpenMP · **2026-09-20** |
+| Optimisation-QE v1.0 | `telechargements/optimisation-QE_v1.0_2026-09-26.tar.gz` (aussi `optimisation-QE-interface.tar.gz`, ~77 Mo) — **autonome** : `pw.x` (QE 7.5 MKL) dans `bin/`, libs dans `lib/`, pseudos Nb/Si · chaîne VC-RELAX → RELAX → SCF · conducteur (N(EF) ≠ 0) ou gap (N(EF) ≈ 0) après SCF → candidat Supra-QE · **2026-09-26** |
 
 The `.tar.gz` files in `telechargements/` are **links** to `5-Interfaces-hiadsi`.
 
