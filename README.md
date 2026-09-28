@@ -36,6 +36,8 @@ Open **http://127.0.0.1:8090/**
 | QE–ALAMODE v1.3 | `telechargements/QE-Alamode_v1.3_2026-09-26.tar.gz` (aussi `QE-Alamode_interface.tar.gz`, ~78 Mo, sans résultats) — **autonome** : `pw.x` + ALAMODE dans `bin/`, libs dans `lib/` · Suivi pw.x, pré-vol forces, reprise · **corrigé et testé sur Nb · 2026-09-26** |
 | Optimisation-QE v1.0 | `telechargements/optimisation-QE_v1.0_2026-09-26.tar.gz` (aussi `optimisation-QE-interface.tar.gz`, ~77 Mo) — **autonome** : `pw.x` (QE 7.5 MKL) dans `bin/`, libs dans `lib/`, pseudos Nb/Si · chaîne VC-RELAX → RELAX → SCF · conducteur (N(EF) ≠ 0) ou gap (N(EF) ≈ 0) après SCF → candidat Supra-QE · **2026-09-26** |
 
+Public **download total** (sum of 7 interface counters) appears in the site footer; per-interface detail remains on [compteurs.html](compteurs.html) (author access).
+
 The `.tar.gz` files in `telechargements/` are **links** to `5-Interfaces-hiadsi`.
 
 ## Publish for everyone

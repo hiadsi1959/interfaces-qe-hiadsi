@@ -41,6 +41,9 @@
       panel.hidden = !on;
       panel.classList.toggle("is-active", on);
     });
+    document.querySelectorAll("[data-i18n-footer]").forEach((el) => {
+      el.hidden = el.getAttribute("data-i18n-footer") !== lang;
+    });
     try {
       localStorage.setItem("hiadsi.presLang", lang);
     } catch (_) {
@@ -99,6 +102,45 @@
       return null;
     }
   }
+
+  async function fetchLiveCount(id) {
+    try {
+      const res = await fetch(`${COUNTER_API}/get/${encodeURIComponent(counterKey(id))}`, {
+        cache: "no-store",
+      });
+      if (res.status === 404) return 0;
+      if (!res.ok) return null;
+      const data = await res.json();
+      if (data && data.error) return 0;
+      const n = Number(data.value);
+      return Number.isFinite(n) ? n : 0;
+    } catch {
+      return null;
+    }
+  }
+
+  const footerTotalEl = document.getElementById("footer-dl-total");
+
+  async function refreshPublicDownloadTotal() {
+    if (!footerTotalEl) return;
+    let sum = 0;
+    let partial = false;
+    for (const iface of IFACES) {
+      const live = await fetchLiveCount(iface.id);
+      if (live == null) {
+        partial = true;
+        sum += baselineFor(iface.id);
+      } else {
+        sum += totalCount(iface.id, live);
+      }
+    }
+    footerTotalEl.textContent = partial ? `≥ ${sum}` : String(sum);
+    footerTotalEl.title = partial
+      ? "Total partiel (baseline + compteurs disponibles)"
+      : "Somme baseline + téléchargements comptés via le bouton Download";
+  }
+
+  refreshPublicDownloadTotal();
 
   /* ——— Feedback ——— */
   const form = document.getElementById("form-suggestions");
@@ -307,6 +349,7 @@
       await logLocal(payload);
       const newCount = await bumpCounter(ifaceId);
       await notifyAuthor({ ...payload, total: newCount });
+      refreshPublicDownloadTotal();
 
       startFileDownload(filePath);
       dlStatus.className = "suggest-status is-ok";
