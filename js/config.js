@@ -34,5 +34,6 @@ window.HIADSI_CONFIG = {
     "supra-QE": 10,
     "QE-Alamode_interface": 10,
     "optimisation-QE": 10,
+    "parametre-U": 0,
   },
 };
