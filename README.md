@@ -1,7 +1,8 @@
 # S. HIADSI — Quantum ESPRESSO interfaces website
 
-Public website to present and download the **eight Quantum ESPRESSO interfaces**
-(including **parametre-U** for Hubbard U via hp.x, **QE–ALAMODE** for anharmonic phonons and κ<sub>L</sub>, and **Optimisation-QE**
+Public website to present and download the **nine Quantum ESPRESSO interfaces**
+(including **SQS-QE (Phases)** for multi-phase alloys / SQS / magnetic orders, **parametre-U** for Hubbard U via hp.x,
+**QE–ALAMODE** for anharmonic phonons and κ<sub>L</sub>, and **Optimisation-QE**
 for VC-RELAX → RELAX → SCF structure optimization with metal/gap screening).
 
 ## Usage rules
@@ -35,8 +36,10 @@ Open **http://127.0.0.1:8090/**
 | THERMO_PW v1.2 | `telechargements/thermo_pw_v1.2_2026-09-04.tar.gz` (~980 Ko, sans résultats de calcul ; P1–P5 opérationnels ; électronique avant phonons ; reprise P2→P3 ; opt-in P2 CALPHAD/ESPEI) · 2026-09-04 |
 | QE–ALAMODE v1.3 | `telechargements/QE-Alamode_v1.3_2026-10-01.tar.gz` (aussi `QE-Alamode_interface.tar.gz`, ~78 Mo, sans résultats) — **autonome** : `pw.x` + ALAMODE dans `bin/`, libs dans `lib/` · κ_e / κ_tot, littérature (DOI), légende grandeurs · **corrigé et testé sur Nb · 2026-10-01** |
 | Optimisation-QE v1.0 | `telechargements/optimisation-QE_v1.0_2026-09-26.tar.gz` (aussi `optimisation-QE-interface.tar.gz`, ~77 Mo) — **autonome** : `pw.x` (QE 7.5 MKL) dans `bin/`, libs dans `lib/`, pseudos Nb/Si · chaîne VC-RELAX → RELAX → SCF · conducteur (N(EF) ≠ 0) ou gap (N(EF) ≈ 0) après SCF → candidat Supra-QE · **2026-09-26** |
+| parametre-U v1.0 | `telechargements/parametre-U_v1.0_2026-10-09.tar.gz` (~22 Mo) — Hubbard U via `hp.x` · **2026-10-09** |
+| SQS-QE (Phases) v1.0 | `telechargements/SQS-QE_v1.0_2026-10-20.tar.gz` (aussi `SQS-QE-interface.tar.gz`, ~0,4 Mo) — phases / SQS / dopage / ordres magnétiques · `./CONFIGURER.sh` + `./DEMARRER.sh` · UI :5031 · **2026-10-20** |
 
-Public **download total** (sum of 8 interface counters) appears in the site footer; per-interface detail remains on [compteurs.html](compteurs.html) (author access).
+Public **download total** (sum of 9 interface counters) appears in the site footer; per-interface detail remains on [compteurs.html](compteurs.html) (author access).
 
 The `.tar.gz` files in `telechargements/` are **links** to `5-Interfaces-hiadsi`.
 

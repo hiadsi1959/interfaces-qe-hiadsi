@@ -14,6 +14,7 @@
     { id: "QE-Alamode_interface", label: "QE–ALAMODE v1.3" },
     { id: "optimisation-QE", label: "Optimisation-QE v1.0" },
     { id: "parametre-U", label: "parametre-U v1.0" },
+    { id: "SQS-QE", label: "SQS-QE (Phases) v1.0" },
   ];
 
   function counterKey(id) {
