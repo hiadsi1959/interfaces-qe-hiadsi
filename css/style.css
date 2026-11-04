@@ -49,12 +49,12 @@ a {
 .cite-banner {
   position: relative;
   z-index: 25;
-  padding: 0.65rem 0;
+  padding: 0.42rem 0;
   background: #0a2a2a;
   color: #e8f4f3;
   border-bottom: 1px solid rgba(184, 107, 46, 0.45);
-  font-size: 0.92rem;
-  line-height: 1.45;
+  font-size: 0.8rem;
+  line-height: 1.3;
 }
 
 .cite-banner p {
@@ -107,7 +107,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  padding: 0.7rem 0;
+  padding: 0.5rem 0;
   color: #f3faf9;
   background:
     radial-gradient(ellipse 80% 120% at 12% 0%, rgba(127, 212, 208, 0.22), transparent 55%),
@@ -127,7 +127,7 @@ a {
 .nav-brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 0.96rem;
   letter-spacing: 0.04em;
   color: #fff;
 }
@@ -135,8 +135,8 @@ a {
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.15rem;
-  font-size: 0.92rem;
+  gap: 0.7rem 1rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   justify-content: flex-end;
@@ -153,10 +153,10 @@ a {
 
 /* ——— Hero ——— */
 .hero {
-  min-height: min(72vh, 44rem);
+  min-height: min(62vh, 36rem);
   display: grid;
   align-content: center;
-  padding: 2.5rem 0 3.25rem;
+  padding: 1.8rem 0 2.2rem;
   position: relative;
   text-align: left;
 }
@@ -164,10 +164,10 @@ a {
 .brand {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.8rem, 8vw, 5.6rem);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
   line-height: 0.95;
   letter-spacing: -0.03em;
-  margin: 0 0 1rem;
+  margin: 0 0 0.7rem;
   color: var(--ink);
 }
 
@@ -177,16 +177,17 @@ a {
 
 .hero-lead {
   max-width: 34rem;
-  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
   color: var(--ink-soft);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.35rem;
   font-weight: 500;
 }
 
 .hero-sub {
   max-width: 32rem;
-  margin: 0 0 2rem;
+  margin: 0 0 1.2rem;
   color: rgba(15, 28, 36, 0.72);
+  font-size: 0.96rem;
 }
 
 .cta-row {
@@ -263,30 +264,30 @@ a {
 
 /* ——— Sections ——— */
 section {
-  padding: 3.2rem 0;
+  padding: 2.3rem 0;
 }
 
 .section-head {
   max-width: 38rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .section-kicker {
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--copper);
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.45rem;
 }
 
 .section-head h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
 }
 
 .section-head p {
@@ -303,9 +304,9 @@ section {
 .interface-item {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: 0.9rem 1rem;
+  gap: 0.7rem 0.8rem;
   align-items: center;
-  padding: 1rem 1.15rem;
+  padding: 0.8rem 0.9rem;
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(15, 28, 36, 0.08);
   border-radius: var(--radius);
@@ -329,14 +330,14 @@ section {
 
 .iface-body h3 {
   font-family: var(--font-display);
-  font-size: 1.08rem;
-  margin: 0 0 0.25rem;
+  font-size: 0.98rem;
+  margin: 0 0 0.2rem;
   letter-spacing: -0.02em;
 }
 
 .iface-body p {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   color: rgba(15, 28, 36, 0.7);
 }
 
@@ -348,8 +349,8 @@ section {
 }
 
 .btn-sm {
-  padding: 0.5rem 0.8rem;
-  font-size: 0.8rem;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.76rem;
 }
 
 .btn-download {
@@ -554,20 +555,20 @@ body.modal-open {
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.1rem 1.5rem;
+  gap: 0.8rem 1rem;
   counter-reset: step;
 }
 
 .step h3 {
   font-family: var(--font-display);
-  font-size: 1.02rem;
-  margin: 0 0 0.38rem;
+  font-size: 0.94rem;
+  margin: 0 0 0.25rem;
 }
 
 .step p {
   margin: 0;
   color: rgba(15, 28, 36, 0.7);
-  font-size: 0.92rem;
+  font-size: 0.84rem;
 }
 
 .step::before {
