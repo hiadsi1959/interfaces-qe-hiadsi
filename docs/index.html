@@ -13,6 +13,7 @@
         .interface-card { background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #128570; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .interface-card.new { border-left-color: #ff6b35; background: #fff8f5; }
         .count { background: #128570; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; display: inline-block; margin-bottom: 1rem; }
+        .version { color: #666; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -26,44 +27,44 @@
     
     <div class="interfaces">
         <div class="interface-card">
-            <h3>Interface 1 - Test Pseudos Original</h3>
-            <p>Interface web complète pour validation de pseudopotentiels UPF</p>
+            <h3>01 Générateur dinputs QE</h3>
+            <p>Interface intuitive pour préparer rapidement les fichiers d'entrée .in de Quantum ESPRESSO (v7.x / 7.5+), y compris à partir de structures CIF.</p>
         </div>
         <div class="interface-card">
-            <h3>Interface 2 - Validation Niveaux 1-4</h3>
-            <p>Interface avec tests SCF, logders, EOS, Delta-test</p>
+            <h3>02 Génération & base de pseudopotentiels</h3>
+            <p>Unité centralisée pour rechercher, sélectionner et générer des pseudopotentiels adaptés à vos calculs DFT. Accès aux principales bibliothèques (PSLibrary, PseudoDojo, SSSP...), prise en charge de formats variés (PAW, USPP, ONCVPSP, relativiste / non relativiste).</p>
         </div>
         <div class="interface-card">
-            <h3>Interface 3 - Générateurs ld1/APE/ATOMPAW/ONCVPSP</h3>
-            <p>Support complet des 4 générateurs</p>
+            <h3>03 Interface de calcul QE</h3>
+            <p>Environnement d'exécution et de suivi des calculs DFT (Density Functional Theory) et DFPT (Density Functional Perturbation Theory). Lancement des modules (pw.x, ph.x, ...), suivi de la convergence, gestion des jobs, visualisation/analyse des sorties.</p>
         </div>
         <div class="interface-card">
-            <h3>Interface 4 - Corrections Automatiques</h3>
-            <p>Système de correction automatique intégré</p>
+            <h3>04 Interface thermo_pw</h3>
+            <p>Outil dédié aux propriétés thermodynamiques et élastiques des matériaux en fonction de la température et de la pression (routines thermo_pw). Profils P1-P5 entièrement fonctionnels : constantes élastiques, vitesses du son, température de Debye, capacité calorifique, expansion thermique, phonons et constantes diélectriques.</p>
         </div>
         <div class="interface-card">
-            <h3>Interface 5 - Archive Validés</h3>
-            <p>Gestion et archivage des pseudos validés</p>
+            <h3>05 Interface Supra-QE</h3>
+            <p>Plateforme axée sur la supraconductivité conventionnelle et le couplage électron-phonon (Quantum ESPRESSO). Voie classique (McMillan / Allen-Dynes) et voie EPW (α²F(ω), λ, ωlog, Tc, Δ(T)); visualisation de la surface de Fermi 3D.</p>
         </div>
         <div class="interface-card">
-            <h3>Interface 6 - Guide Méthodologique</h3>
-            <p>Guide intégré avec documentation complète</p>
+            <h3>06 Interface QE-ALAMODE</h3>
+            <p>Outil de calcul local pour chercheurs en sciences des matériaux : chaîne QE → ALAMODE (forces DFT, supercellules, IFC, phonons, κL RTA). Chaîne de calcul : Optimisation → Calculs (SCF, supercellule, pw.x, alm, anphon) → Résultats (fiche technique, bandes, κ(T), DOS, τ/MFP).</p>
         </div>
         <div class="interface-card">
-            <h3>Interface 7 - API REST</h3>
-            <p>Backend Flask avec API asynchrone</p>
+            <h3>07 Interface Optimisation-QE</h3>
+            <p>Optimisation de structure dédiée pw.x : chaîne VC-RELAX → RELAX → SCF (maille + positions atomiques, puis champ auto-cohérent). Après le SCF, l'interface analyse la densité d'états à EF : matériau conducteur (N(EF) ≠ 0) ou isolant (N(EF) ≈ 0).</p>
         </div>
         <div class="interface-card">
-            <h3>Interface 8 - Multi-générateurs</h3>
-            <p>Parcours et sélection depuis bibliothèques générateurs</p>
+            <h3>08 Interface paramètre-U</h3>
+            <p>Calcul du paramètre de Hubbard U par réponse linéaire (hp.x, DFPT) pour un matériau donné - oxydes corrélés, alliages, sites inéquivalents. Sources CIF / scf.in / formule ; 12 cas physiques (AFM/FM/NM/NCL × semi-conducteur / isolant / métal).</p>
         </div>
         <div class="interface-card">
-            <h3>Interface 9 - Ghosts Detection</h3>
-            <p>Détection et correction des états fantômes</p>
+            <h3>09 Interface SQS-QE (Phases)</h3>
+            <p>Interface Phases / SQS pour Quantum ESPRESSO ≥ 7.5 : optimisation de plusieurs phases d'un même alliage (NM, puis phase ★ → FM/AFM/NCL), SQS et dopages (supercellules, fractions A/B), préparation et résultats dans le navigateur.</p>
         </div>
         <div class="interface-card new">
-            <h3>Interface 10 - Générateur Pseudos Compacté</h3>
-            <p>Interface compactée du générateur de pseudopotentiels - 04-11-2026</p>
+            <h3>10 Générateur Pseudos Compacté</h3>
+            <p>Interface compactée du générateur de pseudopotentiels - 04-11-2026. Interface optimisée pour la génération et la gestion de pseudopotentiels UPF avec les 4 générateurs (ld1, APE, ATOMPAW, ONCVPSP).</p>
             <a href="file:///home/hiadsi/generation_pseudos/index.compact.html">Voir l'interface compactée</a>
         </div>
     </div>
