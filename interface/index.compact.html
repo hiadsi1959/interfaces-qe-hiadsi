@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test_Pseudos</title>
+<meta name="description" content="Interface de validation de pseudopotentiels UPF (Quantum ESPRESSO)">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.min.css?v=20261104">
+</head>
+<body>
+<div class="atmosphere" aria-hidden="true"></div>
+<header class="top">
+<div class="top-inner">
+<div class="brand-block">
+<h1 class="brand">Test_Pseudos</h1>
+<p class="tagline">Interface de validation de pseudopotentiels UPF (Quantum ESPRESSO). Teste tous les pseudos : générés par <strong>ld1, APE, ATOMPAW et ONCVPSP</strong>, téléchargés des <strong>bases de données</strong> et vos pseudos locaux.</p>
+</div>
+<div class="author-block">
+<a href="mailto:said.hiadsi@univ-usto.dz" class="author-link">
+<span class="author-name">Auteur : Said Hiadsi</span>
+<span class="author-email">said.hiadsi@univ-usto.dz</span>
+</a>
+</div>
+</div>
+</header>
+<div class="tabbar">
+<div class="tabbar-inner">
+<nav class="nav" aria-label="Sections">
+<a href="#accueil" class="active" data-view="accueil">Accueil</a>
+<a href="#test_pseudos" data-view="test_pseudos">test_pseudos</a>
+<a href="#valides" data-view="valides">📂 pseudos_testés_validés</a>
+<a href="#guide" data-view="guide">Guide</a>
+</nav>
+<button type="button" class="health" id="health" aria-label="Vérifier l'état de l'API">
+<span class="health-label">Connexion…</span>
+<span class="health-dot" aria-hidden="true"></span>
+</button>
+</div>
+</div>
+<main class="main">
+<section class="hero" id="accueil">
+<article class="panel guide-doc">
+<header class="panel-head">
+<h2>Validation de pseudopotentiels UPF</h2>
+<p>Chaîne de test automatisée : Niveaux 1-4 + corrections automatiques</p>
+</header>
+</article>
+</section>
+<section class="panel" id="test_pseudos">
+<header class="panel-head">
+<h2>Tests de pseudopotentiels</h2>
+</header>
+<div class="drop-row">
+<button type="button" class="btn secondary drop" id="drop-zone">
+<span>Déposer le pseudo à testé</span>
+<input type="file" id="file-input" accept=".upf,.UPF" multiple>
+</button>
+</div>
+<div class="opts">
+<label class="check"><input type="checkbox" id="opt-level1" checked><span class="check-text"><b>1 · Niveau 1 — pw.x SCF</b></span></label>
+<label class="check"><input type="checkbox" id="opt-level2" checked><span class="check-text"><b>2 · Niveau 2 — logders / ghosts</b></span></label>
+<label class="check"><input type="checkbox" id="opt-level3"><span class="check-text"><b>3 · Niveau 3 — EOS sur cristal</b></span></label>
+<label class="check"><input type="checkbox" id="opt-level4"><span class="check-text"><b>4 · Niveau 4 — Delta-test</b></span></label>
+<label class="check"><input type="checkbox" id="opt-autocorrect" checked><span class="check-text"><b>5 · Corrections automatiques</b></span></label>
+</div>
+<div class="actions">
+<button type="button" class="btn primary" id="btn-test-selected" disabled>Tester la sélection</button>
+<button type="button" class="btn secondary" id="btn-test-all" disabled>Tester tout le dossier</button>
+</div>
+<div class="file-list" id="file-list"></div>
+<div class="card-like interact" id="results-panel">
+<div class="results-toolbar">
+<span class="status-line" id="status-line">Aucun test lancé.</span>
+<div class="job-progress" id="job-progress" hidden><div class="job-progress-bar" id="job-progress-bar"></div></div>
+<button type="button" class="btn ghost" id="btn-archive">📦 Archiver les validés</button>
+<button type="button" class="btn ghost" id="btn-purge">⟳ Purger / Rafraîchir</button>
+</div>
+<div class="results" id="results"></div>
+</div>
+</section>
+<section class="panel" id="valides">
+<header class="panel-head"><h2>📂 pseudos_testés_validés</h2></header>
+<p class="meta" id="valides-path">Chemin : …</p>
+<div class="file-list" id="valides-list"></div>
+</section>
+<section class="panel" id="guide">
+<header class="panel-head"><h2>Guide méthodologique</h2></header>
+<div class="guide-summary" id="guide-summary"></div>
+</section>
+</main>
+<footer class="foot"><p>Test Pseudos · moteur engine/test_pseudos.py</p></footer>
+<script src="app.min.js?v=20261104"></script>
+</body>
+</html>

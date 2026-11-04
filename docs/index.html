@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaces QE Hiadsi</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: 0 auto; padding: 2rem; background: #f5f7fa; }
+        header { background: linear-gradient(135deg, #128570 0%, #0e5a4c 100%); color: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem; }
+        h1 { margin: 0; font-size: 2.5rem; }
+        .date { color: #666; font-style: italic; }
+        .interfaces { display: grid; gap: 1rem; }
+        .interface-card { background: white; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #128570; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .interface-card.new { border-left-color: #ff6b35; background: #fff8f5; }
+        .count { background: #128570; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; display: inline-block; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interfaces QE Hiadsi</h1>
+        <p>Collection d'interfaces pour Quantum ESPRESSO - Pseudopotentiels</p>
+    </header>
+    
+    <div class="count">10 interfaces</div>
+    <p class="date">Mise à jour : 04-11-2026</p>
+    
+    <div class="interfaces">
+        <div class="interface-card">
+            <h3>Interface 1 - Test Pseudos Original</h3>
+            <p>Interface web complète pour validation de pseudopotentiels UPF</p>
+        </div>
+        <div class="interface-card">
+            <h3>Interface 2 - Validation Niveaux 1-4</h3>
+            <p>Interface avec tests SCF, logders, EOS, Delta-test</p>
+        </div>
+        <div class="interface-card">
+            <h3>Interface 3 - Générateurs ld1/APE/ATOMPAW/ONCVPSP</h3>
+            <p>Support complet des 4 générateurs</p>
+        </div>
+        <div class="interface-card">
+            <h3>Interface 4 - Corrections Automatiques</h3>
+            <p>Système de correction automatique intégré</p>
+        </div>
+        <div class="interface-card">
+            <h3>Interface 5 - Archive Validés</h3>
+            <p>Gestion et archivage des pseudos validés</p>
+        </div>
+        <div class="interface-card">
+            <h3>Interface 6 - Guide Méthodologique</h3>
+            <p>Guide intégré avec documentation complète</p>
+        </div>
+        <div class="interface-card">
+            <h3>Interface 7 - API REST</h3>
+            <p>Backend Flask avec API asynchrone</p>
+        </div>
+        <div class="interface-card">
+            <h3>Interface 8 - Multi-générateurs</h3>
+            <p>Parcours et sélection depuis bibliothèques générateurs</p>
+        </div>
+        <div class="interface-card">
+            <h3>Interface 9 - Ghosts Detection</h3>
+            <p>Détection et correction des états fantômes</p>
+        </div>
+        <div class="interface-card new">
+            <h3>Interface 10 - Générateur Pseudos Compacté</h3>
+            <p>Interface compactée du générateur de pseudopotentiels - 04-11-2026</p>
+            <a href="file:///home/hiadsi/generation_pseudos/index.compact.html">Voir l'interface compactée</a>
+        </div>
+    </div>
+</body>
+</html>
