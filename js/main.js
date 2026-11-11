@@ -46,6 +46,20 @@
     document.querySelectorAll("[data-i18n-footer]").forEach((el) => {
       el.hidden = el.getAttribute("data-i18n-footer") !== lang;
     });
+    document.querySelectorAll("[data-i18n-update]").forEach((el) => {
+      el.hidden = el.getAttribute("data-i18n-update") !== lang;
+    });
+    const updateDateEl = document.getElementById("site-update-date");
+    if (updateDateEl) {
+      const date = new Date();
+      const locale = lang === "en" ? "en-US" : "fr-FR";
+      updateDateEl.textContent = new Intl.DateTimeFormat(locale, {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      }).format(date);
+      updateDateEl.setAttribute("datetime", date.toISOString());
+    }
     try {
       localStorage.setItem("hiadsi.presLang", lang);
     } catch (_) {

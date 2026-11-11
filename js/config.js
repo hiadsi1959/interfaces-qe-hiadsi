@@ -36,5 +36,6 @@ window.HIADSI_CONFIG = {
     "optimisation-QE": 10,
     "parametre-U": 0,
     "SQS-QE": 0,
+    "test_pseudos": 0,
   },
 };

@@ -197,6 +197,26 @@ a {
   align-items: center;
 }
 
+.hero-update {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(13, 110, 110, 0.18);
+  background: rgba(13, 110, 110, 0.07);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.hero-update time {
+  color: var(--teal);
+  font-weight: 800;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
