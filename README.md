@@ -30,7 +30,7 @@ Open **http://127.0.0.1:8090/**
 | Interface | Archive |
 |-----------|---------|
 | Interface-QE v1.2 | `telechargements/Interface-QE_v1.2_2026-09-03.tar.gz` (aussi `Interface-QE_v1.tar.gz`) — workflows E-P-O, fiche technique HTML/PDF · 2026-09-03 |
-| QE Input Generator | `telechargements/generation_inputs-QE_v1.2_2026-09-18.tar.gz` (aussi `generation_inputs-QE.tar.gz`) — Tab1 direct + CIF v1.2, magnétisme/Hubbard auto, aperçu post-conversion · **2026-09-18** |
+| QE Input Generator | `telechargements/generation_inputs-QE_v1.3_2026-11-25.tar.gz` (aussi `generation_inputs-QE.tar.gz`) — QE 7.5+ HUBBARD après K_POINTS, DFT+U/magnétisme SCF–phonons–optique, CIF UI v1.3 · **2026-11-25** |
 | Pseudopotential Generator v1.4 corrigé | Release [`v1.4.1`](https://github.com/hiadsi1959/interfaces-qe-hiadsi/releases/tag/v1.4.1) → `generation_pseudos_v1.4_2026-11-20_corrige.tar.gz` · 2026-11-20 · corrigé |
 | Supra-QE v1.4 | `telechargements/supra-QE_v1.4_2026-10-01.tar.gz` — WF1 + WF2, magnétisme, base littérature (éléments et composés), exports JSON/CSV pour IA · **2026-10-01** |
 | THERMO_PW v1.3 | `telechargements/thermo_pw_v1.3_2026-11-25.tar.gz` — aussi release [`thermo_pw-v1.3`](https://github.com/hiadsi1959/interfaces-qe-hiadsi/releases/tag/thermo_pw-v1.3) (~5,3 Mo, sans résultats de calcul ; P1–P5 opérationnels ; **DFPT optionnel sur P1/P5** — gain de temps et d'espace disque : P1 190,6 h → 2,3 h et 5,87 → 0,56 Gio, P5 189,2 h → 0,9 h et 5,61 → 0,30 Gio sur BaTiO₃ ; électronique avant phonons ; reprise P2→P3 ; opt-in P2 CALPHAD/ESPEI ; guide v1.3 aussi en HTML ; presets phonons ; DFT+U {atomic} pour DFPT) · 2026-11-25 |
